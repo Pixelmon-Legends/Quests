@@ -1,0 +1,518 @@
+{
+  "type": "basic",
+  "name": "extermagikarpglobal",
+  "title": "L'Extermination des Magikarp",
+  "stages": [
+    {
+      "name": "exterminationmg1",
+      "displayText": "Début event",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "extermagikarp",
+          "title": "Parler au PNJ de lancement",
+          "requirements": [
+            {
+              "type": "have-permission",
+              "inverted": false,
+              "node": "ultima.event"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aVoulez-vous lancer l'event: §cExtermination de Magicarpe §a?§2"
+              ],
+              "choiceID": "lancereventmagikarp1",
+              "choices": [
+                "§2Confirmer§4",
+                "§4Annuler"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "eventmagikarp",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "lancereventmagikarp2",
+          "title": "Lancer",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi bossbarmsg all -sec:-3600 -c:purple -n:EventMagikarp -s:10 -cmd:\"uq changecounter Astriyas EventMagikarp 1 global\" &d&lEvent Magicarpe &e| &c&lTemps restant: [autoTimeLeft]",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! §aLancement de l'Event Extermination de Magicarpes ! Eliminez 800 Magicarpes en moins d'une heure !",
+              "asPlayer": false
+            },
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "MagikarpEventSolo",
+              "counterStore": "global",
+              "amount": "3",
+              "lowerCap": "2",
+              "upperCap": "3"
+            },
+            {
+              "type": "show-title",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "title": "§2Début de l'Event",
+              "subtitle": "§aExtermination de Magicarpes",
+              "subtitleDelay": "2"
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "exterminationmg2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "lancereventmagikarp1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "eventmagikarp1-2",
+          "title": "Annuler",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "lancereventmagikarp1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "exterminationmg2",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "exterminationmg2",
+      "displayText": "Event Extermination de Magikarp",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "killmagikarpevent-25",
+          "title": "Exterminer 25% Magicarpe",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! &225% des Magicarpes éliminés !",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "200",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "spec": "Magikarp"
+        },
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "killmagikarpevent-50",
+          "title": "Exterminer 50% Magicarpe",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! &250% des Magicarpes éliminés !",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "400",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "spec": "Magikarp"
+        },
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "killmagikarpevent-75",
+          "title": "Exterminer 75% Magicarpe",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! &275% des Magicarpes éliminés !",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "600",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "spec": "Magikarp"
+        },
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "killmagikarpevent-100",
+          "title": "§2Exterminer {{remaining}} Magicarpe",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! &2100% des Magicarpes éliminés ! Félicitations à tous !",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi bossbarmsg all -cancel:EventMagikarp",
+              "asPlayer": false
+            },
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "MagikarpEventSolo",
+              "counterStore": "global",
+              "amount": "-3",
+              "lowerCap": "-1",
+              "upperCap": "1"
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "exterminationmg1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "800",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "spec": "Magikarp"
+        },
+        {
+          "type": "do-nothing",
+          "name": "echeceventmagikarp",
+          "title": "Echec event",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "EventMagikarp",
+              "counterStore": "",
+              "minimumValue": "1",
+              "maximumValue": 99999
+            }
+          ],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": "false",
+              "runningChance": 100,
+              "requirements": [],
+              "command": "uq changecounter Astriyas EventMagikarp -1 global",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": "false",
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! §cEchec de l'Event Extermination de Magicarpe ! La prochaine fois sera la bonne !",
+              "asPlayer": false
+            },
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "MagikarpEventSolo",
+              "counterStore": "global",
+              "amount": "-3",
+              "lowerCap": "-3",
+              "upperCap": "-2"
+            },
+            {
+              "type": "move-to-stage",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "exterminationmg1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "killmagikarpstop",
+          "title": "Arreter event",
+          "requirements": [
+            {
+              "type": "have-permission",
+              "inverted": false,
+              "node": "ultima.event"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "stopeventmagikarp",
+              "chatName": "",
+              "chatPages": [
+                "§4Interompre l'Event: §cExtermination de Magicarpe ?§4"
+              ],
+              "choices": [
+                "§4OUI§2",
+                "§2NON"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "eventmagikarp",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "killmagikarpevent-stop-1",
+          "title": "Choose stop",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! &4Event annulé",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi bossbarmsg all -cancel:EventMagikarp",
+              "asPlayer": false
+            },
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "MagikarpEventSolo",
+              "counterStore": "global",
+              "amount": "-3",
+              "lowerCap": "-3",
+              "upperCap": "-2"
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "exterminationmg1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "choiceID": "stopeventmagikarp",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-none"
+    }
+  ],
+  "category": "global",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

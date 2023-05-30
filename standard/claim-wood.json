@@ -1,0 +1,330 @@
+{
+  "type": "basic",
+  "name": "claim-wood",
+  "title": "Deforestation ",
+  "stages": [
+    {
+      "name": "deforestation1",
+      "displayText": "Parler à Hector",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkhector",
+          "title": "Parler à Hector",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! Ca te dit d'effectuer quelques missions pour moi ?",
+                "§aPour commencer voici 4 missions:",
+                "§aRécupère §c10 stacks §ade bûches",
+                "§c10 stacks §ade roche",
+                "§c10 stacks §ade terre/sable/gravier",
+                "§aet élimine §c500 Pokémon §a!",
+                "§aBon courage !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "hector-claim",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "deforestation2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "deforestation2",
+      "displayText": "Couper du Bois (1)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "cut10",
+          "title": "Couper {{remaining}} de bois",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu as déjà coupé 10 stack de bois, voici 1 claim pour toi !",
+                "§aProchaine étape: &c100 stacks !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "640",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:log",
+            "minecraft:log2"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "deforestation3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "deforestation3",
+      "displayText": "Couper du Bois (2)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "cut100",
+          "title": "Couper {{remaining}}de bois",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu as déjà coupé 100 stack de bois, voici 2 claim pour toi !",
+                "§aProchaine étape: &c500 stacks !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "6400",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:log",
+            "minecraft:log2"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "deforestation4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "deforestation4",
+      "displayText": "Couper du Bois (3)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "cut500",
+          "title": "Couper {{remaining}} de bois",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu as déjà coupé 100 stack de bois, voici 3 claims pour toi !",
+                "§aProchaine étape: &c1000 stacks !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "32000",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:log",
+            "minecraft:log2"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "deforestation5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "deforestation5",
+      "displayText": "Couper du Bois (4)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "cut1000",
+          "title": "Couper {{remaining}} de bois",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu a coupé 1000 stacks de bois, voici 4 claims pour toi !",
+                "§aJe n'ai plus de mission pour toi, tu as fais tes preuves !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 59",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "64000",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:log",
+            "minecraft:log2"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

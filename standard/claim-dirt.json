@@ -1,0 +1,316 @@
+{
+  "type": "basic",
+  "name": "claim-dirt",
+  "title": "Terraforming ultime",
+  "stages": [
+    {
+      "name": "dirtclaim1",
+      "displayText": "Parler à Hector",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkhector",
+          "title": "Parler à Hector",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "hector-claim",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dirtclaim2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dirtclaim2",
+      "displayText": "Creuser (1)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "creuser10",
+          "title": "Creuser {{remaining}} de sable/terre/gravier",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu as déjà creusé 10 stacks, voici 1 claim pour toi !",
+                "§aProchaine étape: &c100 stacks !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "640",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:sand",
+            "minecraft:dirt",
+            "minecraft:gravel"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dirtclaim3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dirtclaim3",
+      "displayText": "Creuser (2)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "creuser100",
+          "title": "Creuser {{remaining}} de sable/terre/gravier",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu as déjà creusé 100 stack, voici 2 claim pour toi !",
+                "§aProchaine étape: &c500 stacks !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "6400",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:sand",
+            "minecraft:dirt",
+            "minecraft:gravel"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dirtclaim4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dirtclaim4",
+      "displayText": "Creuser (3)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "creuser500",
+          "title": "Creuser {{remaining}} de sable/terre/gravier",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu as déjà creusé 100 stacks, voici 3 claims pour toi !",
+                "§aProchaine étape: &c1000 stacks !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "32000",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:sand",
+            "minecraft:dirt",
+            "minecraft:gravel"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dirtclaim5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dirtclaim5",
+      "displayText": "Creuser (4)",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "break-block-type",
+          "name": "creuser1000",
+          "title": "Creuser {{remaining}} de sable/terre/gravier",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est Hector !",
+                "§aBravo tu a creusé 1000 stacks, voici 4 claims pour toi !",
+                "§aJe n'ai plus de mission pour toi, tu as fais tes preuves !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 4",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 61",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": "64000",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "blocks": [
+            "minecraft:sand",
+            "minecraft:dirt",
+            "minecraft:gravel"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

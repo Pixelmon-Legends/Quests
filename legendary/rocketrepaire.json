@@ -1,0 +1,1645 @@
+{
+  "type": "basic",
+  "name": "RocketRepaire",
+  "title": "Le Repaire Rocket",
+  "stages": [
+    {
+      "name": "Repairerocket1",
+      "displayText": "L'évoli volé",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "repairerockettalk",
+          "title": "Parler à Pania",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dOh bonjour ! Veut-tu bien m'aider ?",
+                "§dJ'étais au casino, mais j'ai été attaquée par la §cTeam Rocket §d!",
+                "§dCes vauriens m'ont volé mon §eEvoli §d! Peux tu m'aider à le récupérer ?"
+              ],
+              "choiceID": "pania1",
+              "choices": [
+                "§aBien sûr ! Je m'en occupe !",
+                "§cNon désolé, je préfère ne pas m'attaquer à la team Rocket..."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "paniarocket",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "repairerockettalk2",
+          "title": "Choisir ok",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dMerci ! Tu devrais enquêter au casino !",
+                "§dJe les vois passer souvent près du §eDJ§d..."
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu devrais enquêter dans le casino et parler au DJ.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pania1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "repairerockettalk3",
+          "title": "Dire non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dSniiiiiifff pourquoi personne ne m'aide :'(",
+                "§dVas t'en mechant, tu ne vaut pas mieux que la Team Rocket !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pania1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Repairerocket2",
+      "displayText": "L'accès au repaire",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "findrepairerocket",
+          "title": "Trouver l'entrée du repaire",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§5Yoooo ! Me demande pas de son en particulier, je ne fais pas les requêtes !",
+                "§5Quoi tu veux accéder à la planque de la Team Rocket ?",
+                "§5Effectivement ils passent souvent pas loin... Mais je n'ai rien à voir avec eux !",
+                "§5Une fois cette carte d'accès m'est tombé sur la tête... Tiens je te la donne"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set cmi.command.portal.accesrepairerocket",
+              "asPlayer": "false"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as obtenu une carte d'accès au repaire Rocket ! L'entrée ne doit pas être loin...",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "casinodj",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "enter-area",
+          "name": "enterrocketrepaire",
+          "title": "Entrer dans le repaire",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as réussi à entrer ! Mais serait-ce un labyrinthe ? Plus qu'a trouver le bon chemin...",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-4977",
+          "maxX": "-4975",
+          "minY": "84",
+          "maxY": "86",
+          "minZ": "-5064",
+          "maxZ": "-5062"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "repairerockettalk-pania",
+          "title": "Parler à Pania",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dAlors tu as réussi à récuperer mon évoli auprès de la Team Rocket ? N'oublie pas ils doivent se trouver dans le casino !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "paniarocket",
+          "uuid": "",
+          "cancelInteraction": "false",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Repairerocket3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Repairerocket3",
+      "displayText": "Le repaire Rocket",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket1",
+          "title": "Battre le dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket1",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket2",
+          "title": "Battre le dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket2",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket3",
+          "title": "Battre le dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket3",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket4",
+          "title": "Battre le dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu devrais pouvoir aller à l'étage désormais, mais tu peux continuer de vaincre les autres membres de la Team Rocket dans le labyrinthe.",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket4",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "do-nothing",
+          "name": "Ajoutfacultatif",
+          "title": "Combats factultatifs",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "add-task-set",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "taskSetName": "CombatsFacultatifs"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Repairerocket4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Repairerocket4",
+      "displayText": "Plus loin dans le repaire",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket5",
+          "title": "Battre le dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur5"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket5",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket6",
+          "title": "Battre le dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur5"
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur6"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket6",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket7",
+          "title": "Battre le dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur6"
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur7"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket7",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket8",
+          "title": "Battre le dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur7"
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur8"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aBravo ! Plus qu'à affronter les derniers membres de la Team Rocket !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "dresseurrocket8",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "rocketspy1",
+          "title": "Parle à l'espion",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "dresseur5"
+                }
+              ],
+              "dimension": 0,
+              "x": "-5000",
+              "y": "90",
+              "z": "-5078",
+              "yaw": 0
+            },
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "dresseur6"
+                }
+              ],
+              "dimension": 0,
+              "x": "-5001",
+              "y": "90",
+              "z": "-5084",
+              "yaw": 0
+            },
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "dresseur7"
+                }
+              ],
+              "dimension": 0,
+              "x": "-5000",
+              "y": "90",
+              "z": "-5090",
+              "yaw": 0
+            },
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "dresseur8"
+                }
+              ],
+              "dimension": 0,
+              "x": "-5000",
+              "y": "90",
+              "z": "-5104",
+              "yaw": 0
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§o§7Chut! Toi là, si jamais tu echoues, parle-moi je t'emmènerai à ta dernière position ! "
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "rocketspy",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Repairerocket5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Repairerocket5",
+      "displayText": "Le boss de la team Rocket",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket9",
+          "title": "Battre Jessie et James",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "dresseur8"
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "rocketjessie"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as vaincu Jessie et James ! Plus qu'a battre leur boss !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "jessierocket",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeatrocket10",
+          "title": "Battre Giovanni",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "rocketjessie"
+            },
+            {
+              "type": "give-pokemon",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Eevee f:111",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§cGiovanni: Noooon c'est impossible !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§cComment ai-je pu perdre contre toi ! Raaaah !!",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§cReprends cet Evoli, il n'est pas assez bien pour nous de toute façon !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": "8",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aBravo, tu as vaincu Giovanni et récupéré l'Evoli de Pania, retourne la voir !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money add {{player}} 10k",
+              "asPlayer": "false"
+            },
+            {
+              "type": "spawn-particles",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "particle": "FIREWORKS_SPARK",
+              "dimension": 0,
+              "x": 0,
+              "y": "97",
+              "z": "-75",
+              "numParticles": "10",
+              "velocity": 1
+            },
+            {
+              "type": "teleport-to-position",
+              "delay": "7",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-5000",
+              "y": "60",
+              "z": "-5041",
+              "yaw": 0
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "giovannirocket",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "rocketspy2",
+          "title": "Parle à l'espion",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "dresseur8"
+                }
+              ],
+              "dimension": 0,
+              "x": "-5000",
+              "y": "90",
+              "z": "-5104",
+              "yaw": 0
+            },
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "rocketjessie"
+                }
+              ],
+              "dimension": 0,
+              "x": "-5000",
+              "y": "95",
+              "z": "-5071",
+              "yaw": 0
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§o§7Chut! Toi là, si jamais tu echoues, parle-moi je t'emmènerai à ta dernière position ! "
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "rocketspy",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Repairerocket6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-none"
+    },
+    {
+      "name": "Repairerocket6",
+      "displayText": "Retourner voir Pania",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkrepairerocketend",
+          "title": "Parler à Pania",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dRebonjour ! J'ai entendu beaucoup de bruit venant de l'étage du casino !",
+                "§dAttend ?! Tu les as tous vaincus ?!",
+                "§dOh et tu as mon évoli ! Mais que lui ont-ils fait ? ",
+                "§dOn dirait qu'il fait partie de la Team Rocket désormais...",
+                "§dTu sais quoi, garde le ! Je pense qu'il sera mieux avec toi !",
+                "§dEt voici une récompense pour m'avoir aidé !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:master_ball",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-experience",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "amount": "55"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 9",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "paniarocket",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [
+    {
+      "name": "CombatsFacultatifs",
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-1",
+          "title": "Battre Rocket 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket1",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-2",
+          "title": "Battre Rocket 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket2",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-3",
+          "title": "Battre Rocket 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket3",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-4",
+          "title": "Battre Rocket 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket4",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-5",
+          "title": "Battre Rocket 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket5",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-6",
+          "title": "Battre Rocket 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket6",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-7",
+          "title": "Battre Rocket 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket7",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-8",
+          "title": "Battre Rocket 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket8",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-9",
+          "title": "Battre Rocket 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket9",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-10",
+          "title": "Battre Rocket 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket10",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-11",
+          "title": "Battre Rocket 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket11",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-12",
+          "title": "Battre Rocket 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket12",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-13",
+          "title": "Battre Rocket 13",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket13",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-14",
+          "title": "Battre Rocket 14",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket14",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "battrerocket-champion",
+          "title": "Battre Rocket champion",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 5000",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "rocket-champion",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        }
+      ]
+    }
+  ]
+}

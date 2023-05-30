@@ -1,0 +1,615 @@
+{
+  "type": "basic",
+  "name": "lacasadelpapy",
+  "title": "La Casa Del Papy",
+  "stages": [
+    {
+      "name": "casa1",
+      "displayText": "Parler au papy",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkpapy",
+          "title": "Parler au papy",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "casa1",
+              "chatName": "",
+              "chatPages": [
+                "§7§oBonjour ! Chut ne fais pas trop de bruit, j'essaie d'entrer discrètement !§a"
+              ],
+              "choices": [
+                "§aHein ?! Pourquoi ?§c",
+                "§cEncore un gars chelou ! J'appelle la police..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "casadelpapy",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choix1-1",
+          "title": "Choix 1-1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "casa2",
+              "chatName": "",
+              "chatPages": [
+                "§7§oEn fait c'est bête, mais lors de mon dernier cambrio...Retrait d'argent, j'ai oublié mon dentier dans la salle des coffres...",
+                "§7§oEt j'ai entendu dire qu'ils avaient renforcé la sécurité",
+                "§7Mais attends ! Tu pourrais m'aider ?§a"
+              ],
+              "choices": [
+                "§aD'accord, je vais chercher votre dentier...§c",
+                "§cJe préfère pas tremper dans vos histoires désolé..."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "casa1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choix2-1",
+          "title": "Choix 2-1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§7Oh c'est gentil !",
+                "§7Fais attention, j'ai entendu dire qu'ils avait engagé un Pokémon de sécurité !",
+                "§7Reviens me voir quand tu auras mon dentier !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "casa2",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choix1-2",
+          "title": "Choix 1-2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§7§oNe fais pas ça ! Promis je fais rien de mal !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "casa1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "select-choice",
+          "name": "choix2-2",
+          "title": "Choix 2-2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§7Je comprends... Pourquoi personne ne veut m'aider :'("
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "casa2",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "casa2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "casa2",
+      "displayText": "Descendre au sous sol de la banque",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "kill-entity",
+          "name": "gobank",
+          "title": "§2Aller dans la banque et éliminer le garde",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -4916.0 47 -5011.0 0 180",
+              "asPlayer": false
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aC'est bon le garde est eliminé et je suis dans la salle des coffres plus qu'à trouver ce dentier !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4916",
+          "waypointZ": "-4968",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "entities": [],
+          "mark": "persianbanque"
+        },
+        {
+          "type": "get-item",
+          "name": "findteeth",
+          "title": "Trouver le dentier",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -4941.5 62.1 -4975.5 0 90",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:gold_teeth",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "dentsenor",
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "casa3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "casa3",
+      "displayText": "Rapporter le dentier",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "endcasapapy",
+          "title": "§2Rapporter le dentier au papy",
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:gold_teeth",
+              "quantity": 1,
+              "meta": -1,
+              "marker": "dentsenor",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§7Ohhhhh ! Tu as mon dentier ?! Merci bien !",
+                "§7Que veux tu comme récompense pour ce service ?§a"
+              ],
+              "choiceID": "casaend",
+              "choices": [
+                "§aUne partie de ton butin !§e",
+                "§eJe garde tes dents !"
+              ]
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4922",
+          "waypointZ": "-4989",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "casadelpapy",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "noteeth",
+          "title": "Pas le dentier",
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": "true",
+              "item": "pixelmon:gold_teeth",
+              "quantity": 1,
+              "meta": -1,
+              "marker": "dentsenor",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§7Et bien ?! Ou sont mes dents ?",
+                "§7Rapporte moi les vite !"
+              ]
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "casadelpapy",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixmoney",
+          "title": "Choix Money",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§7D'accord, tiens voici 5.000$, c'est pour toi !",
+                "§7Merci encore !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money add {{player}} 5k",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 38",
+              "asPlayer": false
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:gold_teeth",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "dentsenor",
+              "nbt": ""
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "casaend",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choixdents",
+          "title": "Choix dents",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§7Hein ?! Quoi ? Mais pourquoi fais tu ça ?!",
+                "§f§oVous mettez le dentier de Slater dans votre bouche, celui-ci vous regarde les yeux écarquillés...",
+                "§f§oVous sentez de la bave qui restait sur le dentier couler au fond de votre gorge...vous vous dites que vous avez fait une erreur",
+                "§f§o....",
+                "§f§o......................"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi effect {{player}} confusion 1 60",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "4",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi effect {{player}} slow 60 5",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "5",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi effect {{player}} blindness 60 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "19",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi kill {{player}}",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "20",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! §e§l{{player}} §cest mort par empoisonnement au dentier... §c?&4!&c?&4!",
+              "asPlayer": false
+            },
+            {
+              "type": "send-message",
+              "delay": "21",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as obtenu le titre \"Psychopathe\". Je ne sais pas si tu dois en être fier...",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": "21",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set deluxetags.tag.psychopathe",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 38",
+              "asPlayer": false
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:gold_teeth",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "dentsenor",
+              "nbt": ""
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "casaend",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

@@ -1,0 +1,1327 @@
+{
+  "type": "repeatable",
+  "name": "potion-daily",
+  "title": "L'Alchimiste",
+  "stages": [
+    {
+      "name": "dailypotion1",
+      "displayText": "Parler à William",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 43",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "start-daily-potion",
+          "title": "Parler à William",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bBonjour ! J'aurais besoin d'aide, peux-tu m'aider ?§a"
+              ],
+              "choiceID": "choosepotion",
+              "choices": [
+                "§aD'accord !§c",
+                "§cDésolé, je n'ai pas le temps."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "william-potion",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choose1-1",
+          "title": "Choix potion",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "random-action",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "dailypotion-force"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "dailypotion-speed"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "dailypotion-fire"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "dailypotion-regen"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "dailypotion-heal"
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "choosepotion",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choose1-2",
+          "title": "Choix non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bD'accord ! Une autre fois alors !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "choosepotion",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dailypotion-force",
+      "displayText": "Potion Force",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-force",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bJ'aurais besoin de 6 potions de force 2 !",
+                "§bReviens me voir quand tu les auras !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire 6 potions de Force 2 ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "potion-force"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "get-item",
+          "name": "brew-force",
+          "title": "Préparer {{remaining}} potions de Force 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mes potions ! Il faut le rapporter à William !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "minecraft:potion",
+          "quantity": "6",
+          "meta": "-1",
+          "mark": "",
+          "nbt": "{Potion:\"minecraft:strong_strength\"}"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dailypotion-end",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dailypotion-speed",
+      "displayText": "Potion Rapidité",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-rapidité",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bJ'aurais besoin de 6 potions de rapidité 2 !",
+                "§bReviens me voir quand tu les auras !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire 6 potions de Rapidité 2 ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "potion-speed"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "get-item",
+          "name": "brew-speed",
+          "title": "Préparer {{remaining}} potions de Rapidité 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mes potions ! Il faut le rapporter à William !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "minecraft:potion",
+          "quantity": "6",
+          "meta": "-1",
+          "mark": "",
+          "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dailypotion-end",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dailypotion-fire",
+      "displayText": "Potion Feu",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-feu",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bJ'aurais besoin de 6 longues potions de résistance au feu !",
+                "§bReviens me voir quand tu les auras !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire 6 potions de resistance au feu longues! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "potion-feu"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "get-item",
+          "name": "brew-feu",
+          "title": "Préparer {{remaining}} potions de Resistance au feu 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mes potions ! Il faut le rapporter à William !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "minecraft:potion",
+          "quantity": "6",
+          "meta": -1,
+          "mark": "",
+          "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dailypotion-end",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dailypotion-regen",
+      "displayText": "Potion Regen",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-regen",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bJ'aurais besoin de 6 potions de Regénération 2 !",
+                "§bReviens me voir quand tu les auras !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire 6 potions de Régénération 2 ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "potion-regen"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "get-item",
+          "name": "brew-regen",
+          "title": "Préparer {{remaining}} potions de Régénération 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mes potions ! Il faut le rapporter à William !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "minecraft:potion",
+          "quantity": "6",
+          "meta": -1,
+          "mark": "",
+          "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dailypotion-end",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dailypotion-heal",
+      "displayText": "Potion Heal",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-heal",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bJ'aurais besoin de 6 potions de Soin instantané 2 !",
+                "§bReviens me voir quand tu les auras !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire 6 potions de Soin Instantané 2 ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "potion-heal"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "get-item",
+          "name": "brew-heal",
+          "title": "Préparer {{remaining}} potions de Soin Instantané 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mes potions ! Il faut le rapporter à William !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "minecraft:potion",
+          "quantity": "6",
+          "meta": -1,
+          "mark": "",
+          "nbt": "{Potion:\"minecraft:strong_healing\"}"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "dailypotion-end",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "dailypotion-end",
+      "displayText": "Livrer les potions",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "givepotion",
+          "title": "§2Donner les potions",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "potion-force"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "{Potion:\"minecraft:strong_strength\"}"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bTu as fini les potions ! Quelle efficacité, merci !",
+                    "§bVoici ta récompense !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 43",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 5k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "potion-force"
+                },
+                {
+                  "type": "give-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:dragon_breath",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": "{Potion:\"minecraft:strong_strength\"}"
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "potion-speed"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bTu as fini les potions ! Quelle efficacité, merci !",
+                    "§bVoici ta récompense !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 43",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 5k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "potion-speed"
+                },
+                {
+                  "type": "give-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:dragon_breath",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "potion-fire"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bTu as fini les potions ! Quelle efficacité, merci !",
+                    "§bVoici ta récompense !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 43",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 5k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "potion-fire"
+                },
+                {
+                  "type": "give-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:dragon_breath",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "potion-regen"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bTu as fini les potions ! Quelle efficacité, merci !",
+                    "§bVoici ta récompense !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 43",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 5k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "potion-regen"
+                },
+                {
+                  "type": "give-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:dragon_breath",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "potion-heal"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "{Potion:\"minecraft:strong_healing\"}"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bTu as fini les potions ! Quelle efficacité, merci !",
+                    "§bVoici ta récompense !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 43",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 5k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "potion-heal"
+                },
+                {
+                  "type": "give-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:dragon_breath",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "minecraft:potion",
+                  "quantity": "6",
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": "{Potion:\"minecraft:strong_healing\"}"
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "any-of",
+                  "inverted": "false",
+                  "requirements": [
+                    {
+                      "type": "all-of",
+                      "inverted": false,
+                      "requirements": [
+                        {
+                          "type": "have-flag",
+                          "inverted": false,
+                          "flag": "potion-force"
+                        },
+                        {
+                          "type": "carrying-item",
+                          "inverted": "true",
+                          "item": "minecraft:potion",
+                          "quantity": "6",
+                          "meta": -1,
+                          "marker": "",
+                          "nbt": "{Potion:\"minecraft:strong_strength\"}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "all-of",
+                      "inverted": false,
+                      "requirements": [
+                        {
+                          "type": "have-flag",
+                          "inverted": false,
+                          "flag": "potion-speed"
+                        },
+                        {
+                          "type": "carrying-item",
+                          "inverted": "true",
+                          "item": "minecraft:potion",
+                          "quantity": "6",
+                          "meta": -1,
+                          "marker": "",
+                          "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "all-of",
+                      "inverted": false,
+                      "requirements": [
+                        {
+                          "type": "have-flag",
+                          "inverted": false,
+                          "flag": "potion-fire"
+                        },
+                        {
+                          "type": "carrying-item",
+                          "inverted": "true",
+                          "item": "minecraft:potion",
+                          "quantity": "6",
+                          "meta": -1,
+                          "marker": "",
+                          "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "all-of",
+                      "inverted": false,
+                      "requirements": [
+                        {
+                          "type": "have-flag",
+                          "inverted": false,
+                          "flag": "potion-regen"
+                        },
+                        {
+                          "type": "carrying-item",
+                          "inverted": "true",
+                          "item": "minecraft:potion",
+                          "quantity": "6",
+                          "meta": -1,
+                          "marker": "",
+                          "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "all-of",
+                      "inverted": false,
+                      "requirements": [
+                        {
+                          "type": "have-flag",
+                          "inverted": false,
+                          "flag": "potion-heal"
+                        },
+                        {
+                          "type": "carrying-item",
+                          "inverted": "true",
+                          "item": "minecraft:potion",
+                          "quantity": "6",
+                          "meta": -1,
+                          "marker": "",
+                          "nbt": "{Potion:\"minecraft:strong_healing\"}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHey ! Ah tu n'as pas encore mes potions ? Reviens me voir quand tu les auras !"
+                  ]
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4895",
+          "waypointZ": "-5156",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "william-potion",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

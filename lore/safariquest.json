@@ -1,0 +1,3566 @@
+{
+  "type": "basic",
+  "name": "safariquest",
+  "title": "Quête du Safari",
+  "stages": [
+    {
+      "name": "safari1",
+      "displayText": "Rencontrer le capitaine",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "capitainesafari1",
+          "title": "Parler avec le Capitaine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Bonjour jeune recrue !",
+                "§3J'ai une mission à vous confier !",
+                "§3Suite à notre exil de la Terre nous avons découvert cette planète.",
+                "§3Mais en arrivant ici nous avons épuisé le peu d'énergie qu'il nous restait",
+                "§3Désormais seuls les générateurs de secours nous permettent de garder un état stationnaire.§a"
+              ],
+              "choiceID": "capitainesafari1",
+              "choices": [
+                "§aQu'attendez vous de moi Capitaine ?§c",
+                "§cJ'ai autre chose à faire Capitaine"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "capitaineoui",
+          "title": "Choisir oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "capitainesafari2",
+              "chatName": "",
+              "chatPages": [
+                "§3Votre mission sera d'explorer cette planète inconnue.",
+                "§3Entrez en contact avec les autochtones et faites moi un rapport régulier sur leur mode de vie.",
+                "§3Votre but: retrouver une source d'énergie pour le vaisseau.§a"
+              ],
+              "choices": [
+                "§aJe m'en occupe Capitaine"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "capitainesafari1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "capitaineoui2",
+          "title": "Choisir Oui2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Parfait ! Votre point de largage se situe dans une forêt.",
+                "§3Bon courage recrue, rompez !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "capitainesafari2",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "capitainenon",
+          "title": "Choisir Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§4Comment ça ?! Gardes attrapez le ! Il sera exécuté pour mutinerie !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi kill {{player}}",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! §e§l{{player}} §ca été executé pour cause de mutinerie",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "capitainesafari1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari2",
+      "displayText": "Aller dans la forêt",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "safariforest1",
+          "title": "§2Aller dans la forêt",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §aTe voici désormais dans la forêt, nous détectons une forme de vie, je l'indique sur ton radar.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4354",
+          "maxX": "-4342",
+          "minY": "75",
+          "maxY": "87",
+          "minZ": "-5753",
+          "maxZ": "-5739"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafaridryade",
+          "title": "§2Parler à la Dryade",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safaridryade1",
+              "chatName": "",
+              "chatPages": [
+                "§2❀ Bonjour! Je suis la dryade protectrice de la forêt! ❀",
+                "§2❀ Fais attention étranger, une force maléfique est à l'œuvre ici ❀",
+                "§2❀ Seul un dresseur d'exception pourrait nous venir en aide ❀§a"
+              ],
+              "choices": [
+                "§aPeut-être que je pourrais vous aider ?§c",
+                "§cD'accord il vaut mieux que l'on se cache."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4348.5",
+          "waypointZ": "-5731.5",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "safaridryade1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafariforet1",
+          "title": "Choisir aider",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2❀ Merci jeune dresseur ❀",
+                "§2❀ Si tu arrive à nous venir en aide, nous te fourniront de quoi alimenter ton vaisseau ❀",
+                "§2❀ Pour nous aider il faudrait mettre en sécurité les pokémon suivants : ❀",
+                "§2❀ 5 Keunotor, 2 Rocabot et 1 Zorua ❀",
+                "§2❀ Les forces du mal cherchent à les récupérer pour leur armée, alors fais vite ! ❀"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safaridryade1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari3",
+      "displayText": "Sauver les Pokémon de la forêt",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "nextStage": "safari4",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Bidoof",
+          "timesToComplete": 5,
+          "name": "catchforest1",
+          "title": "§2Capturer {{remaining}} Keunotor",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Rockruff",
+          "timesToComplete": 2,
+          "name": "catchforest2",
+          "title": "§2Capturer {{remaining}} Rocabot",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Zorua",
+          "timesToComplete": 1,
+          "name": "catchforest3",
+          "title": "§2Capturer {{remaining}} Zorua",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ]
+    },
+    {
+      "name": "safari4",
+      "displayText": "Retourner voir la Dryade",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safaridryade1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safaridryadefinish",
+          "title": "§2Retourner voir la Dryade",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§2❀ Bravo grâce à toi ces Pokémon sont désormais en sécurité ❀",
+                "§2❀ Comme promis mes Dryades vont apporter une source d'énergie sur ton vaisseau ! ❀",
+                "§2❀ Voici également quelques récompenses pour t'aider dans ta quête contre le mal ❀"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "item": "pixelmon:ultra_ball",
+              "quantity": 16,
+              "meta": -1,
+              "mark": "",
+              "nbt": "",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-item"
+            },
+            {
+              "amount": 27,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.sauveurdelaforet",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4348.5",
+          "waypointZ": "-5732.5",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "safari5"
+    },
+    {
+      "name": "safari5",
+      "displayText": "Retourner au vaisseau 1",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief1",
+          "title": "§2Faire un rapport au Capitaine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Rebonjour recrue ! Nous venons de reçevoir une livraison de carburant par des...dryades",
+                "§3Malheureusement il nous en faut beaucoup plus pour pouvoir redémarrer le vaisseau !",
+                "§3J'ai aussi eu des informations comme quoi un mal inconnu sévirait sur cette planète...",
+                "§3Continuez d'enquêter, votre prochaine mission se trouve dans la forêt noire.",
+                "§3Rompez !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set group.safari2",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 2k",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set cmi.command.portal.safariforetblack",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4302",
+          "waypointZ": "-5596",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari6",
+      "displayText": "Aller dans la forêt noire",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "safaridarkforest1",
+          "title": "§2Aller dans la forêt noire",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §a§l1 §aforme de vie détectée, position indiquée sur le radar.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4404",
+          "maxX": "-4236",
+          "minY": "70",
+          "maxY": "88",
+          "minZ": "-5975",
+          "maxZ": "-5840"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafariwitch",
+          "title": "§2Parler à la Sorcière",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safarisorciere1",
+              "chatName": "",
+              "chatPages": [
+                "§5✡ Bonjour étranger, je te déconseille de rester ici ! ✡",
+                "§5✡ La Forêt noire est menacée par un envahisseur démoniaque ! ✡",
+                "§5✡ Beaucoup des Pokémon sont passés dans les rangs de l'ennemi, mefie-toi ! ✡§a"
+              ],
+              "choices": [
+                "§aJe pourrais vous aider ?"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4360",
+          "waypointZ": "-5926",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "safarisorciere1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafariforetnoire1",
+          "title": "Choisir aider",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§5✡ C'est bien gentil de ta part ! ✡",
+                "§5✡ En contrepartie, si tu m'aides à éliminer quelques suppôts du mal, je t'aiderai à réparer ton vaisseau ✡§2",
+                "§5✡ Il faudrait que tu élimine: 8 Goupilou, 5 Pandespiègle et 3 Saquedeneu ✡"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safarisorciere1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari7",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari7",
+      "displayText": "Tuer les Pokémon de la forêt noire",
+      "displayTextLineCount": "3",
+      "canDrop": false,
+      "nextStage": "safari8",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Nickit",
+          "timesToComplete": 5,
+          "name": "killdarkforest1",
+          "title": "§2Tuer {{remaining}} Goupillou",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Pancham",
+          "timesToComplete": 3,
+          "name": "killdarkforest2",
+          "title": "§2Tuer {{remaining}} Pandespiègle",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Tangela",
+          "timesToComplete": 1,
+          "name": "killdarkforest3",
+          "title": "§2Tuer {{remaining}} Saquedeneu",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ]
+    },
+    {
+      "name": "safari8",
+      "displayText": "Retourner voir la Sorcière",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safarisorciere1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safarisorcierend",
+          "title": "§2Retourner voir la Sorcière",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§5✡ Merci d'avoir éliminé la menace ! ✡",
+                "§5✡ Comme promis, j'ai fait apparaître sur ton vaisseau le matériel pour aider au réparations. ✡",
+                "§5✡ Voici un cadeau de ma part pour t'aider dans tes aventures ✡"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "item": "pixelmon:max_revive",
+              "quantity": 4,
+              "meta": -1,
+              "mark": "",
+              "nbt": "",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-item"
+            },
+            {
+              "amount": 40,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.sorcierdelaforet",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4360",
+          "waypointZ": "-5927",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "safari9"
+    },
+    {
+      "name": "safari9",
+      "displayText": "Retourner au vaisseau 2",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief2",
+          "title": "§2Faire un rapport au Capitaine (2)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Rebonjour recrue ! J'en déduit que vous avez réussi votre mission dans la forêt noire ",
+                "§3Les membres d'équipage ont eu la peur de leur vie quand une caisse de matériel est apparue sur le pont du vaisseau...",
+                "§3Il nous manque encore beaucoup d'éléments avant de pouvoir faire redémarrer notre moteur supraluminique",
+                "§3Continuez d'enquêter, nous avons repéré un point d'intérêt dans le désert.",
+                "§3Rompez !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 5k",
+              "asPlayer": "false"
+            },
+            {
+              "command": "lp user {{player}} permission set group.safari3",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set cmi.command.portal.safaridesert",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4302",
+          "waypointZ": "-5596",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari10",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari10",
+      "displayText": "Aller dans le désert",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "safaridesert1",
+          "title": "§2Aller dans le désert",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §a§l1 §aforme de vie détectée, je te transmet sa position.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4108",
+          "maxX": "-4091",
+          "minY": "79",
+          "maxY": "95",
+          "minZ": "-5817",
+          "maxZ": "-5793"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafariwitch-copy",
+          "title": "§2Parler à l'adorateur",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safariadorateur1",
+              "chatName": "",
+              "chatPages": [
+                "§e► Bonjour, c'est toi qui vient d'une autre planète ? ◄§e",
+                "§e► Dis moi, d'où tu viens, quel est le dieu que vous vénérez ? ◄§e"
+              ],
+              "choices": [
+                "§eArceus comme tout le monde, non?",
+                "§eAstriyas et Denivak pourquoi ?"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4085.5",
+          "waypointZ": "-5797.5",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "safariadorateur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafaridesert1",
+          "title": "Choisir arceus",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§e► Ah bon ? Et bien nous c'est Insolourdo ! ◄§e",
+                "§e► Il nous as toujours protégé du mal, mais ces derniers temps je sens son pouvoir s'affaiblir... ◄§e",
+                "§e► Le pouvoir du mal devient de plus en plus puissant ! ◄§e"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices",
+              "choiceID": "safariadorateur2",
+              "choices": [
+                "§aIl y a peut être un moyen de lui rendre son pouvoir ?"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safariadorateur1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafaridesert2",
+          "title": "Choisir astri et deni",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "§7§oVoix off",
+              "chatPages": [
+                "§7§oEuhh alors oui effectivement c'est eux qui nous ont créé",
+                "§7§oMais pour le coup c'était pas dans le scénario",
+                "§7Alors on va dire que t'as répondu Arceus"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices",
+              "choiceID": "safariadorateur1",
+              "choices": [
+                "§b§kEuhh Ok"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safariadorateur1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "select-choice",
+          "name": "safaridesertchoix3",
+          "title": "Choisir aider",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§e► Tu as raison ! ◄§e",
+                "§e► Nous pouvons faire le rituel d'Insolourdo ◄§e",
+                "§e► Pour cela tu vas devoir me ramener un Insolourdo et éliminer 8 Kraknoix et 3 Ossatueurs ◄§e"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "choiceID": "safariadorateur2",
+          "choiceNumber": "1"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari11",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari11",
+      "displayText": "Faire le rituel d'Insolourdo",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "nextStage": "safari12",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "all-are-completed",
+      "tasks": [
+        {
+          "spec": "Trapinch",
+          "timesToComplete": 8,
+          "name": "killdeserteasy-copy",
+          "title": "§2Tuer {{remaining}} Kraknoix",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Marowak",
+          "timesToComplete": 3,
+          "name": "killdesertmedium-copy",
+          "title": "§2Tuer {{remaining}} Ossatueur",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Dunsparce",
+          "timesToComplete": "1",
+          "name": "saveinsolourdo-copy",
+          "title": "§2Capturer {{remaining}} Insolourdo",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§c§lPour effectuer la livraison, parle à l'adorateur en ayant l'Insolourdo en slot 1 de ton équipe.",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ]
+    },
+    {
+      "name": "safari12",
+      "displayText": "Retourner voir l'Adorateur",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "nextStage": "safari13",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safariadorateur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safariadorateurend",
+          "title": "§2Rapporter Insolourdo",
+          "titleLineCount": "1",
+          "description": "Il te faut Insolourdo en slot 1 de ton équipe",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "spec": "Dunsparce",
+              "search": "Party",
+              "box": -1,
+              "slot": "1",
+              "maxToTake": "1",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "take-pokemon"
+            },
+            {
+              "message": "§2Tu as livré Insolourdo avec succès!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            },
+            {
+              "type": "show-dialogue",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§e► Bravo ! Je sens déjà la puissance de notre dieu se restaurer ! ◄§e",
+                "§e► J'ai prié pour qu'Insolourdo vous aide à réparer votre vaisseau ◄§e",
+                "§e► Voici une récompense pour toi ! ◄§e"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "4",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set deluxetags.tag.adorateurdinsolourdo",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": "4",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money add {{player}} 2000",
+              "asPlayer": "false"
+            },
+            {
+              "type": "give-item",
+              "delay": "4",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:eviolite",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-experience",
+              "delay": "4",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "amount": "40"
+            }
+          ],
+          "requirements": [
+            {
+              "spec": "Dunsparce",
+              "slot": 1,
+              "inverted": false,
+              "type": "have-pokemon-in-party"
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4085",
+          "waypointZ": "-5797",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "safarinoinsolourdo",
+          "title": "Pas d'insolourdo",
+          "requirements": [
+            {
+              "spec": "Dunsparce",
+              "slot": 1,
+              "inverted": "true",
+              "type": "have-pokemon-in-party"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§e► Tu n'as pas l'Insolourdo dans ton slot 1... ◄§e"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "safariadorateur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ]
+    },
+    {
+      "name": "safari13",
+      "displayText": "Retourner au vaisseau 3",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief3",
+          "title": "§2Faire un rapport au Capitaine (3)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Rebonjour recrue ! Un chose surprenante vient de se produire d'après nos ingénieurs!",
+                "§3Un Insolourdo serait apparu dans le vaisseau et aurrait réparé un des éléments critiques du moteur !",
+                "§3Je pense qu'il s'agit d'une hallucination collective mais bon...",
+                "§3Nous devons recueillir plus d'informations, vous devriez vous rendre dans le Mésa.",
+                "§3Rompez !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 10k",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": "4",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set group.safari4",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set cmi.command.portal.safarimesa",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4302",
+          "waypointZ": "-5596",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari14",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari14",
+      "displayText": "Aller dans le Mésa",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "safarimesa1",
+          "title": "§2Aller dans les plaines du Mésa",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §a§lOn a repéré la signature d'un autre vaisseau, fais attention, je t'indique sa position.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4392",
+          "maxX": "-4263",
+          "minY": "70",
+          "maxY": "120",
+          "minZ": "-5539",
+          "maxZ": "-5350"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafariwitch-copy-copy",
+          "title": "§2Parler au voyageur",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safarivoyageur1",
+              "chatName": "",
+              "chatPages": [
+                "§2§kBonjour, voyageur !",
+                "§2§kOh mince ! §2Pardon j'avais oublié d'allumer mon traducteur !",
+                "§2Je vois que ton vaisseau est aussi bloqué ici.",
+                "§2Le mien a été attaqué par des hordes de démons",
+                "§2On pourrait s'entraider ?"
+              ],
+              "choices": [
+                "§aBonne idée !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4368",
+          "waypointZ": "-5417",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "safarivoyageur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafarimesa1",
+          "title": "Choisir aide",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§2Parfait, je prépare un cargaison de pièces détachées pour votre vaisseau.",
+                "§2Si pendant ce temps tu pouvais me protéger des pokémon",
+                "§2Il faudrait éliminer 10 Wattouat, 10 Cabriolaine, 5 Ecremeuh, 3 Tauros et 1 Goinfrex"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safarivoyageur1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari15",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari15",
+      "displayText": "Protéger le voyageur",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "nextStage": "safari16",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Mareep",
+          "timesToComplete": 10,
+          "name": "killmesa1-copy",
+          "title": "§2Tuer {{remaining}} Wattouat",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Skiddo",
+          "timesToComplete": 10,
+          "name": "killmesa2-copy",
+          "title": "§2Tuer {{remaining}} Cabriolaine",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Miltank",
+          "timesToComplete": 5,
+          "name": "killmesa3-copy",
+          "title": "§2Tuer {{remaining}} Ecremeuh",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Tauros",
+          "timesToComplete": 3,
+          "name": "killmesa4-copy",
+          "title": "§2Tuer {{remaining}} Tauros",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Munchlax",
+          "timesToComplete": 1,
+          "name": "killmesa5-copy",
+          "title": "§2Tuer {{remaining}} Goinfrex",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        }
+      ]
+    },
+    {
+      "name": "safari16",
+      "displayText": "Retourner voir le voyageur",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safarivoyageur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safarisorcierend-copy",
+          "title": "§2Retourner voir le voyageur",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§2Merci de m'avoir protégé, j'ai tout envoyé à ton vaisseau par drone.",
+                "§2Voici un cadeau pour toi !",
+                "§2J'ai fini mes réparations aussi, mais je vais rester pour faire le plein de provisions."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.chasseurdebetail",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "amount": 40,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:ultra_ball",
+              "quantity": "16",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4368",
+          "waypointZ": "-5417",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "safari17"
+    },
+    {
+      "name": "safari17",
+      "displayText": "Retourner au vaisseau 4",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief4",
+          "title": "§2Faire un rapport au Capitaine (4)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Rebonjour recrue ! Nous avons bien reçu tout un lot de pièces détachées par drone !",
+                "§3Félicitations ! Grace à vous les réparations avancent bien !",
+                "§3Il faut désormais que tu t'aventures dans la jungle, il se peut que des informations cruciales s'y trouvent !",
+                "§3Rompez !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 10k",
+              "asPlayer": "false"
+            },
+            {
+              "command": "lp user {{player}} permission set group.safari5",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set cmi.command.portal.safarijungle",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4302",
+          "waypointZ": "-5596",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari18",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari18",
+      "displayText": "Aller dans la Jungle",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "safarimesa1-copy",
+          "title": "§2Aller dans la Jungle",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §aOn a repéré une personne seule au milieu de la jungle, je t'indique sa position.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4510",
+          "maxX": "-4424",
+          "minY": "62",
+          "maxY": "100",
+          "minZ": "-5535",
+          "maxZ": "-5418"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafaricampeur",
+          "title": "§2Parler au campeur",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safaricampeur1",
+              "chatName": "",
+              "chatPages": [
+                "§aBonjour, j'adore les pokémon !",
+                "§aMais depuis peu certains démons font fuir les pokémon...",
+                "§aVeut-tu bien m'aider à les défendre ?"
+              ],
+              "choices": [
+                "§aOui bien sûr"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4476",
+          "waypointZ": "-5484",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "safaricampeur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafarimesa1-copy",
+          "title": "Choisir aide",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aMerci ! Il faudrai que tu capture:",
+                "§a5 Mimitoss, 4 Venipatte, 2 Pyronille",
+                "§aJe sens qu'ils seront en sécurité avec toi. Je t'attend ici."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safaricampeur1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari19",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari19",
+      "displayText": "Protéger les Pokémon",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "nextStage": "safari20",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Venonat",
+          "timesToComplete": "5",
+          "name": "safarijungle1",
+          "title": "§2Capturer {{remaining}} Mimitoss",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Venipede",
+          "timesToComplete": "4",
+          "name": "safarijungle2",
+          "title": "§2Capturer {{remaining}} Venipatte",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Larvesta",
+          "timesToComplete": "2",
+          "name": "safarijungle3",
+          "title": "§2Capturer {{remaining}} Pyronille",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Joltik",
+          "timesToComplete": "1",
+          "name": "safarijungle4",
+          "title": "§2Capturer {{remaining}} Statitik",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ]
+    },
+    {
+      "name": "safari20",
+      "displayText": "Retourner voir le campeur",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safaricampeur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safaricampeurend",
+          "title": "§2Retourner voir le campeur",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§2Incroyable ! Tu as réussi à tous les mettre en sécurité !",
+                "§2Voici une récompense !",
+                "§2J'ai entendu dire que ton vaisseau avait du mal à se déplacer, tu pourras peut-être obtenir un source d'énergie chez les fées."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.arachnophile",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "amount": 40,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 2000",
+              "asPlayer": "false"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4476",
+          "waypointZ": "-5484",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "safari21"
+    },
+    {
+      "name": "safari21",
+      "displayText": "Retourner au vaisseau 5",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief5",
+          "title": "§2Faire un rapport au Capitaine (5)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Rebonjour recrue ! J'ai bien reçu l'information comme quoi une source d'énergie très puissante se trouverait chez les fées !",
+                "§3Il ne vous reste plus qu'à vous rendre là-bas pour voir de quoi il s'agit.",
+                "§3Rompez !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 10k",
+              "asPlayer": "false"
+            },
+            {
+              "command": "lp user {{player}} permission set group.safari6",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set cmi.command.portal.safarifée",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4302",
+          "waypointZ": "-5596",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari22",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari22",
+      "displayText": "Aller dans la Forêt des Fées",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "safariforetfee1",
+          "title": "§2Aller dans la Forêt des Fées",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §aDes signatures thermiques ont été détectées mais...elles sont toutes petites. Je te laisse vérifier, voici les coordonnées.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4415",
+          "maxX": "-4241",
+          "minY": "70",
+          "maxY": "155",
+          "minZ": "-5705",
+          "maxZ": "-5601"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafarifee1",
+          "title": "§2Parler à la fée",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safarifee1",
+              "chatName": "",
+              "chatPages": [
+                "§dBonjour l'Humain !",
+                "§dOn t'attendais pour te donner une source d'énergie...",
+                "§dMais les démons sont arrivés et l'ont volé...",
+                "§dEt maintenant il on corrompu certains pokémon !"
+              ],
+              "choices": [
+                "§aJe vais vous aider !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4327",
+          "waypointZ": "-5681",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "safarifee1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafarifee1",
+          "title": "Choisir aide",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aMerci ! Il faudrais que tu élimine:",
+                "§a5 Snubull, 2 Mysdibulle, 4 Ponyta de Galar et 6 Mélofée",
+                "§aFais vite, avant qu'ils ne s'en prennent à nous."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safarifee1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari23",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari23",
+      "displayText": "Eliminer les Pokémon corrompus",
+      "displayTextLineCount": "3",
+      "canDrop": false,
+      "nextStage": "safari24",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "all-are-completed",
+      "tasks": [
+        {
+          "spec": "Clefairy",
+          "timesToComplete": "6",
+          "name": "killfee1",
+          "title": "§2Eliminer {{remaining}} Mélofée",
+          "titleLineCount": 2,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Ponyta f:2",
+          "timesToComplete": "4",
+          "name": "killfee2",
+          "title": "§2Eliminer {{remaining}} Ponyta de Galar",
+          "titleLineCount": 2,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Mawile",
+          "timesToComplete": "2",
+          "name": "killfee3",
+          "title": "§2Eliminer {{remaining}} Mysdibulle",
+          "titleLineCount": 2,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Snubbull",
+          "timesToComplete": "5",
+          "name": "killfee4",
+          "title": "§2Eliminer {{remaining}} Snubbull",
+          "titleLineCount": 2,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ]
+    },
+    {
+      "name": "safari24",
+      "displayText": "Retourner voir la fée",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safarifee1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safarifeeend",
+          "title": "§2Retourner voir la fée",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§dMerci ! Grace à toi nous somme sauvés !",
+                "§dMalheureusement je n'ai plus la pièce pour ton vaisseau...Mais j'ai entendu dire qu'il la faisaient passer par les cavernes...",
+                "§dEn tout cas voici une compensation."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.soigneurdefee",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "amount": 40,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 2000",
+              "asPlayer": "false"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4327",
+          "waypointZ": "-5681",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "safari25"
+    },
+    {
+      "name": "safari25",
+      "displayText": "Retourner au vaisseau 6",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief6",
+          "title": "§2Faire un rapport au Capitaine (6)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Rebonjour recrue ! Qu'avez vous rapporté ?",
+                "§3Comment ça la source d'énergie aurait été volée par des démons !?!",
+                "§3Il faut vite aller à leur poursuite ! Foncez aux cavernes et faites tout pour la récupérer !",
+                "§3Rompez !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 10k",
+              "asPlayer": "false"
+            },
+            {
+              "command": "lp user {{player}} permission set group.safari8",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "command": "lp user {{player}} permission set cmi.command.portal.safarigrotte",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari26",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari26",
+      "displayText": "Aller dans les cavernes",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "safaricaverne1",
+          "title": "§2Se rendre dans les cavernes",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §aOn a du mal à scanner en sous-sol, je t'envoies les coordonnées potentielles de ton objectif.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafaricaverne1",
+          "title": "§2Parler à la cavernière",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safaricaverne1",
+              "chatName": "",
+              "chatPages": [
+                "§9Bonjour, ce que tu cherches n'est plus ici...",
+                "§9Je te dirai vers où elle a été emmenée mais seulement si tu me prouve que tu es assez puissant",
+                "§9Pour cela tu vas devoir visiter toutes les contrées où tu es déjà allé, et vaincre chaque pokémon boss de chaque zone"
+              ],
+              "choices": [
+                "§aSérieux ?! On doit les poursuivre rapidement !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4306",
+          "waypointZ": "-5585",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "safaricaverne1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafaricaverne1",
+          "title": "Choisir ok",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§9Tu n'as pas le choix ! Les ennemis que tu poursuis sont très puissants !",
+                "§9Bon courage, je t'attendrai ici"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safaricaverne1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari27",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari27",
+      "displayText": "Affronter tous les boss rares",
+      "displayTextLineCount": "3",
+      "canDrop": false,
+      "nextStage": "safari28",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "all-are-completed",
+      "tasks": [
+        {
+          "spec": "Mimikyu b:3",
+          "timesToComplete": 1,
+          "name": "bosssafari2",
+          "title": "§2Affonter le Boss Rare de la forêt noire",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Steelix b:3",
+          "timesToComplete": 1,
+          "name": "bosssafari3",
+          "title": "§2Affonter le Boss Rare du désert",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Raichu b:3",
+          "timesToComplete": 1,
+          "name": "bosssafari4",
+          "title": "§2Affonter le Boss Rare du Mesa",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Scizor b:3",
+          "timesToComplete": 1,
+          "name": "bosssafari5",
+          "title": "§2Affonter le Boss Rare de la Jungle",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Hatterene b:3",
+          "timesToComplete": 1,
+          "name": "bosssafari6",
+          "title": "§2Affonter le Boss Rare de la forêt des fées",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Garchomp b:3",
+          "timesToComplete": 1,
+          "name": "bosssafari8",
+          "title": "§2Affonter le Boss Rare de la caverne",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ]
+    },
+    {
+      "name": "safari28",
+      "displayText": "Retourner parler à la cavernière",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safaricaverne1",
+          "uuid": "",
+          "cancelInteraction": true,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safaricaverneend",
+          "title": "§2Retourner voir la cavernière",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§9Bravo, tu m'a prouvé que tu étais capable d'affronter les démons",
+                "§9Voici ta récompense",
+                "§9J'ai transmis toutes les informations pour la suite à ton commandant. Bon courage."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "amount": 160,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "spec": "Litten CT:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-pokemon"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.bossdusafari",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "safari29"
+    },
+    {
+      "name": "safari29",
+      "displayText": "Retourner au vaisseau 7",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief7",
+          "title": "Faire un rapport au Capitaine (7)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Recrue ! Nous avons reçu des informations très importantes !",
+                "§3L'ennemi se cache apparemment sur une planète adjacente, qui ressemblerait aux Enfers !",
+                "§3Allez vite sur place !",
+                "§3Rompez !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 10k",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set group.safari9",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set cmi.command.portal.safarienfer",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari30",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari30",
+      "displayText": "Aller sur la planète Enfer",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "safarihell1",
+          "title": "§2Aller sur la planète Enfer",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2§lContrôle mission: §aIl y a un brouillage radar ici ! Tu vas devoir te débrouiller !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "-4135",
+          "waypointZ": "-5933",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4241",
+          "maxX": "-4062",
+          "minY": "34",
+          "maxY": "198",
+          "minZ": "-6313",
+          "maxZ": "-6063"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksafarihell1",
+          "title": "§2Parler au commando",
+          "requirements": [],
+          "actions": [
+            {
+              "choiceID": "safarihell1",
+              "chatName": "",
+              "chatPages": [
+                "§3Hé toi ! Que fais tu ici ? Cette zone est dangereuse !",
+                "§3Quoi ? Le Cpt.Rod t'envoie pour récupérer une source d'énergie volée par les démons ?",
+                "§3On va s'en occuper mais avant aide-moi à repousser l'ennemi !"
+              ],
+              "choices": [
+                "§aD'accord on va se les faire !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "0",
+          "waypointZ": "0",
+          "waypointRadius": "10",
+          "trackAutomatically": "false",
+          "mark": "safarihell1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixsafarihell1",
+          "title": "Choisir ok",
+          "requirements": [],
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§3Il faut éliminer au moins: 10 Arcanin, 5 Magmar, 3 Chartor, 3 Darumacho, 2 Aflamanoir et 1 Boumata",
+                "§3Je m'occupe de ce coté !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "safarihell1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari31",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari31",
+      "displayText": "Tuer les Pokémon de l'enfer",
+      "displayTextLineCount": "2",
+      "canDrop": false,
+      "nextStage": "safari32",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Arcanine f:3",
+          "timesToComplete": "10",
+          "name": "killhell1",
+          "title": "§2Tuer {{remaining}} Arcanin d'Hisui",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Magmar",
+          "timesToComplete": "5",
+          "name": "killhell2",
+          "title": "§2Tuer {{remaining}} Magmar",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Torkoal",
+          "timesToComplete": "3",
+          "name": "killhell3",
+          "title": "§2Tuer {{remaining}} Chartor",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Darmanitan",
+          "timesToComplete": "3",
+          "name": "killhell4",
+          "title": "§2Tuer {{remaining}} Darumacho",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "spec": "Turtonator",
+          "timesToComplete": "1",
+          "name": "killhell5",
+          "title": "§2Tuer {{remaining}} Boumata",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ]
+    },
+    {
+      "name": "safari32",
+      "displayText": "Retourner parler au commando",
+      "displayTextLineCount": "3",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "safarihell1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "safarihellend1",
+          "title": "§2Retourner voir le commando",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§3Merci pour ton aide ! Voici de quoi t'aider pour la suite !",
+                "§3Je ne sais pas si tu as remarqué mais il y a une grotte qui doit sûrement mener au repaire de leur chef...",
+                "§3Tu dois le vaincre !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "amount": "55",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4137",
+          "waypointZ": "-6117",
+          "waypointRadius": "10",
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "safari33"
+    },
+    {
+      "name": "safari33",
+      "displayText": "Affronter le chef de Démons",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "enterhellboss1",
+          "title": "§2Trouver l'antre du chef des Démons",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4110",
+          "waypointZ": "-6197",
+          "waypointRadius": "2",
+          "trackAutomatically": "true",
+          "dimension": 0,
+          "minX": "-4120",
+          "maxX": "-4112",
+          "minY": "117",
+          "maxY": "108",
+          "minZ": "-6206",
+          "maxZ": "-6196"
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "defeathellboss",
+          "title": "§2Battre le Boss des Enfers",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§4Noooon !!! Comment un misérable comme toi a t'il pu me vaincre ! Ce n'est pas grave, ce qui vous attends sera bien pire !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aVous récupérez la source d'énergie et l'envoyez dans le vaisseau grâce au rayon tracteur. §oAu passage vous remarquez un disque de données, vous le récupérez pour le donner au commandant.",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": "7",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aBravo ! Tu les as vaincus ! Rentre au vaisseau pour fêter ta victoire !",
+              "useActionBar": false
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.tueurdedemon",
+              "asPlayer": "false",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "safarihellboss",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "safari34",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "safari34",
+      "displayText": "Retourner au vaisseau 8",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "safaridebrief8",
+          "title": "§2Faire un rapport au Capitaine (8)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Félicitations ! Vous êtes une recrue exceptionnelle ! ",
+                "§3Grâce à vous le vaisseau à récupéré son énergie !",
+                "§3Il faudra tout de même quelques temps avant de pouvoir le déplacer.",
+                "§3Voici vos récompenses, vous l'avez bien mérité §e§nSergent !",
+                "§3Quoi vous avez trouvé ce disque ? Je vais voir pour le faire analyser, vous devriez parler à Izabella d'ici 24h, elle vous dira ce qu'il en est."
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 20k",
+              "asPlayer": "false"
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "suicune ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cc give p Nebuleuse 1 {{player}}",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 8",
+              "asPlayer": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "SafariFini"
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "lore",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

@@ -1,0 +1,633 @@
+{
+  "type": "basic",
+  "name": "sulfura",
+  "title": "Quête de Sulfura",
+  "stages": [
+    {
+      "name": "sulfura1",
+      "displayText": "Parler au serviteur de Sulfura",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talksulfuraservant",
+          "title": "Parler au serviteur de Sulfura",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": false,
+              "flag": "chercheurdoiseau"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "sulfuraservant1",
+              "chatName": "",
+              "chatPages": [
+                "§cBonjour, tu es ici pour trouver Sulfura ?",
+                "§cTu es au bon endroit, mais avant tu dois montrer que tu es digne de lui.§a"
+              ],
+              "choices": [
+                "§aQue dois-je faire ?§c",
+                "§cCe sera pour une autre fois alors..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "serviteursulfura",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "sulfuraselect-oui",
+          "title": "Choisir Oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cTrès bien, tu vas devoir relever l'épreuve de Sulfura !",
+                "§cPour cela il faut déjà que tu trouves une pierre feu !",
+                "§cReviens me voir quand tu l'auras"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "sulfuraservant1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "sulfuraselect-non",
+          "title": "Choisir Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cA une prochaine alors..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "sulfuraservant1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksulfuraservant-not",
+          "title": "Serviteur de Sulfura Not",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "chercheurdoiseau"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cBonjour, il n'y a rien pour toi ici, reviens quand tu sauras ce que tu cherches."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "serviteursulfura",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "sulfura2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "sulfura2",
+      "displayText": "Obtenir la pierre feu",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "getfirestone",
+          "title": "Obtenir la pierre feu",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai la pierre feu ! Il faut que je retourne voir le serviteur de Sulfura !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:fire_stone",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "sulfura3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "sulfura3",
+      "displayText": "Retourner voir le serviteur",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "backsulfuraservant1",
+          "title": "§2Retourner voir le serviteur de Sulfura",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cSuper tu as la pierre feu ! Maintenant il faut que tu élimine 10 Pokémon de type feu !",
+                "§cReviens me voir dès que ce sera fait !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4559",
+          "waypointZ": "-5710",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "serviteursulfura",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "sulfura4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "sulfura4",
+      "displayText": "Battre 10 Pokémon Feu",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "kill10firepokemon",
+          "title": "Battre {{remaining}} Pokémon feu",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai battu les 10 Pokémon Feu, plus qu'à aller voir la Servante de Sulfura !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "10",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "spec": "type:Fire"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "sulfura5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "sulfura5",
+      "displayText": "Retourner voir le serviteur 2",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "backsulfuraservant2",
+          "title": "§2Retourner voir le serviteur de Sulfura",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cJ'ai l'impression que tu es dans les bonnes grâces de Sulfura",
+                "§cVoici une orbe pour toi ! Combine là avec la pierre Feu, puis remplis là grâce à de nombreux sacrifices, reviens me voir quand ce sera bon !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:orb",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4559",
+          "waypointZ": "-5710",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "serviteursulfura",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "craft-item",
+          "name": "craftsulfuraorb",
+          "title": "Crafter l'orbe de Sulfura",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai l'orbe de Sulfura ! Plus qu'a la remplir !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "item": "pixelmon:tres_orb",
+          "meta": -1,
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "fillsulfuraorb",
+          "title": "Remplir l'orbe de Sulfura",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai rempli l'orbe de Sulfura ! Plus qu'a la montrer au serviteur !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "item": "pixelmon:tres_orb",
+          "meta": "375",
+          "nbt": "",
+          "quantity": 1,
+          "mark": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "sulfura6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "sulfura6",
+      "displayText": "Parler au serviteur 3",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "backsulfuraservant3",
+          "title": "§2Retourner voir le serviteur de Sulfura",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cFélicitation pour tous ces sacrifices !",
+                "§cIl ne te reste plus qu'à invoquer Sulfura ! Bon courage !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4559",
+          "waypointZ": "-5710",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "serviteursulfura",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "catch-pokemon",
+          "name": "catchsulfura",
+          "title": "Capturer Sulfura",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "catchsulfura"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catcharticodin"
+                }
+              ],
+              "message": "§aJ'ai Sulfura ! Plus que les 2 autres oiseaux !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catcharticodin"
+                }
+              ],
+              "message": "§aJ'ai Sulfura ! Plus que l'oiseau de Glace !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catcharticodin"
+                }
+              ],
+              "message": "§aJ'ai Sulfura ! Plus que l'oiseau de Foudre !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catcharticodin"
+                }
+              ],
+              "message": "§aJ'ai Sulfura ! J'ai tous les oiseaux, si je vais voir notre scientifique il va être impressionné !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 26",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "Moltres"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

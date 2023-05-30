@@ -1,0 +1,482 @@
+{
+  "type": "basic",
+  "name": "mewclone",
+  "title": "Le Clonage de Mew",
+  "stages": [
+    {
+      "name": "clonemewstart",
+      "displayText": "Finir la quête de Mew",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "exit-area",
+          "name": "clonemewstart",
+          "title": "Avoir fini la quête Mew",
+          "requirements": [
+            {
+              "type": "have-completed-quest",
+              "inverted": false,
+              "questName": "capturermew"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§a§lGoh: §aHé {{player}} ! C'est Goh ! J'ai entendu parler d'une opération spéciale pour Mew, tu devrais passer au labo, je t'en parlerai !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-74",
+          "maxX": "-69",
+          "minY": "62",
+          "maxY": "67",
+          "minZ": "7",
+          "maxZ": "18"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "clonemew2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "clonemew2",
+      "displayText": "Parler à Goh",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "clonetalkgoh",
+          "title": "Parler à Goh",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut {{player}} ! T'as retrouvé le chemin du labo ? §oAhaha !",
+                "§aJe voulais te voir parce que j'ai entendu dire qu'il était possible de cloner Mew !",
+                "§aÇa te dit d'essayer ? On pourrait apprendre plein de choses sur Mew !"
+              ],
+              "choiceID": "gohclone1",
+              "choices": [
+                "§aOui carrément !",
+                "§eÇa ne me paraît pas très naturel..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5075",
+          "waypointZ": "-4973",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "gohclonechoix1",
+          "title": "Choisir Ok",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSuper ! Pour cela il nous faut tout d'abord une machine de clonage...",
+                "§aTu peux la fabriquer ?"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "gohclone1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "gohclonechoix2",
+          "title": "Choisir non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aOui peut-être...Si ça t'intéresse reviens me voir !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "gohclone1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "clonemew3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "clonemew3",
+      "displayText": "Fabriquer la machine à cloner",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "craft-item",
+          "name": "craftclonemew",
+          "title": "Crafter la machine à cloner",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§a§oGoh: §aTu as la machine à cloner, ça y est ? Tu devrais essayer de cloner le tien !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:cloning_machine",
+          "meta": -1,
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "clonemew4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "clonemew4",
+      "displayText": "Cloner Mew",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "catch-pokemon",
+          "name": "clonemewmewtwo",
+          "title": "Cloner Mew et obtenir Mewtwo",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as obtenu Mewtwo ! Tu devrais aller le montrer à Goh !",
+              "useActionBar": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "clonemew5"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "mewtwo"
+        },
+        {
+          "type": "catch-pokemon",
+          "name": "clonemewditto",
+          "title": "Cloner Mew et obtenir ditto",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as obtenu Metamorph ! Tu devrais aller le montrer à Goh !",
+              "useActionBar": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "clonemew5"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "ditto"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "clonemew5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "clonemew5",
+      "displayText": "Retourner voir Goh",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "clonemewend",
+          "title": "Retourner voir Goh avec Mewtwo",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "mewtwo",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aWow tu as fini de le cloner ? Et tu as obtenu ce Pokémon ?!",
+                "§aUn Mewtwo ? Quel étrange Pokémon !",
+                "§aJe me demande s'il est possible d'avoir d'autres Pokémon grâce à Mew...",
+                "§aMerci pour la découverte, je vais faire un rapport au Pr.Ras !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:cloning_machine",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 12",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "0",
+          "waypointZ": "0",
+          "waypointRadius": "10",
+          "trackAutomatically": "false",
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "clonemewend-ditto",
+          "title": "Retourner voir Goh avec Metamorph",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "ditto",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aWow tu as fini de le cloner ? Et tu as obtenu ce Pokémon ?!",
+                "§aUn Mewtwo ? Quel étrange Pokémon !",
+                "§aJe me demande s'il est possible d'avoir d'autres Pokémon grâce à Mew...",
+                "§aMerci pour la découverte, je vais faire un rapport au Pr.Ras !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 12",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

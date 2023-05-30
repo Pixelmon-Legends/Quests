@@ -1,0 +1,422 @@
+{
+  "type": "basic",
+  "name": "nigosier",
+  "title": "Nigosier a faim !",
+  "stages": [
+    {
+      "name": "nigo1",
+      "displayText": "Parler à Nigosier",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "nigochat1",
+          "title": "§aParler à Nigosier",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§9Ce Nigosier vous regarde fixement, il a l'air de vouloir quelque chose.",
+                "GRrRRrRRRrr §9C'est son ventre qui gargouille, vous comprenez donc que ce qu'il vous réclame avec son regard vide c'est de la nourriture",
+                "§9La Professeure Ras n'a pas le temps avec ses recherches de le nourir, c'est à vous de vous en occuper !",
+                "§9Maintenant il ne reste plus qu'à trouver ce que mange les Nigosier ...§a"
+              ],
+              "choiceID": "nigo1",
+              "choices": [
+                "§2Il mange des Embrochet§a",
+                "§2Il mange des Pikachu"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "nigo",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choix1",
+          "title": "Dire Embrochet",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "nigoembro1"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Merci beaucoup {{player}} de te porter volontaire pour t'occuper de mon Nigosier, je n'ai vraiment pas le temps en ce moment .... Tu vas lui chercher un Embrochet ? Parfait il adore ça !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "nigo1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choix2",
+          "title": "Dire Pikachu",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Merci beaucoup {{player}} de te porter volontaire pour t'occuper de mon Nigosier, je n'ai vraiment pas le temps en ce moment .... Tu vas lui chercher un Pikachu ?! Je ne suis pas certaine que ça fasse partie de son alimentation mais pourquoi pas après tout !",
+              "useActionBar": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "nigopikachu1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "nigo1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "nigopikachu1",
+      "displayText": "Capturer un Pikachu",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "catch-pokemon",
+          "name": "pika1",
+          "title": "§aCapturer un Pikachu",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aHummm un bon Pikachu bien grassouillet pour Nigosier, il va se régaler ! Allons lui apporter",
+              "useActionBar": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "nigopikachu2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "Pikachu"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "nigopikachu2",
+      "displayText": "Apporter un Pikachu à Nigosier",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "nigopika3",
+          "title": "§aApporter un Pikachu à Nigosier",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Pikachu",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Aie, mon Nigocier a craché le Pikachu en plein dans ta figure ... J'espère que ça ne t'a pas fait trop mal ? En tout cas il est en colère, je pense que tu devrais lui ramener un Embrochet pour te faire pardonner {{player}}.",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi kill {{player}}",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! §e§l{{player}} §ca été attaqué par un Nigosier en colère !",
+              "asPlayer": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "nigoembro1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "nigoembro1",
+      "displayText": "Capturer un Embrochet",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "catch-pokemon",
+          "name": "nigocaptureembro",
+          "title": "§aCapturer un Embrochet",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aHummm un bon Embrochet bien grassouillet pour Nigosier, il va se régaler ! Allons lui apporter",
+              "useActionBar": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "nigoembro2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "Arrokuda"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "nigoembro2",
+      "displayText": "Apporter un Embrochet à Nigosier",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "nigoembrofin",
+          "title": "§aApporter un Embrochet à Nigosier",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Arrokuda",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "take-pokemon",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Arrokuda",
+              "search": "Party",
+              "box": -1,
+              "slot": -1,
+              "maxToTake": 1
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:rare_candy",
+              "quantity": "10",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Merci {{player}} ! Je te promets que je vais prendre plus de temps pour m'occuper de mon petit Nigosier à l'avenir.",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 13",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

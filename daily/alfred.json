@@ -1,0 +1,400 @@
+{
+  "type": "repeatable",
+  "name": "Alfred",
+  "title": "Quête du Barman",
+  "stages": [
+    {
+      "name": "Alfred1",
+      "displayText": "Parlez à Alfred",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 10",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "alfred1.1",
+          "title": "dialogue",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "bar",
+              "chatName": "",
+              "chatPages": [
+                "§eBonjour ! Veux-tu bien aider ton barman préféré ?"
+              ],
+              "choices": [
+                "§aBien sûr ! ",
+                "§cPas le temps"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "alfred",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "alfred1.3",
+          "title": "Accepte",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Alfred",
+              "chatPages": [
+                "§eIl me faudrait des ingrédients pour mes cocktails",
+                "§eVoici la liste des ingrédients: un seau de lait, 8 baies Oran et 8 baies Prine."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "bar",
+          "choiceNumber": "1"
+        },
+        {
+          "type": "select-choice",
+          "name": "alfred1.2",
+          "title": "Refus",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Alfred",
+              "chatPages": [
+                "§cQuel dommage..."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "bar",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Alfred2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Alfred2",
+      "displayText": "Apportez des ingrédients à Alfred !",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "alfredberry-prine",
+          "title": "§2Trouver {{remaining}} baie Prine",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "3",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "item": "pixelmon:lum_berry",
+          "quantity": "8",
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "alfredberry-oran",
+          "title": "§2Trouver {{remaining}} baie Oran",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "item": "pixelmon:oran_berry",
+          "quantity": "8",
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "alfredberry-milk",
+          "title": "§2Trouver {{remaining}} seau de lait",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "item": "minecraft:milk_bucket",
+          "quantity": "1",
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Alfred3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "alfred3",
+      "displayText": "Livrez Alfred ",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "alfred3.1",
+          "title": "§2Parlez à Alfred",
+          "requirements": [
+            {
+              "type": "all-of",
+              "inverted": false,
+              "requirements": [
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "minecraft:milk_bucket",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:oran_berry",
+                  "quantity": "8",
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:lum_berry",
+                  "quantity": "8",
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "Merci ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 2000",
+              "asPlayer": false
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:oran_berry",
+              "quantity": "8",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:lum_berry",
+              "quantity": "8",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "minecraft:milk_bucket",
+              "quantity": "1",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 10",
+              "asPlayer": "false"
+            },
+            {
+              "type": "complete-quest",
+              "delay": "0.1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4979",
+          "waypointZ": "-5065",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "alfred",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

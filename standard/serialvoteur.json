@@ -1,0 +1,434 @@
+{
+  "type": "basic",
+  "name": "serialvoteur",
+  "title": "Serial Voteur",
+  "stages": [
+    {
+      "name": "votepl1",
+      "displayText": "Parler à Donald",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkpnjvote",
+          "title": "Parler à Donald",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§6Rebonjour citoyen !",
+                "§6Tu es venu voter encore plus pour le serveur ? Comme je te comprends !",
+                "§6Tu sais quoi je vais te fixer un objectif ! Vote 200 fois pour le serveur !",
+                "§6Bon courage, j'espère te revoir bientôt !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu es actuellement à {{counter:Votes}} votes.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "donaldtrumpignon",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votepl2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votepl2",
+      "displayText": "Voter 200 fois pour le serveur",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "3vote",
+          "title": "Vote 200 fois",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "Votes",
+              "counterStore": "",
+              "minimumValue": "200",
+              "maximumValue": "999999"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aC'est bon j'ai voté 200 fois ! Je dois retourner voir Donald !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votepl3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votepl3",
+      "displayText": "Retourner voir Donald",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "200donald",
+          "title": "§2Retourner voir Donald",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§6Wahh déjà tout ces votes ! Tu es vraiment un très bon citoyen toi !",
+                "§6Voici une récompense pour toi: 200 PB !",
+                "§6Maintenant, prochaine étape: 500 votes ! A toi de jouer !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "azlink money add {{player}} 200",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "-5006",
+          "waypointZ": "-4977",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "donaldtrumpignon",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votepl4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votepl4",
+      "displayText": "Voter 500 fois pour le serveur",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "500vote",
+          "title": "Vote 500 fois",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "Votes",
+              "counterStore": "",
+              "minimumValue": "500",
+              "maximumValue": "999999"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aC'est bon j'ai voté 500 fois ! Je dois retourner voir Donald !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votepl5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votepl5",
+      "displayText": "Retourner voir Donald 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "500donald",
+          "title": "§2Retourner voir Donald",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§6500 votes ! C'est incroyable !",
+                "§6Voici une récompense pour toi: 500 PB !",
+                "§6Si tu atteint les 1000 votes, tu sera vraiment un joueur exceptionnel, est-ce que tu pense pouvoir y arriver ?"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "azlink money add {{player}} 500",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "-5006",
+          "waypointZ": "-4977",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "donaldtrumpignon",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votepl6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votepl6",
+      "displayText": "Voter 1000 fois pour le serveur",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "1000vote",
+          "title": "Vote 1000 fois",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "Votes",
+              "counterStore": "",
+              "minimumValue": "1000",
+              "maximumValue": "999999"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aC'est bon j'ai voté 1000 fois ! Je dois retourner voir Donald !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votepl7",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votepl7",
+      "displayText": "Retourner voir Donald 3",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "1000donald",
+          "title": "§2Retourner voir Donald",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§61000 votes ! Tu devrait être nommé Président !",
+                "§6Voici une récompense pour toi: 1000 PB !",
+                "§6Félicitations, je ne pensais pas que tu y arriverait, Astriyas, Denivak et moi-même te remercions pour ton implication dans le serveur ! §oSnifff c'est beau..."
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "azlink money add {{player}} 1000",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 49",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "-5006",
+          "waypointZ": "-4977",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "donaldtrumpignon",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [
+    {
+      "type": "simple",
+      "description": "Faire la quête vote",
+      "requirements": [
+        {
+          "type": "have-completed-quest",
+          "inverted": false,
+          "questName": "votepixelmonlegends"
+        }
+      ]
+    }
+  ],
+  "taskSets": []
+}

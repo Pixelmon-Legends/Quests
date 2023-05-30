@@ -1,0 +1,1096 @@
+{
+  "type": "basic",
+  "name": "TDC",
+  "title": "Finir la Tour De Combat",
+  "stages": [
+    {
+      "name": "tdc1",
+      "displayText": "Aller à la tour",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "entertdc",
+          "title": "Allez à la Tour De Combat",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aInconnu: Salut {{player}} ! Bienvenue à la Tour De Combat !! Je suis à l'intérieur rejoins moi je vais te présenter les lieux !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-5408",
+          "maxX": "-5402",
+          "minY": "20",
+          "maxY": "28",
+          "minZ": "-5252",
+          "maxZ": "-5246"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tdc2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc2",
+      "displayText": "Parler à L'Inconnu",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "tdcchat",
+          "title": "Parler à L'Inconnu",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Luth",
+              "chatPages": [
+                "§6Rebonjour {{player}}, c'est moi qui t'ai appelé toute à l'heure !",
+                "§6Je me présente je suis Luth ! Je viens de la région de Johto et je suis dresseur Pokémon.",
+                "§6Je viens justement de terminer la Tour De Combat.",
+                "§6C'est un sacré défi tu peux me croire ...",
+                "§6Mais on est bien récompensé, à chaque combat gagné tu gagne des §cPCo (Point Combat)§6 et avec tu peux avoir de belles récompenses !",
+                "§6Et bien entendu les combats sont de plus en plus compliqués !",
+                "§6Tu sais quoi je vais te laisser la surprise, termine cette Tour de Combat et reviens me voir lorsque tu sera un dresseur expérimenté !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tdc3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc3",
+      "displayText": "Battre les Dresseurs",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat1",
+          "title": "Battre le Dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Serena !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat2",
+          "title": "Battre le Dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Nabil !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc2",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat3",
+          "title": "Battre le Dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Sacha Ketchum !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc3",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat4",
+          "title": "Battre le Dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Roy !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc4",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat5",
+          "title": "Battre le Dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Silver !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc5",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat6",
+          "title": "Battre le Dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Echo !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc6",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat7",
+          "title": "Battre le Dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Euphorbe !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc7",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat8",
+          "title": "Battre le Dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Red !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc8",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat9",
+          "title": "Battre le Dresseur 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Pierre Rochard !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc9",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat10",
+          "title": "Battre le Dresseur 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Cynthia !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc10",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat11",
+          "title": "Battre le Dresseur 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Tarak !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc11",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat12",
+          "title": "Battre le Dresseur 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Denivak & Astriyas ! §aRetourne voir Luth pour lui annoncer la bonne nouvelle !!!",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc12",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "tdcchatfin-not-copy",
+          "title": "Parler à Luth Not",
+          "requirements": [
+            {
+              "type": "any-of",
+              "inverted": "true",
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc1"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc2"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc3"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc4"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc5"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc6"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc7"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc8"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc9"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc10"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc11"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc12"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Luth",
+              "chatPages": [
+                "§cTu n'as encore terminé la tour, Je sais elle est compliquée mais tu vas y arriver !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tdc4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc4",
+      "displayText": "Parler à Luth",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "tdcchatfin",
+          "title": "Parler à Luth",
+          "requirements": [
+            {
+              "type": "all-of",
+              "inverted": "false",
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc1"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc2"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc3"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc4"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc5"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc6"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc7"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc8"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc9"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc10"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc11"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc12"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Luth",
+              "chatPages": [
+                "§6Tu as terminé la tour ?! Félicitation !",
+                "§6Tu es vraiment un dresseur exceptionnel ! ",
+                "§6Tiens je te donne une partie de mes PCo ! J'aime partager avec les bon dresseurs de Pokémon",
+                "§6Reviens me voir un prochain jour si jamais tu souhaite un challenge plus corsé la prochaine fois !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:hive_badge",
+              "quantity": "15",
+              "meta": -1,
+              "mark": "",
+              "nbt": "{ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"§6§oPoint obtenu dans la Tour de Combat\"],Name:\"§6§lPCo\"}}"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 28",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "tdcchatfin-not",
+          "title": "Parler à Luth Not",
+          "requirements": [
+            {
+              "type": "any-of",
+              "inverted": "true",
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc1"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc2"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc3"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc4"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc5"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc6"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc7"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc8"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc9"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc10"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc11"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "tdc12"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Luth",
+              "chatPages": [
+                "§cTu n'as encore terminé la tour, Je sais elle est compliquée mais tu vas y arriver !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

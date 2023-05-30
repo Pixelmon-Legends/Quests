@@ -1,0 +1,294 @@
+{
+  "type": "basic",
+  "name": "heatran",
+  "title": "La Fan de Heatran",
+  "stages": [
+    {
+      "name": "heatranchat",
+      "displayText": "§aParler à Circe",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "heatran",
+          "uuid": "",
+          "cancelInteraction": true,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "Heatran1",
+          "title": "§aParle avec Circe",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "Circe2",
+              "chatName": "",
+              "chatPages": [
+                "§aJe ne pensais pas rencontrer quelqu'un ici, normalement en tant que membre de la team Magma je suis sensé t'attaquer ... Mais je n'ai pas la tête à ça ....",
+                "§aToute la journée on nous parle de Groudon, Groudon par çi, Groudon par là §cY'en a marre !!!",
+                "§aLe Pokémon qui devrait nous motiver c'est §cHeatran ! §a§Lui au moins il est vraiment de type feu, et il a trop la classe !!!",
+                "§aJe rêve de le voir un jour, mais j'ai beaucoup trop peur d'aller dans le §cNether §adonc je ne réaliserai jamais ce doux rêve... §o*snif*"
+              ],
+              "choices": [
+                "§aSi ça peut te remonter le moral, je peux te le ramener ?",
+                "§eBon courage ma grande, faut croire en ses rêves !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 14,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Circe2",
+          "choiceNumber": 2,
+          "name": "heatranchoix1",
+          "title": "Dire Non",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aMerci du conseil..."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Circe2",
+          "choiceNumber": 1,
+          "name": "heatranchoix2",
+          "title": "Dire Oui",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "choiceID": "Seb2",
+              "chatName": "",
+              "chatPages": [
+                "§aTu ferais ça pour moi alors qu'on est ennemis ?!"
+              ],
+              "choices": [
+                "§aEuh... Oui bien sûr !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "Heatran2"
+    },
+    {
+      "name": "Heatran2",
+      "displayText": "Capturer Heatran",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "catch-pokemon",
+          "name": "captureh",
+          "title": "Capturer Heatran",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as enfin trouvé ce fameux Heatran ! Vas le montrer à Circe pour voir sa réaction.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "Heatran"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Heatran3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Heatran3",
+      "displayText": "Aller montrer Heatran à Circe",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "mark": "heatran",
+          "uuid": "",
+          "cancelInteraction": true,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "Heatranfin",
+          "title": "§2Montrer Heatran à Circe",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aOH MON DIEU C'EST LUI AHHHHHH !!!",
+                "§aJ'y crois pas que tu es allez en enfer pour le trouver ! Tu dois être un dresseur exceptionnel ! ",
+                "§aPour te remercier d'avoir réalisé mon rêve je te donne cet objet que j'ai volé à mon chef avant de partir.",
+                "§aJe pense que je vais quitter la team Magma donc je risque pas de le recroiser ! Merci encore et à bientôt j'espère !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:red_shard",
+              "quantity": "5",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:heavy_duty_boots",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 20000",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 14",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "heatran",
+              "slot": -1
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4543",
+          "waypointZ": "-5700",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

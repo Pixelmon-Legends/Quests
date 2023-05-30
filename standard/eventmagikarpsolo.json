@@ -1,0 +1,346 @@
+{
+  "type": "basic",
+  "name": "eventmagikarpsolo",
+  "title": "EventMagikarpSolo",
+  "stages": [
+    {
+      "name": "startevent-magikarp",
+      "displayText": "Start Event",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "eventstartcondition",
+          "title": "Event Start condition",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "MagikarpEventSolo",
+              "counterStore": "global",
+              "minimumValue": "2",
+              "maximumValue": "4"
+            }
+          ],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "MagikarpSolo",
+              "counterStore": "normal",
+              "amount": "-800",
+              "lowerCap": "0",
+              "upperCap": "0"
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "magikarpevent-start"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-none"
+    },
+    {
+      "name": "magikarpevent-start",
+      "displayText": "Event en cours",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "killmagikarp",
+          "title": "Tuer des Magicarpe, déjà {{counter:MagikarpSolo:normal}}",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "uq changecounter {{player}} MagikarpSolo 1 normal",
+              "asPlayer": false
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aUn de plus ! Tu en es à {{counter:MagikarpSolo:normal}} !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "Magikarp"
+        },
+        {
+          "type": "do-nothing",
+          "name": "cancelevent-magikarp",
+          "title": "Event canceled",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "MagikarpEventSolo",
+              "counterStore": "global",
+              "minimumValue": "-4",
+              "maximumValue": "-2"
+            }
+          ],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "uq changecounter {{player}} MagikarpSolo -{{counter:MagikarpSolo:normal}} normal",
+              "asPlayer": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "startevent-magikarp"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "do-nothing",
+          "name": "eventend-magikarp",
+          "title": "Event end",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "MagikarpEventSolo",
+              "counterStore": "global",
+              "minimumValue": "-1",
+              "maximumValue": "1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "run-command",
+                  "delay": "0",
+                  "applyToAll": "false",
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "MagikarpSolo",
+                      "counterStore": "normal",
+                      "minimumValue": "2",
+                      "maximumValue": "5"
+                    }
+                  ],
+                  "command": "give {{player}} pixelmon:thunder_badge 2 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"Un point obtenu lors des events\"],Name:\"《Point Event》\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": "0",
+                  "applyToAll": "false",
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "MagikarpSolo",
+                      "counterStore": "normal",
+                      "minimumValue": "5",
+                      "maximumValue": "10"
+                    }
+                  ],
+                  "command": "give {{player}} pixelmon:thunder_badge 4 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"Un point obtenu lors des events\"],Name:\"《Point Event》\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": "0",
+                  "applyToAll": "false",
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "MagikarpSolo",
+                      "counterStore": "normal",
+                      "minimumValue": "10",
+                      "maximumValue": "20"
+                    }
+                  ],
+                  "command": "give {{player}} pixelmon:thunder_badge 8 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"Un point obtenu lors des events\"],Name:\"《Point Event》\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": "0",
+                  "applyToAll": "false",
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "MagikarpSolo",
+                      "counterStore": "normal",
+                      "minimumValue": "20",
+                      "maximumValue": "40"
+                    }
+                  ],
+                  "command": "give {{player}} pixelmon:thunder_badge 16 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"Un point obtenu lors des events\"],Name:\"《Point Event》\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": "1",
+                  "applyToAll": "false",
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "MagikarpSolo",
+                      "counterStore": "normal",
+                      "minimumValue": "40",
+                      "maximumValue": "100"
+                    }
+                  ],
+                  "command": "give {{player}} pixelmon:thunder_badge 32 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"Un point obtenu lors des events\"],Name:\"《Point Event》\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": "1",
+                  "applyToAll": "false",
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "MagikarpSolo",
+                      "counterStore": "normal",
+                      "minimumValue": "100",
+                      "maximumValue": "800"
+                    }
+                  ],
+                  "command": "give {{player}} pixelmon:thunder_badge 64 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"Un point obtenu lors des events\"],Name:\"《Point Event》\"}}",
+                  "asPlayer": false
+                }
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "uq changecounter {{player}} MagikarpSolo -{{counter:MagikarpSolo:normal}} normal",
+              "asPlayer": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "startevent-magikarp"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "VISIBLE",
+  "prerequisites": [],
+  "taskSets": []
+}

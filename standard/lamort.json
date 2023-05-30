@@ -1,0 +1,97 @@
+{
+  "type": "basic",
+  "name": "lamort",
+  "title": "La Mort",
+  "stages": [
+    {
+      "name": "die",
+      "displayText": "Mourir 30 fois",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "die",
+          "name": "die30",
+          "title": "Mourir 30 fois",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -5976.0 103 -5193.0 0 90",
+              "asPlayer": false
+            },
+            {
+              "type": "show-dialogue",
+              "delay": "1.2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "§cAstriyas et Denivak",
+              "chatPages": [
+                "§cWow ! Bonjour {{player}} !",
+                "§cTu pourrais toquer avant d'entrer, on a été surpris !",
+                "§cAttends ?! Tu es déjà mort 30 fois ! Mais comment fais-tu ?!",
+                "§cBref...Tu mérite bien un titre ! Voilà : §3§l[§b§oEsprit Fantômatique§3§l]"
+              ]
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.espritfantomatique",
+              "asPlayer": false,
+              "delay": "5",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "spawn {{player}}",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "30",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

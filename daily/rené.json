@@ -1,0 +1,437 @@
+{
+  "type": "repeatable",
+  "name": "René",
+  "title": "Quête du Mineur",
+  "stages": [
+    {
+      "name": "René1",
+      "displayText": "Parlez à René",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 21",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "alfred1.1",
+          "title": "dialogue",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "mineur",
+              "chatName": "René le mineur",
+              "chatPages": [
+                "§7Bonjour l'jeune, j'ai besoin d'aide, je n'ai plus de matériel pour faire mon métier",
+                "§7Et je suis bien trop vieux et fatigué pour remonter à la surface ...",
+                "§7Peux-tu aider un vieux mineur comme moi ?§2"
+              ],
+              "choices": [
+                "§aOui pourquoi pas !§4",
+                "§cAttends c'est pas possible un vieux mineur ?"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "rene",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "René1.2",
+          "title": "Refus",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "René le mineur",
+              "chatPages": [
+                "Hé ben ... Tu n'es pas le couteau le plus aiguisé toi ...",
+                "MINEUR C'EST PAR RAPPORT À MON MÉTIER PAS À MON ÂGE !!!!"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "mineur",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "select-choice",
+          "name": "René1.3",
+          "title": "Accepte",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "René le mineur",
+              "chatPages": [
+                "Merci bien ! Pour pouvoir continuer mon métier, je vais avoir besoin d'une pioche en fer, et de 32 torches.",
+                "Ah et une dernière chose, il me faut un Wagomine, le mien commence à être vieux et fatigué comme moi !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "mineur",
+          "choiceNumber": "1"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "René2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "René2",
+      "displayText": "Avoir une pioche en fer, 32 torches et un Wagomine",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "piocherene",
+          "title": "§2Fabriquer une Pioche en fer",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "item": "minecraft:iron_pickaxe",
+          "meta": -1,
+          "nbt": "",
+          "quantity": 1,
+          "mark": ""
+        },
+        {
+          "type": "get-item",
+          "name": "torcherene",
+          "title": "§2Fabriquer 32 Torches",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "item": "minecraft:torch",
+          "meta": -1,
+          "nbt": "",
+          "quantity": "32",
+          "mark": ""
+        },
+        {
+          "type": "evolve-pokemon",
+          "name": "wagominerene",
+          "title": "§2Faire évoluer un Charbi en Wagomine",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "fromPokemon": "Rolycoly",
+          "toPokemon": "Carkol"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "René3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "René3",
+      "displayText": "Livrer René",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "msg-copy-copy-copy",
+          "title": "Message",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aC'est bon j'ai tout ce qu'il me faut pour René ! Il faut que je lui apporte tout.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "René3.1",
+          "title": "§2Parlez à René",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Carkol",
+              "slot": -1
+            },
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "minecraft:iron_pickaxe",
+              "quantity": 1,
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            },
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "minecraft:torch",
+              "quantity": 1,
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "René le Mineur",
+              "chatPages": [
+                "Merci beaucoup !",
+                "Tu me sauves la vie !",
+                "Voici une p'tite récompense"
+              ]
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "minecraft:iron_pickaxe",
+              "quantity": "1",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "minecraft:torch",
+              "quantity": "32",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-pokemon",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Carkol",
+              "search": "Party",
+              "box": -1,
+              "slot": -1,
+              "maxToTake": 1
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 1500",
+              "asPlayer": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:aluminium_plate",
+              "quantity": "2",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 21",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4264",
+          "waypointZ": "-5828",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "rene",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

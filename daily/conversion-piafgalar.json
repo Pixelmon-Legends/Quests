@@ -1,0 +1,453 @@
+{
+  "type": "repeatable",
+  "name": "conversion-piafgalar",
+  "title": "Echange d'oiseau de Galar",
+  "stages": [
+    {
+      "name": "piafgalar1",
+      "displayText": "Parler à Chald",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark-copy",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 55",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkchald",
+          "title": "Parler à Chald",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! Tu es {{player}} n'est-ce pas ?",
+                "§aJe viens d'un région lointaine, ou certains Pokémon sont différents, comme les Oiseaux Légendaires par exemple !",
+                "§aTu sais quoi ? Apporte moi un oiseau légendaire, et je te l'echangerai contre un oiseau légendaire de Galar ! A bientôt !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "chald-piaf",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "piafgalar2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "piafgalar2",
+      "displayText": "Apporter un des Oiseaux Légendaires",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "givechald",
+          "title": "Parler à Chald avec l'oiseau en slot 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "any-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "have-pokemon-in-party",
+                      "inverted": false,
+                      "spec": "Articuno f:0",
+                      "slot": "1"
+                    },
+                    {
+                      "type": "have-pokemon-in-party",
+                      "inverted": false,
+                      "spec": "Zapdos f:0",
+                      "slot": "1"
+                    },
+                    {
+                      "type": "have-pokemon-in-party",
+                      "inverted": false,
+                      "spec": "Moltres f:0",
+                      "slot": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "have-money",
+                  "inverted": false,
+                  "amount": "400001"
+                }
+              ],
+              "chatName": "",
+              "chatPages": [
+                "§aRebonjour {{player}} ! Tu est revenu avec l'oiseaux de ton choix ?",
+                "§aComme mes Pokémon vienne de loin et qu'ils sont difficiles à capturer, il me faut aussi 400k$",
+                "§aCa te va ?"
+              ],
+              "choiceID": "choixoiseaugalar",
+              "choices": [
+                "§aOui !§c",
+                "§cJe vais y réflechir"
+              ]
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "any-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "all-of",
+                      "inverted": false,
+                      "requirements": [
+                        {
+                          "type": "have-pokemon-in-party",
+                          "inverted": "true",
+                          "spec": "Articuno f:0",
+                          "slot": "1"
+                        },
+                        {
+                          "type": "have-pokemon-in-party",
+                          "inverted": "true",
+                          "spec": "Zapdos f:0",
+                          "slot": "1"
+                        },
+                        {
+                          "type": "have-pokemon-in-party",
+                          "inverted": "true",
+                          "spec": "Moltres f:0",
+                          "slot": "1"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "have-money",
+                      "inverted": "true",
+                      "amount": "400001"
+                    }
+                  ]
+                }
+              ],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! N'oublie pas, si tu veux que je t'échange un oiseau légendaire, il te faut l'un d'eux en slot 1, mais aussi 400k$ !",
+                "§aA bientôt !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "chald-piaf",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "echangeoui",
+          "title": "Choisir echanger",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "Articuno f:0",
+                  "slot": "1"
+                },
+                {
+                  "type": "have-money",
+                  "inverted": false,
+                  "amount": "400001"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money take {{player}} 400k",
+                  "asPlayer": "false"
+                },
+                {
+                  "type": "run-command",
+                  "delay": "1",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "pokeedit {{player}} 1 f:2",
+                  "asPlayer": false
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§aEt voilà ! J'espère que ton Artikodin de Galar te plaira !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 55",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "Zapdos f:0",
+                  "slot": "1"
+                },
+                {
+                  "type": "have-money",
+                  "inverted": false,
+                  "amount": "400001"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money take {{player}} 400k",
+                  "asPlayer": "false"
+                },
+                {
+                  "type": "run-command",
+                  "delay": "1",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "pokeedit {{player}} 1 f:2",
+                  "asPlayer": false
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§aEt voilà ! J'espère que ton Electhor de Galar te plaira !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 55",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "Moltres f:0",
+                  "slot": "1"
+                },
+                {
+                  "type": "have-money",
+                  "inverted": false,
+                  "amount": "400001"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money take {{player}} 400k",
+                  "asPlayer": "false"
+                },
+                {
+                  "type": "run-command",
+                  "delay": "1",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "pokeedit {{player}} 1 f:2",
+                  "asPlayer": false
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§aEt voilà ! J'espère que ton Sulfura de Galar te plaira !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 55",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "choixoiseaugalar",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": "3",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

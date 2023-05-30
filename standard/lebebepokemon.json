@@ -1,0 +1,452 @@
+{
+  "type": "basic",
+  "name": "lebebepokemon",
+  "title": "Le Bébé Pokémon",
+  "stages": [
+    {
+      "name": "bebepoke1",
+      "displayText": "Parler à Mickael",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk-mickael",
+          "title": "Parler à Mickael",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "pichupension",
+              "chatName": "",
+              "chatPages": [
+                "§dSalut ! Désolé je n'ai pas trop le temps de discuter, je surveille les Pokémon de la pension !",
+                "§dMais !? Je crois qu'il nous manque un §cPichu ! §dTu pourrais m'aider à le chercher ?",
+                "§dIl a tendance à se balader et à escalader...§a"
+              ],
+              "choices": [
+                "§aOui bien sûr",
+                "§cTu aurais dû mieux le surveiller..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "cancelInteraction": "true",
+          "mark": "mickael-pension",
+          "uuid": "",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choix1-1",
+          "title": "Choisir oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dSuper ! Reviens me voir quand tu l'auras retrouvé !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pichupension",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choix1-2",
+          "title": "Choisir non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dMince ! Comment je vais me débrouiller...",
+                "§dJe ne peux pas surveiller ceux là et retrouver l'autre en même temps..."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pichupension",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "bebepoke2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "bebepoke2",
+      "displayText": "Trouver le Pichu égaré",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "kill-entity",
+          "name": "kill-pichu",
+          "title": "Tuer le Pichu égaré",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§cHein ?! Mais pourquoi tu as fais ça ? Tu devrais aller voir Mickael...",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast ! §c{{player}} a tué un bébé Pokémon !!! §lLE MONSTRE !",
+              "asPlayer": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "bebepoke-kill"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pichu-pension",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "find-pichu",
+          "title": "§2Trouver le Pichu égaré",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aFélicitations ! Tu as trouvé le Pichu ! Retourne voir Mickael !",
+              "useActionBar": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "bebepoke-get"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "Mickael a dit que le Pichu aimait escalader. Il se trouve sûrement vers l'est.",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pichu-pension",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talk-mickael-copy",
+          "title": "Parler à Mickael",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dRebonjour ! Tu as trouvé le Pichu perdu ?",
+                "§dPas encore ? Il doit être bien caché, mais je pense qu'il se trouve vers l'est, et puis il aime bien le parkour..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "cancelInteraction": "true",
+          "mark": "mickael-pension",
+          "uuid": "",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "bebepoke-get",
+      "displayText": "Retourner voir Mickael",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "end-mickael-good",
+          "title": "§2Parler à Mickael",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dCool ! Merci de l'avoir récupérer, tu me sauve !",
+                "§dvoici pour toi !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money add {{player}} 10k",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 42",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": "-4931",
+          "waypointZ": "-5186",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "cancelInteraction": "true",
+          "mark": "mickael-pension",
+          "uuid": "",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "bebepoke-kill",
+      "displayText": "Retourner voir Mickael...",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "end-mickael-bad",
+          "title": "§2Parler à Mickael...",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dMais qu'est-ce que tu as fait !!!!?? Tu es fou !",
+                "§dIl faut être fou pour avoir tué ce pauvre Pichu !",
+                "§dTu va devoir payer une amende !",
+                "§dSon maître va être en pleurs quand il va apprendre la nouvelle...Pars maintenant"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money take {{player}} 10k",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 42",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set deluxetags.tag.tueurdebebes",
+              "asPlayer": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as reçu le titre §4[§5Tueur de bébés§4] §a...",
+              "useActionBar": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": "-4931",
+          "waypointZ": "-5186",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "cancelInteraction": "true",
+          "mark": "mickael-pension",
+          "uuid": "",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

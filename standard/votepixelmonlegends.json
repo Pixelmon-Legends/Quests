@@ -1,0 +1,275 @@
+{
+  "type": "basic",
+  "name": "votepixelmonlegends",
+  "title": "Make Pixelmon Legends Great Again",
+  "stages": [
+    {
+      "name": "votetuto1",
+      "displayText": "Parler à Donald",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkpnjvote",
+          "title": "Parler à Donald",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§6Bonjour toi ! J'espère que tu sais comment voter !",
+                "§6Dans le doute, laisse moi t'expliquer, n'oublie pas que chaque citoyen a le devoir de voter !",
+                "§6Pour cela il faut que tu te rendes sur les différents sites de votes, et que tu inscrive ton pseudo afin de déposer ton scrutin !",
+                "§6En faisant ça, tu reçois des récompenses, et aide à faire grandir notre communauté !",
+                "§6Je vais te donner une mission pour bien commencer ta carrière électorale, tu dois voter 3 fois !",
+                "§6Reviens me voir quand ce sera fait ! Make Pixelmon Legends Great Again !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "donaldtrumpignon",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votetuto2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votetuto2",
+      "displayText": "Voter 3 fois pour le serveur",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "1vote",
+          "title": "Vote 1 fois",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "Votes",
+              "counterStore": "",
+              "minimumValue": "1",
+              "maximumValue": "2"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aEt 1 vote ! Plus que 2 !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "do-nothing",
+          "name": "2vote",
+          "title": "Vote 2 fois",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "Votes",
+              "counterStore": "",
+              "minimumValue": "2",
+              "maximumValue": "3"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aEt 2 votes ! Plus qu'un !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "do-nothing",
+          "name": "3vote",
+          "title": "Vote 3 fois",
+          "requirements": [
+            {
+              "type": "have-counter",
+              "inverted": false,
+              "counterName": "Votes",
+              "counterStore": "",
+              "minimumValue": "3",
+              "maximumValue": "999999"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aC'est bon j'ai mes 3 votes ! Je dois retourner voir Donald !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "votetuto3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "votetuto3",
+      "displayText": "Retourner voir Donald",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "enddonald",
+          "title": "§2Retourner voir Donald",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§6Je vois que tu as voté 3 fois ! Félicitations !",
+                "§6Voici une récompense pour toi !",
+                "§6Reviens me voir une autre fois, je te redonnerai peut être une nouvelle quête !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money add {{player}} 5k",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 47",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "-5005",
+          "waypointZ": "0",
+          "waypointRadius": "-4977",
+          "trackAutomatically": false,
+          "mark": "donaldtrumpignon",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

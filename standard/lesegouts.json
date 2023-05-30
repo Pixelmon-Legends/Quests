@@ -1,0 +1,461 @@
+{
+  "type": "basic",
+  "name": "lesegouts",
+  "title": "Les Egouts",
+  "stages": [
+    {
+      "name": "egouts1",
+      "displayText": "Parler à Poallju",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkpoallju",
+          "title": "Parler à Poallju",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "egouts-choix1",
+              "chatName": "",
+              "chatPages": [
+                "§aBonjour ! Désolé de t'interpeller comme ça, mais on a vraiment besoin d'aide !",
+                "§aDes Rattata se sont installés dans les égouts de la ville ! Peux tu nous aider à les chasser de là ?"
+              ],
+              "choices": [
+                "§aC'est d'accord !§c",
+                "§cBeurk, j'aime pas les rats..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": "0",
+          "waypointRadius": "10",
+          "trackAutomatically": false,
+          "mark": "poallju",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "egout-ok",
+          "title": "Choisir OK",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aOh super, tu nous sauves !",
+                "§aReviens me parler quand tu voudras entrer ! Et prépare une épée !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "egouts-choix1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "egout-non",
+          "title": "Choisir Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aZut ! Bon j'espère que quelqu'un d'autre passera dans le coin... "
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "egouts-choix1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "egouts2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "egouts2",
+      "displayText": "Entrer dans les égouts",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talktoenter",
+          "title": "Parler à Poallju pour entrer",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "entreregouts",
+              "chatName": "",
+              "chatPages": [
+                "§aBonjour ! Veut tu entrer dans les égouts ?"
+              ],
+              "choices": [
+                "§aOui !§c",
+                "§cNon pas encore"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "poallju",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "entreregout-oui",
+          "title": "Choisir entrer",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -5050.0 52 -4976.0 0 180",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "entreregouts",
+          "choiceNumber": 1
+        },
+        {
+          "type": "kill-entity",
+          "name": "killrattata",
+          "title": "§2Tuer {{remaining}} Rattata",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'en ai éliminé une bonne partie, je devrais aller voir l'autre monsieur au fond des égouts.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "15",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "entities": [],
+          "mark": "rattata-egouts"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "egouts3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "egouts3",
+      "displayText": "Aller plus loin dans les égouts",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkdiv",
+          "title": "§2Parler à Div",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "bossegouts",
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! C'est toi qui est venu nous aider?",
+                "§aMerci beaucoup, tu nous a bien aidé !",
+                "§aMais derrière cette grille il y a des bruits vraiment effroyables, je préfère ne pas y aller.",
+                "§aJe ne préfère pas y aller, mais si tu en a le courage, je peux t'ouvrir..."
+              ],
+              "choices": [
+                "§aC'est d'accord, j'y vais!§c",
+                "§cJe reviendrai une autre fois..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "true",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "div-egouts",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "entrermom-egouts-oui-copy",
+          "title": "Choisir entrer",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -5087.0 49 -4995.0 0 180",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "bossegouts",
+          "choiceNumber": 1
+        },
+        {
+          "type": "kill-entity",
+          "name": "killrattata-mom",
+          "title": "§2Tuer le boss des Egouts",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai éliminé la maman, cela devrait leur faciliter le travail désormais. Je devrait sortir maintenant.",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -5045.0 61 -4972.0 0 180",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "entities": [],
+          "mark": "rattata-egouts-mom"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "egouts4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-none"
+    },
+    {
+      "name": "egouts4",
+      "displayText": "Retourner voir Poallju",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkpoallju-end",
+          "title": "§2Parler à Poallju",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aFélicitations, tu as réussi à réduire drastiquement la prolifération des Rattata !",
+                "§aVoici une récompense pour te remercier !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 50",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 7500",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "-5046",
+          "waypointZ": "-4975",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "poallju",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

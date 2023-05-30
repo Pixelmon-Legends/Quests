@@ -1,0 +1,633 @@
+{
+  "type": "basic",
+  "name": "articodin",
+  "title": "Quête d'Articodin",
+  "stages": [
+    {
+      "name": "articodin1",
+      "displayText": "Parler au serviteur d'Articodin",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkarticodinservant",
+          "title": "Parler au serviteur d'Articodin",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": false,
+              "flag": "chercheurdoiseau"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "articodinservant1",
+              "chatName": "",
+              "chatPages": [
+                "§bBonjour, tu es ici pour trouver Articodin ?",
+                "§bTu es au bon endroit, mais avant tu dois montrer que tu es digne de lui.§a"
+              ],
+              "choices": [
+                "§aQue dois-je faire ?§c",
+                "§cCe sera pour une autre fois alors..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "serviteurarticodin",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "articodinselect-oui",
+          "title": "Choisir Oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cTrès bien, tu vas devoir relever l'épreuve d'Articodin !",
+                "§cPour cela il faut déjà que tu trouves une pierre Glace !",
+                "§cReviens me voir quand tu l'auras"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "articodinservant1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "articodinselect-non",
+          "title": "Choisir Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bA une prochaine alors..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "articodinservant1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talksulfuraservant-not",
+          "title": "Serviteur d'Articodin Not",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "chercheurdoiseau"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bBonjour, il n'y a rien pour toi ici, reviens quand tu sauras ce que tu cherches."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "serviteurarticodin",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "articodin2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "articodin2",
+      "displayText": "Obtenir la pierre glace",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "geticestone",
+          "title": "Obtenir la pierre glace",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai la pierre glace ! Il faut que je retourne voir le serviteur d'Articodin !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:ice_stone",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "articodin3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "articodin3",
+      "displayText": "Retourner voir le serviteur",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "backarticodinservant1",
+          "title": "§2Retourner voir le serviteur d'Articodin",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bSuper tu as la pierre glace ! Maintenant il faut que tu élimine 10 Pokémon de type Glace !",
+                "§bReviens me voir dès que ce sera fait !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4459",
+          "waypointZ": "-5737",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "serviteurarticodin",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "articodin4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "articodin4",
+      "displayText": "Battre 10 Pokémon Glace",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "kill10firepokemon",
+          "title": "Battre {{remaining}} Pokémon Glace",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai battu les 10 Pokémon Glace, plus qu'à aller voir la Servante d'Articodin !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "10",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "spec": "type:Ice"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "articodin5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "articodin5",
+      "displayText": "Retourner voir le serviteur 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "backarticodinservant2",
+          "title": "§2Retourner voir le serviteur d'Articodin",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cJ'ai l'impression que tu es dans les bonnes grâces d'Articodin",
+                "§cVoici une orbe pour toi ! Combine là avec la pierre Glace, puis remplis là grâce à de nombreux sacrifices, reviens me voir quand ce sera bon !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:orb",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4459",
+          "waypointZ": "-5737",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "serviteurarticodin",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "craft-item",
+          "name": "craftarticodinorb",
+          "title": "Crafter l'orbe d'Articodin",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai l'orbe d'Articodin ! Plus qu'a la remplir !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "item": "pixelmon:uno_orb",
+          "meta": -1,
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "fillarticodinorb",
+          "title": "Remplir l'orbe d'Articodin",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai rempli l'orbe d'Articodin ! Plus qu'a la montrer au serviteur !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "item": "pixelmon:uno_orb",
+          "meta": "375",
+          "nbt": "",
+          "quantity": 1,
+          "mark": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "articodin6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "articodin6",
+      "displayText": "Parler au serviteur 3",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "backarticodinservant3",
+          "title": "§2Retourner voir le serviteur d'Articodin",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bFélicitation pour tous ces sacrifices !",
+                "§bIl ne te reste plus qu'à invoquer Articodin ! Bon courage !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4459",
+          "waypointZ": "-5737",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "serviteurarticodin",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "catch-pokemon",
+          "name": "catcharticodin",
+          "title": "Capturer Articodin",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catchsulfura"
+                }
+              ],
+              "message": "§aJ'ai Articodin ! Plus que les 2 autres oiseaux !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catchsulfura"
+                }
+              ],
+              "message": "§aJ'ai Articodin ! Plus que l'oiseau de Feu !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchsulfura"
+                }
+              ],
+              "message": "§aJ'ai Articodin ! Plus que l'oiseau de Foudre !",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchsulfura"
+                }
+              ],
+              "message": "§aJ'ai Articodin ! J'ai tous les oiseaux, si je vais voir notre scientifique il va être impressionné !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 25",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "Articuno"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

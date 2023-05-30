@@ -1,0 +1,2482 @@
+{
+  "type": "basic",
+  "name": "pokedex",
+  "title": "Quête du Pokédex",
+  "stages": [
+    {
+      "name": "Stage1-1",
+      "displayText": "Etape 5% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-5",
+          "title": "Login5",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "45"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 5% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage1-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage1-2",
+      "displayText": "Etape 5% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk5",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:rare_candy",
+              "quantity": "10",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Ekans ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage2-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage2-1",
+      "displayText": "Etape 10% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-10",
+          "title": "Login10",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "90"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 10% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage2-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage2-2",
+      "displayText": "Etape 10% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk10",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:ultra_ball",
+              "quantity": "32",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Skitty ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage3-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage3-1",
+      "displayText": "Etape 15% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-15",
+          "title": "Login15",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "135"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 15% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": "10",
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage3-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage3-2",
+      "displayText": "Etape 15% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk15",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:max_soup",
+              "quantity": "1",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Wooloo ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage4-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage4-1",
+      "displayText": "Etape 20% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-20",
+          "title": "Login20",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "180"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 20% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage4-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage4-2",
+      "displayText": "Etape 20% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk20",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "points give {{player}} 1000",
+              "asPlayer": false
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Shinx ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage5-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage5-1",
+      "displayText": "Etape 25% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-25",
+          "title": "Login25",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "225"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 25% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage5-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage5-2",
+      "displayText": "Etape 25% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk25",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "pokerandom {{player}} shiny:true",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "pokerandolp user {{player}} permission set deluxetags.tag.chercheurdebutantm %player% shiny:true",
+              "asPlayer": false
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Goldeen ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage6-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage6-1",
+      "displayText": "Etape 30% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-30",
+          "title": "Login30",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "270"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 30% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage6-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage6-2",
+      "displayText": "Etape 30% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk30",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Taillow ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:orb",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:fire_stone",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:ice_stone",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:thunder_stone",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage7-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage7-1",
+      "displayText": "Etape 35% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-35",
+          "title": "Login35",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "315"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 35% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage7-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage7-2",
+      "displayText": "Etape 35% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk35",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Ponyta ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 50000",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage8-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage8-1",
+      "displayText": "Etape 40% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-40",
+          "title": "Login40",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "360"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 40% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage8-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage8-2",
+      "displayText": "Etape 40% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk35-copy",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Poochyena ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:xl_exp_candy",
+              "quantity": "4",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage9-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage9-1",
+      "displayText": "Etape 45% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-45",
+          "title": "Login45",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "405"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 45% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage9-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage9-2",
+      "displayText": "Etape 45% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk35-copy-copy",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété une partie du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Rockruff ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:rainbow_wing",
+              "quantity": "1",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage10-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage10-1",
+      "displayText": "Etape 50% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-50",
+          "title": "Login50",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "450"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 50% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage10-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage10-2",
+      "displayText": "Etape 50% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk50",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Ralts ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set deluxetags.tag.chercheurconfirme",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "pokerandom {{player}} shiny:true",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage11-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage11-1",
+      "displayText": "Etape 55% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-55",
+          "title": "Login55",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "495"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 55% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage11-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage11-2",
+      "displayText": "Etape 55% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk50-copy",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Claydol ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "points give {{player}} 3000",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage12-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage12-1",
+      "displayText": "Etape 60% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-60",
+          "title": "Login60",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "540"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 60% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage12-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage12-2",
+      "displayText": "Etape 60% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk50-copy-copy",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Cloyster ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:hourglass_gold",
+              "quantity": "64",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage13-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage13-1",
+      "displayText": "Etape 65% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-65-copy",
+          "title": "Login65",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "585"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 65% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage13-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage13-2",
+      "displayText": "Etape 65% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk65",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Torchic ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:ability_capsule",
+              "quantity": "1",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage14-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage14-1",
+      "displayText": "Etape 70% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-70",
+          "title": "Login70",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "630"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 70% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage14-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage14-2",
+      "displayText": "Etape 70% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk70",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Chikorita ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:lens_gold",
+              "quantity": "1",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage15-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage15-1",
+      "displayText": "Etape 75% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-75",
+          "title": "Login75",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "675"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 75% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage15-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage15-2",
+      "displayText": "Etape 75% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk75",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Totodile ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set deluxetags.tag.chercheurexpert",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "pokerandom {{player}} shiny:true",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage16-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage16-1",
+      "displayText": "Etape 80% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-80",
+          "title": "Login80",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "720"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 80% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage16-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage16-2",
+      "displayText": "Etape 80% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk80",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Hatenna ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 100000",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage17-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage17-1",
+      "displayText": "Etape 85% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-85",
+          "title": "Login85",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "765"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 85% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage17-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage17-2",
+      "displayText": "Etape 85% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk85",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Absol ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage18-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage18-1",
+      "displayText": "Etape 90% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-90",
+          "title": "Login90",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "810"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 90% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage18-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage18-2",
+      "displayText": "Etape 90% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk90",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Feebas ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:waterdude_wishing_piece",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage19-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage19-1",
+      "displayText": "Etape 95% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-95",
+          "title": "Login95",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "855"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 95% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage19-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage19-2",
+      "displayText": "Etape 95% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk95",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Bravo ! Tu as complété la moitié du Pokédex ! Voici ta récompense !"
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Mewtwo ct:akuma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cc give p legends 1 {{player}}",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage20-1",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage20-1",
+      "displayText": "Etape 100% 1",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login-100",
+          "title": "Login100",
+          "requirements": [
+            {
+              "type": "have-pokedex-count",
+              "inverted": false,
+              "status": "caught",
+              "count": "900"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§2Tu as atteint les 100% du pokédex ! Va voir le Pr.Ras pour récupérer ta récompense !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "Stage20-2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "Stage20-2",
+      "displayText": "Etape 100% 2",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk100",
+          "title": "Parler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Félicitations ! Tu as terminé le Pokédex ! Voici tes récompenses !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "pokerandom {{player}} shiny:true",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "pokerandom {{player}} shiny:true",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set deluxetags.tag.profpokemon",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "cmi broadcast &e&l{{player}} &2&la complété 100% du Pokédex! GG à lui!",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5071",
+          "waypointZ": "-4969",
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

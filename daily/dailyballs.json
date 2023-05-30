@@ -1,0 +1,392 @@
+{
+  "type": "repeatable",
+  "name": "dailyballs",
+  "title": "Livraison de Pokéball",
+  "stages": [
+    {
+      "name": "pokeball1",
+      "displayText": "Parler à Suldelaana",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 20",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "chat1",
+          "title": "§aParler à Suldelaana",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Suldelaana",
+              "chatPages": [
+                "§aSalut Forgeron {{player}} prêt pour une nouvelle journée de travail ?!",
+                "§aNotre client Ball Masqué, Le vendeur de Pokéballs du Market, nous demande de lui livrer: 10 Pokéballs + 5 Bis Balls + 5 Rapide Balls + 2 Luxe Balls"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "balls",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pokeball2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pokeball2",
+      "displayText": "Fabriquer les Pokéballs",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "balldelivery1",
+          "title": "§2Fabriquer 10 Pokéballs",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:poke_ball",
+          "meta": -1,
+          "nbt": "",
+          "quantity": "10",
+          "mark": ""
+        },
+        {
+          "type": "get-item",
+          "name": "balldelivery2",
+          "title": "§2Fabriquer 5 Rapide balls",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:quick_ball",
+          "meta": -1,
+          "nbt": "",
+          "quantity": "5",
+          "mark": ""
+        },
+        {
+          "type": "get-item",
+          "name": "balldelivery3",
+          "title": "§2Fabriquer 5 Bis balls",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:repeat_ball",
+          "meta": -1,
+          "nbt": "",
+          "quantity": "5",
+          "mark": ""
+        },
+        {
+          "type": "get-item",
+          "name": "balldelivery4",
+          "title": "§2Fabriquer 2 Luxe balls",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:luxury_ball",
+          "meta": -1,
+          "nbt": "",
+          "quantity": "2",
+          "mark": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pokeball3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pokeball3",
+      "displayText": "Livrer les Pokéball à Ball Masqué",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "livraison",
+          "title": "§2Livrer les Pokéball à Ball Masqué",
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:poke_ball",
+              "quantity": "10",
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            },
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:quick_ball",
+              "quantity": "5",
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            },
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:repeat_ball",
+              "quantity": "5",
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            },
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:luxury_ball",
+              "quantity": "2",
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Ball Masqué",
+              "chatPages": [
+                "§cMerci {{player}} ! Je commençais à ne plus avoir de stock.",
+                "§cBien entendu tout travail mérite salaire, voici ton paiement !"
+              ]
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:poke_ball",
+              "quantity": "10",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:quick_ball",
+              "quantity": "5",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:repeat_ball",
+              "quantity": "5",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:luxury_ball",
+              "quantity": "2",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 3500",
+              "asPlayer": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:aluminium_plate",
+              "quantity": "3",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 20",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4905",
+          "waypointZ": "-5147",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "ballmasque",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [
+    {
+      "type": "simple",
+      "description": "Avoir fait la quête \"Fabrication de Pokéball\"",
+      "requirements": [
+        {
+          "type": "have-completed-quest",
+          "inverted": false,
+          "questName": "tutoball"
+        }
+      ]
+    }
+  ],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

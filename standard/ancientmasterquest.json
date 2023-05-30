@@ -1,0 +1,210 @@
+{
+  "type": "basic",
+  "name": "AncientMasterQuest",
+  "title": "Quête de l'Ancien Maître",
+  "stages": [
+    {
+      "name": "AncientMaster1",
+      "displayText": "Parler a Hosoe",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkhosoe",
+          "title": "Parler à Hosoe",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cKonnichiwa ! Ce bâtiment proche de nous est la tour de Combat, tu dois déjà le savoir !",
+                "§cMais savais tu que l'ancien Maître de cette tour se trouve juste de l'autre coté ?",
+                "§cSi ça t'intéresse tu peux aller le défier !",
+                "§cMais attention, même s'il est à la retraite, il reste coriace ! Sayonara !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe devrais peut-être aller voir qui est cet ancien Grand Maître, de l'autre côté de la tour de combat...",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "hosoesayako",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "AncientMaster2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "AncientMaster2",
+      "displayText": "Parler au grand maitre",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkmaster",
+          "title": "§2Parler au grand maitre",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cBonjour ! Je pense que tu as rencontré Hosue et qu'il t'as parlé de moi ?",
+                "§cIl fait tous ces efforts pour que je continue à combattre, §oahahah §c!",
+                "§cBref, si tu veux combattre, vient me voir ! §oAhahah"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": "-5528",
+          "waypointZ": "-5249",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "ancienttowermaster",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "AncientMaster3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "AncientMaster3",
+      "displayText": "Battre l'Ancien Maitre",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "defeatancientmaster",
+          "title": "Battre l'ancien maitre",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": "5",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cFélicitations ! Tu es vraiment un dresseur d'exception ! Voici un récompense pour toi !",
+                "§cJe vais prévenir mes gardes de ne plus te bloquer l'accès aux tours sur les côtés de la mienne.",
+                "§cBon courage pour la suite !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "lp user {{player}} permission set group.tourdeshifours",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money add {{player}} 20k",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 44",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ancienttowermaster",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

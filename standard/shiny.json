@@ -1,0 +1,389 @@
+{
+  "type": "basic",
+  "name": "Shiny",
+  "title": "La Collectionneuse de Shiny",
+  "stages": [
+    {
+      "name": "shiny1",
+      "displayText": "§aParler à Jeanne",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "shinychat",
+          "title": "§aParler à Jeanne",
+          "requirements": [
+            {
+              "type": "all-of",
+              "inverted": false,
+              "requirements": [
+                {
+                  "type": "have-pokedex-count",
+                  "inverted": false,
+                  "count": "225",
+                  "status": "caught"
+                },
+                {
+                  "type": "have-completed-quest",
+                  "inverted": false,
+                  "questName": "lecatchingcharm"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "shiny1",
+              "chatName": "",
+              "chatPages": [
+                "§aBonjour {{player}}, tu connais les pokémon chromatiques ? Enfin vous les jeunes vous dîtes \"Shiny\"",
+                "§aCe sont des pokémon avec une couleur différente de d'habitude, ils sont très rares.",
+                "§aMais des fois ça arrive que leurs couleurs shiny soit moins belles que leurs couleurs de base...",
+                "§aSi jamais tu trouve un shiny qui ne te plaît pas, je peux te l'échanger contre un des miens ? Avec l'âge j'ai une sacré collection maintenant !"
+              ],
+              "choices": [
+                "§aD'accord, je penserai à vous si j'ai besoin, merci Madame."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "shiny",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "shinyoui",
+          "title": "§aDire Oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aD'accord je reste ici si besoin, une petite chose avant que tu parte, le pokémon que tu voudra échanger devra être §c§lDans le SLOT 1 de ton équipe§a."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "shiny1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "shinychat-not",
+          "title": "No condition",
+          "requirements": [
+            {
+              "type": "any-of",
+              "inverted": false,
+              "requirements": [
+                {
+                  "type": "have-pokedex-count",
+                  "inverted": "true",
+                  "count": "225",
+                  "status": "caught"
+                },
+                {
+                  "type": "have-completed-quest",
+                  "inverted": "true",
+                  "questName": "lecatchingcharm"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aBonjour {{player}} ! Si tu acquiert plus d'experience, je te proposerai des échanges !",
+                "§aIl faudrait que tu capture un bon nombre de Pokémon, au moins 500 je pense",
+                "§aMais aussi que ton pokédex soit suffisamment complété au moins 25% je dirais !",
+                "§aBon courage et à bientôt !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "shiny",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "shiny2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "shiny2",
+      "displayText": "Amener un Shiny à Jeanne pour faire un échange",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "shinycatch",
+          "title": "§2Amener un Shiny à Jeanne pour faire un échange",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "shinyfin",
+              "chatName": "",
+              "chatPages": [
+                "§aOh te revoila {{player}} ! J'en conclut donc que tu es prêt à faire l'échange !",
+                "§aAvant toute chose, fait bien attention à ton équipe §c§lJe vais prendre le shiny qui est dans le SLOT 1 de ton équipe§a.",
+                "§aTu es prêt pour l'échange ?§c"
+              ],
+              "choices": [
+                "§cNon attendez 5minutes je reviens§a",
+                "§aOui !"
+              ]
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "shinychat2non",
+          "title": "Dire Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aPas de problème je t'attend."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "shinyfin",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "shinyfin",
+          "title": "Répondre Oui",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "shiny",
+              "slot": "1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aJ'espère que ton nouveau shiny te plaît {{player}} !"
+              ]
+            },
+            {
+              "type": "take-pokemon",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "",
+              "search": "Party",
+              "box": -1,
+              "slot": "1",
+              "maxToTake": 1
+            },
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "pokegive {{player}} random shiny !leg !ub",
+              "asPlayer": "false"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 6",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "shinyfin",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "select-choice",
+          "name": "yesbutnoshiny",
+          "title": "Dire oui mais pas shiny",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": "true",
+              "spec": "shiny",
+              "slot": "1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aLe 1er pokémon de ton équipe n'est pas shiny ! Repasse me voir quand tu en aura un !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "shinyfin",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

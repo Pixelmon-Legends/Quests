@@ -1,0 +1,2781 @@
+{
+  "type": "repeatable",
+  "name": "curryexpress",
+  "title": "Curry Express",
+  "stages": [
+    {
+      "name": "curryexpress-1",
+      "displayText": "Parler à la serveuse",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 41",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "start-curryexpress",
+          "title": "Parler à la serveuse",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Bonjour ! C'est toi qui avait aidé le chef ?",
+                "§3On aurait besoin d'aide, il faudrait préparer une commande et la livrer rapidement...d'ici 5 minutes !",
+                "§3Tu pourrais t'en occuper ? Je te dirai ou le livrer dès que tu l'auras préparé !§a"
+              ],
+              "choiceID": "curryexpress1",
+              "choices": [
+                "§aD'accord !§c",
+                "§cDésolé, je n'ai pas le temps."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "serveusecurry",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choose1-1",
+          "title": "Choix du curry",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "random-action",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-champignons"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-epices"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-legumes"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-nouilles"
+                }
+              ]
+            },
+            {
+              "type": "start-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "curryexpress",
+              "timerText": "Curry Express ! Temps restant: {{seconds}}",
+              "timerSeconds": "310",
+              "colour": "RED",
+              "continueWhileOffline": "false",
+              "expiryActions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§cTu n'as pas livré la commande à temps :(",
+                  "useActionBar": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "actions": [
+                    {
+                      "type": "unset-flag",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "flag": "curry-legumes"
+                    },
+                    {
+                      "type": "unset-flag",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "flag": "curry-champignons"
+                    },
+                    {
+                      "type": "unset-flag",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "flag": "curry-nouilles"
+                    },
+                    {
+                      "type": "stop-timer",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "timerID": "curry-epices"
+                    }
+                  ]
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ],
+              "logoutActions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-1"
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "curryexpress1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choose1-2",
+          "title": "Choix non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Ok ! Repasse me voir si ça t'interesse !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "curryexpress1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-legumes",
+      "displayText": "Curry legumes",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-legumes",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Il faudrait préparer un curry de légumes ! Fais vite !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire un curry de legumes ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "curry-legumes"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "cook-curry",
+          "name": "cook-queue-copy",
+          "title": "Cuisiner un curry de legumes",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "random-action",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-joelle"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-julien"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-goh"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-xukkoids"
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "curryType": "SALAD_MIX",
+          "rating": null,
+          "flavour": null
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-nouilles",
+      "displayText": "Curry nouilles",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-nouilles",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Il faudrait préparer un curry de nouilles ! Fais vite !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire un curry de nouilles ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "curry-nouilles"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "cook-curry",
+          "name": "cook-nouilles",
+          "title": "Cuisiner un curry de nouilles",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "random-action",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-joelle"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-julien"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-goh"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-xukkoids"
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "curryType": "INSTANT_NOODLES",
+          "rating": null,
+          "flavour": null
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-champignons",
+      "displayText": "Curry champignons",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-champignons",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Il faudrait préparer un curry de champignons ! Fais vite !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire un curry de champignons ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "curry-champignons"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "cook-curry",
+          "name": "cook-champignons",
+          "title": "Cuisiner un curry de champignons",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "random-action",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-joelle"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-julien"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-goh"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-xukkoids"
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "curryType": "MIXED_MUSHROOMS",
+          "rating": null,
+          "flavour": null
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-epices",
+      "displayText": "Curry Epices",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "infotalk-epices",
+          "title": "Dialogue info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Il faudrait préparer un curry d'épices ! Fais vite !"
+              ]
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJe dois faire un curry d'épices ! Au boulot !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "curry-epices"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "cook-curry",
+          "name": "cook-epices",
+          "title": "Cuisiner un curry d'épices",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "random-action",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-joelle"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-julien"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-goh"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "curryexpress-xukkoids"
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "curryType": "SPICE_MIX",
+          "rating": null,
+          "flavour": null
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-goh",
+      "displayText": "Livrer Goh",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "curryinfo-goh",
+          "title": "Infos",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§3§lAnnah: §3Tu as le curry ? Il faut le livrer à Goh, fonce !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "livrer-goh",
+          "title": "Livrer Goh",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "all-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_salad_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_spice_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_mixed_mushrooms",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_instant_noodles",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Mais ou est le plat que j'ai commandé ?"
+                  ]
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "gohmew",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-xukkoids",
+      "displayText": "Livrer Xukkoids",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "curryinfo-xukkoids",
+          "title": "Infos",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§3§lAnnah: §3Tu as le curry ? Il faut le livrer à Xukkoids, fonce !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "livrer-Xukkoids",
+          "title": "Livrer Xukkoids",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "all-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_salad_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_spice_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_mixed_mushrooms",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_instant_noodles",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Mais ou est le plat que j'ai commandé ?"
+                  ]
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "safarivoyageur1",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-julien",
+      "displayText": "Livrer Julien Lepersian",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "curryinfo-julien",
+          "title": "Infos",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§3§lAnnah: §3Tu as le curry ? Il faut le livrer à Julien Lepersian, fonce !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "livrer-julien",
+          "title": "Livrer Julien Lepersian",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "all-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_salad_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_spice_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_mixed_mushrooms",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_instant_noodles",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Mais ou est le plat que j'ai commandé ?"
+                  ]
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "julienlepersian",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "curryexpress-joelle",
+      "displayText": "Livrer Joëlle",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "curryinfo-joelle",
+          "title": "Infos",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§3§lAnnah: §3Tu as le curry ? Il faut le livrer à l'infirmière Joelle, fonce !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "livrer-joelle",
+          "title": "Livrer l'infirmière Joelle",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_salad_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-nouilles"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_instant_noodles",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-champignons"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_mixed_mushrooms",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "carrying-item",
+                  "inverted": false,
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": ""
+                }
+              ],
+              "actions": [
+                {
+                  "type": "unset-flag",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "flag": "curry-epices"
+                },
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Merci pour la livraison ! Voici ton paiement !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": "2",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "money add {{player}} 10k",
+                  "asPlayer": false
+                },
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "curryexpress"
+                },
+                {
+                  "type": "take-item",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "item": "pixelmon:dish_curry_spice_mix",
+                  "quantity": 1,
+                  "meta": -1,
+                  "mark": "",
+                  "nbt": ""
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 41",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "curry-legumes"
+                },
+                {
+                  "type": "all-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_salad_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_spice_mix",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_mixed_mushrooms",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    },
+                    {
+                      "type": "carrying-item",
+                      "inverted": "true",
+                      "item": "pixelmon:dish_curry_instant_noodles",
+                      "quantity": 1,
+                      "meta": -1,
+                      "marker": "",
+                      "nbt": ""
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§bHello ! Mais ou est le plat que j'ai commandé ?"
+                  ]
+                }
+              ]
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "joelle",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

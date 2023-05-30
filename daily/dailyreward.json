@@ -1,0 +1,972 @@
+{
+  "type": "repeatable",
+  "name": "dailyreward",
+  "title": "Daily Reward",
+  "stages": [
+    {
+      "name": "daily1",
+      "displayText": "Dailylogin",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "login",
+          "title": "Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTa récompense journalière est disponible ! Va voir le livreur Amagnézone ! ",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 51",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "login-talk",
+          "title": "Parler au deliveryman",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aVoici ta récompense journalière ! Repasse demain !",
+              "useActionBar": false
+            },
+            {
+              "type": "change-counter",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "DailyReward",
+              "counterStore": "",
+              "amount": "1",
+              "lowerCap": "0",
+              "upperCap": 99999
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": 0,
+                      "maximumValue": "1"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_rare_candy 10",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "1",
+                      "maximumValue": "2"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_ultra_ball 10",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "2",
+                      "maximumValue": "3"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_exp_share",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "3",
+                      "maximumValue": "4"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_pc",
+                      "asPlayer": false
+                    },
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_healer",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "4",
+                      "maximumValue": "5"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} cooked_beef 32",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "5",
+                      "maximumValue": "6"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_master_ball",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "6",
+                      "maximumValue": "7"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_wishing_piece",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "7",
+                      "maximumValue": "8"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_rare_candy 32",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "8",
+                      "maximumValue": "9"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_ultra_ball 32",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "9",
+                      "maximumValue": "10"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_hourglass_gold 10",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "10",
+                      "maximumValue": "11"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_exp_all",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "11",
+                      "maximumValue": "12"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} cooked_beef 64",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "12",
+                      "maximumValue": "13"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "money give {{player}} 20000",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "13",
+                      "maximumValue": "14"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_ranch 3",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "14",
+                      "maximumValue": "15"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_rare_candy 48",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "15",
+                      "maximumValue": "16"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_ultra_ball 48",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "16",
+                      "maximumValue": "17"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_hourglass_gold 20",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "17",
+                      "maximumValue": "18"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} minecraft:purple_shulker_box 5",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "18",
+                      "maximumValue": "19"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_macho_brace",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "19",
+                      "maximumValue": "20"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cc give p Comete 1 {{player}}",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "20",
+                      "maximumValue": "21"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} cake 16",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "21",
+                      "maximumValue": "22"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_rare_candy 64",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "22",
+                      "maximumValue": "23"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_master_ball",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "23",
+                      "maximumValue": "24"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_hourglass_gold 30",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "24",
+                      "maximumValue": "25"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_orb",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "25",
+                      "maximumValue": "26"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} exp_bottle 64",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "26",
+                      "maximumValue": "27"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cmi give {{player}} pixelmon_wishing_piece 5",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "27",
+                      "maximumValue": "28"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "money give {{player}} 20000",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "28",
+                      "maximumValue": "29"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "cc give p Galaxie 1 {{player}}",
+                      "asPlayer": false
+                    }
+                  ]
+                },
+                {
+                  "type": "run-actions",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [
+                    {
+                      "type": "have-counter",
+                      "inverted": false,
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "minimumValue": "29",
+                      "maximumValue": "30"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "run-command",
+                      "delay": 0,
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "command": "pokerandom {{player}} shiny",
+                      "asPlayer": false
+                    },
+                    {
+                      "type": "change-counter",
+                      "delay": "5",
+                      "applyToAll": false,
+                      "runningChance": 100,
+                      "requirements": [],
+                      "counterName": "DailyReward",
+                      "counterStore": "",
+                      "amount": "-50",
+                      "lowerCap": "0",
+                      "upperCap": "1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 51",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "daily-delivery",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "84600"
+}

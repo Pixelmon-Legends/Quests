@@ -1,0 +1,310 @@
+{
+  "name": "capturermew",
+  "title": "Capturer Mew",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "category": "legendary",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "stages": [
+    {
+      "name": "gohmewstart",
+      "displayText": "§aParler à Goh",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "gohmew",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "gostart",
+          "title": "§aParle avec Goh",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "gohmew1",
+              "chatName": "",
+              "chatPages": [
+                "§aHello! Je suis l'assistant du Pr. Ras",
+                "§aTu connais l'histoire de l'ancêtre de tous les Pokémon?"
+              ],
+              "choices": [
+                "§aVas-y je t'ecoute",
+                "§eJe m'en fiche un peu là..."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "0",
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "gohmew1",
+          "choiceNumber": 2,
+          "name": "select2",
+          "title": "Dire Je m'en fiche",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aZut c'est dommage, reviens me voir quand tu sera intéressé..."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "gohmew1",
+          "choiceNumber": 1,
+          "name": "select1",
+          "title": "Dire Oui je t'ecoute",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "gohmew2",
+              "chatName": "",
+              "chatPages": [
+                "§aAlors il était une fois..."
+              ],
+              "choices": [
+                "§eTu peut aller plus vite quand même ?!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "gohmew2",
+          "choiceNumber": 1,
+          "name": "select1-1",
+          "title": "Suite",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aOk ok! Donc j'ai entendu dire que Mew ne spawn que dans certains biomes! Même si ce n'est qu'une légende..."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "gohmew2"
+    },
+    {
+      "name": "gohmew2",
+      "displayText": "Capturer Mew",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Mew",
+          "timesToComplete": 1,
+          "name": "catch",
+          "title": "Capturer Mew",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "/pwiki Mew",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as capturé Mew! Retourne voir Goh il va sûrement être impressionné.",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "gohmew3"
+    },
+    {
+      "name": "gohmew3",
+      "displayText": "Retourner voir Goh",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "gohmew",
+          "uuid": "",
+          "cancelInteraction": true,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "gohfinish",
+          "title": "§2Parler à Goh",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aOh c'était donc vrai! Tu l'as trouvé! Incroyable!",
+                "§aTiens je t'offre ceci pour avoir réussi à trouver un pokémon aussi rare!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "amount": 55,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.souslecamion",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "command": "money give {{player}} 5000",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 11",
+              "asPlayer": false
+            },
+            {
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "complete-quest"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "0",
+          "waypointZ": "0",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": ""
+    }
+  ],
+  "prerequisites": [],
+  "taskSets": [],
+  "type": "basic"
+}

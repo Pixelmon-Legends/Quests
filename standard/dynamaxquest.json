@@ -1,0 +1,688 @@
+{
+  "name": "dynamaxquest",
+  "title": "Quête Dynamax",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "category": "standard",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "stages": [
+    {
+      "name": "dynamax1",
+      "displayText": "Parler au Pr.Sonya",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "gigamaxsonya",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "startdynamax",
+          "title": "§aParler au Pr.Sonya",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "dynamax1",
+              "chatName": "",
+              "chatPages": [
+                "§aSalut! On a découvert une nouvelle manière de combattre avec les Pokémon!",
+                "§aÇa te dit d'essayer?§a"
+              ],
+              "choices": [
+                "§aWaouh trop cool! Bien sûr!§c",
+                "§cBof..."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [
+            {
+              "type": "have-pokemon-in-level-range",
+              "inverted": false,
+              "spec": "",
+              "minLevel": "50",
+              "maxLevel": 100
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "dynamax1",
+          "choiceNumber": 1,
+          "name": "dynamaxchoix-oui",
+          "title": "Choisir ok",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aTrès bien, il faudrait alors que tu trouve un Ectoplasma,  une Maxi soupe, ainsi que des bonbons gigamax!",
+                "§aSi jamais, il existe une recette pour la soupe, mais je ne l'ai pas trouvé sur marmiton...",
+                "§aReviens me voir dès que tu as tout!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "dynamax1",
+          "choiceNumber": 2,
+          "name": "dynamaxchoix-non",
+          "title": "Choisir bof",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aOk c'est dommage, reviens me voir si tu changes d'avis."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "mark": "gigamaxsonya",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "startdynamax-not",
+          "title": "Parler au Pr.Sonya not",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aSalut! J'ai quelque chose à te proposer... mais tu n'est pas encore assez puissant...",
+                "§aIl te faut des Pokémon au moins niveau 50 pour commencer."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [
+            {
+              "type": "have-pokemon-in-level-range",
+              "inverted": "true",
+              "spec": "",
+              "minLevel": "50",
+              "maxLevel": 100
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "dynamax2"
+    },
+    {
+      "name": "dynamax2",
+      "displayText": "Trouver tous les éléments",
+      "displayTextLineCount": 2,
+      "canDrop": false,
+      "nextStage": "dynamax3",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "name": "havesoup",
+          "title": "§aAvoir une Maxi Soupe",
+          "titleLineCount": 2,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§2Tu as trouvé la Maxi Soupe! Bien joué!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "get-item",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "item": "pixelmon:max_soup",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "name": "havecandy",
+          "title": "§aAvoir 10 Bonbons Dynamax",
+          "titleLineCount": 2,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§2Tu as trouvé les 10 bonbon dynamax! Bien joué!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "get-item",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "item": "pixelmon:dynamax_candy",
+          "quantity": "10",
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        }
+      ]
+    },
+    {
+      "name": "dynamax3",
+      "displayText": "Retourner parler au Pr.Sonya",
+      "displayTextLineCount": 2,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "gigamaxsonya",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "talksonya2",
+          "title": "§2Parler au Pr.Sonya",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aTu as tout récupéré?! Bien joué!",
+                "§aRegarde, maintenant on donne tout a ton Pokémon et...",
+                "§aVoilà, il est désormais capable de Gigamaxer!",
+                "§aAh! Mais je vois que tu n'as pas le bracelet!",
+                "§aJe veux bien t'en donné un...Mais pour ça bats moi en combat!",
+                "§aParle-moi quand tu es prêt!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "command": "pokeedit {{player}} 1 fgigamax dynlvl:10",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:max_soup",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:dynamax_candy",
+              "quantity": "10",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "requirements": [
+            {
+              "inverted": "false",
+              "type": "all-of",
+              "requirements": [
+                {
+                  "inverted": false,
+                  "type": "have-pokemon-in-party",
+                  "spec": "Gengar",
+                  "slot": "1"
+                },
+                {
+                  "item": "pixelmon:max_soup",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "",
+                  "inverted": false,
+                  "type": "carrying-item"
+                },
+                {
+                  "item": "pixelmon:dynamax_candy",
+                  "quantity": 10,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "",
+                  "inverted": false,
+                  "type": "carrying-item"
+                }
+              ]
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-5068",
+          "waypointZ": "-4978",
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        },
+        {
+          "mark": "gigamaxsonya",
+          "uuid": "",
+          "cancelInteraction": "false",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "missing",
+          "title": "Missing item",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "message": "§cIl te manque des éléments! Où sont-ils passés?!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [
+            {
+              "requirements": [
+                {
+                  "item": "pixelmon:max_soup",
+                  "quantity": 1,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "",
+                  "inverted": "true",
+                  "type": "carrying-item"
+                },
+                {
+                  "item": "pixelmon:dynamax_candy",
+                  "quantity": 10,
+                  "meta": -1,
+                  "marker": "",
+                  "nbt": "",
+                  "inverted": "true",
+                  "type": "carrying-item"
+                }
+              ],
+              "inverted": "false",
+              "type": "any-of"
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "mark": "gigamaxsonya",
+          "uuid": "",
+          "cancelInteraction": "false",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "missing-pokemon",
+          "title": "Missing pokemon",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "message": "§cIl te manque un Ectoplasma dans ton slot 1 !",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": "true",
+              "spec": "Gengar",
+              "slot": "1"
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "dynamax4"
+    },
+    {
+      "name": "dynamax4",
+      "displayText": "Parler au Pr.Sonya pour lancer le combat",
+      "displayTextLineCount": 2,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "gigamaxsonya",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "prebattlesonya",
+          "title": "§2Parler au Pr.Sonya",
+          "titleLineCount": 2,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aTu es prêt? Alors c'est parti!",
+                "§aAllons dans un endroit plus calme."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command",
+              "command": "tppos {{player}} -5072 97 -4980 0 0",
+              "asPlayer": false
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-5068",
+          "waypointZ": "-4978",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "mark": "battlesonya",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647,
+          "timesToComplete": 1,
+          "name": "battlesonya",
+          "title": "§2Battre le Pr.Sonya",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command",
+              "command": "tppos {{player}} -5071 63 -4987 0 270",
+              "asPlayer": false
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-trainer",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "nextStage": "dynamax5"
+    },
+    {
+      "name": "dynamax5",
+      "displayText": "Parler au Pr.Sonya",
+      "displayTextLineCount": "1",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "finishras",
+          "title": "§2Parler avec le Pr.Sonya",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aBien joué! Tu m'as battue alors que tu n'avais pas le Dynamax!",
+                "§aTiens voici ton bracelet, ainsi que quelques autres récompenses!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "command": "dynamaxband {{player}}",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.dynamaxeur",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "command": "money give {{player}} 10000",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "message": "§2Tu as reçu le &6&lBracelet Dynamax §2!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 33",
+              "asPlayer": false
+            },
+            {
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "complete-quest"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-5068",
+          "waypointZ": "-4978",
+          "waypointRadius": 10,
+          "trackAutomatically": "false"
+        }
+      ],
+      "nextStage": ""
+    }
+  ],
+  "prerequisites": [],
+  "taskSets": [],
+  "type": "basic"
+}

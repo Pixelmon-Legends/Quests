@@ -1,0 +1,315 @@
+{
+  "type": "basic",
+  "name": "yoshi2",
+  "title": "La requête de Yoshi",
+  "stages": [
+    {
+      "name": "yoshi1",
+      "displayText": "Parler  à Yoshi",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "yoshichat",
+          "title": "§2Parler  à Yoshi",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Yoshi !!  §a§oVous ne parlez pas la langue de ce petit dinosaure mais vous comprenez rapidement que ce n'est pas un Pokémon, et qu'il ne vient pas du même univers que vous.",
+                "§2Yoshi ? §a§oIl vous demande si dans votre monde, il y a des gros moustachus qui s'amusent à vous monter dessus, vous faire manger n'importe quoi et qui n'hésitent pas à vous laisser tomber pour atteindre leurs objectifs ?§c"
+              ],
+              "choiceID": "yoshichat1",
+              "choices": [
+                "§c§oFaire oui de la tête avec un grand sourire§a",
+                "§a§oFaire non de la tête"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "yoshi",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "oui1",
+          "title": "Dire Oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§cYOSHI ?!! §a§oVous n'avez pas compris mais il est préférable de partir..."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "yoshichat1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "non1",
+          "title": "Dire Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2YOSHI ! §a§oVous n'avez pas compris mais il a l'air content !",
+                "§2Yoshi ? §a§oIl vous demande si vous pouvez l'aider à devenir un Pokémon ?"
+              ],
+              "choiceID": "yoshichat2",
+              "choices": [
+                "§aJe vais te trouver un Pokémon qui te ressemble et qui t'expliquera ses techniques !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "yoshichat1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "select-choice",
+          "name": "choix2",
+          "title": "Dire Oui2",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "yoshichat2",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "yoshi2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "yoshi2",
+      "displayText": "Apporter votre Pokémon à à Yoshi",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "yoshiend",
+          "title": "§2Donner le Pokémon à Yoshi",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Tyrunt",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Yoshi ! §a§oYoshi vous remercie !",
+                "§a§oLes deux Pokémon s'entendent à merveille, ils vont s'entrainer dur pour aller vaincre ce fameux moustachu qui à tant traumatisé Yoshi"
+              ]
+            },
+            {
+              "type": "take-pokemon",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Tyrunt",
+              "search": "Party",
+              "box": -1,
+              "slot": -1,
+              "maxToTake": 1
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "15",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Tyrantrum ct:magma",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": "true"
+            },
+            {
+              "type": "send-message",
+              "delay": "15",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aQuelques jours plus tard, Yoshi et votre Ptiranidur sont devenus plus forts que le moustachu. Votre pokémon est revenu dans votre PC avec un trophée en plus !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 4",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5000",
+          "waypointZ": "-5090",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "yoshi",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "yoshiend-copy",
+          "title": "PAs de pokémon",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": "true",
+              "spec": "Tyrunt",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Yoshi ?! §a§oYoshi n'a pas l'air content ....",
+                "§a§oTu n'as pas le pokémon qu'il lui faut ! Reviens plus tard !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5000",
+          "waypointZ": "-5090",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "yoshi",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

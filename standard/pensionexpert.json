@@ -1,0 +1,1144 @@
+{
+  "type": "basic",
+  "name": "pensionexpert",
+  "title": "Elevage de Pokémon Expert",
+  "stages": [
+    {
+      "name": "pensionexpert1",
+      "displayText": "Parler à Géraldine (Egg Move)",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginnotifpension2",
+          "title": "Message login pension",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§a§lGéraldine, de la Pension: §aHé {{player}}, viens me voir si tu veux en savoir plus sur la reproduction des Pokémon !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "pensionchat1-copy",
+          "title": "§aParler à Géraldine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "pensionchat1",
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dBonjour {{player}}, Si tu es là c'est que tu es prêt à passer à l'étape supérieure de la formation sur l'élevage ?§9"
+              ],
+              "choices": [
+                "§cNon je vais me contenter de la base§2",
+                "§aOui, je souhaite préparer des Pokémon Stratégiques !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choix1-copy",
+          "title": "choix 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dD'accord, reviens me voir si tu changes d'avis !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pensionchat1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choix2-copy",
+          "title": "choix 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dOk ! J'ai plein de choses à t'apprendre !",
+                "§dHum ... Par quoi je vais bien pouvoir commencer ?",
+                "§dJe vais t'expliquer les étapes dans l'ordre où tu dois les faire pour avoir un Pokémon parfait sans perdre trop de temps",
+                "§dEtape N°1: Les Egg Moves !",
+                "§dC'est super important de toujours commencer votre breeding par les Egg Moves !",
+                "§dCe sont des capacités que le Pokémon ne peut apprendre que pendant la reproduction ",
+                "§dIl faut donc trouver un pokémon qui fait partie du même groupe œuf, ",
+                "§dVérifier que le Pokémon connait bien l'attaque désirée et faire un œuf avec.",
+                "§dJe vais te donner un exercice pour que tu fasses un egg move",
+                "§dJe veux que tu me présentes un Minisange qui connaît l'attaque Atterissage",
+                "§dPour cela tu dois reproduire un Minisange Femelle avec un Goélise Mâle qui connaît l'attaque Atterrissage ! "
+              ],
+              "choiceID": "eggmove",
+              "choices": [
+                "§aPourquoi forcément un Minisange femelle ?",
+                "§aOk j'ai compris !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pensionchat1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "select-choice",
+          "name": "explicaztion",
+          "title": "choix femelle",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dTrès bonne question {{player}}!",
+                "§dEn fait tu dois retenir que lorsque tu reproduis deux pokémon différents, le pokémon qui sera dans l'oeuf sera de la même espèce que la maman",
+                "§dDonc comme ici tu veux un Minisange avec Atterrissage il faut que la maman soit un Minisange et le papa un Goélise.  ",
+                "§dPour te faire gagner du temps, je t'offre la CT: Atterrissage à apprendre à ton Goélise  "
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:tm_gen7",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": "{tm:19s}"
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "pensionexpert2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "eggmove",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "ok",
+          "title": "choixok",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dSi tu as compris, je te laisse faire le eggmove tranquillement, reviens me voir pour la suite !",
+                "Pour gagner du temps, je t'offre la CT: Atterrissage à apprendre à ton Goélise."
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:tm_gen7",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": "{tm:19s}"
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "pensionexpert2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "eggmove",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert2",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert2",
+      "displayText": "Capturer les Pokémon",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "catch-pokemon",
+          "name": "catchminisange",
+          "title": "Capturer un Minisange femelle",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "rookidee g:female"
+        },
+        {
+          "type": "catch-pokemon",
+          "name": "catchgoelise",
+          "title": "Capturer un Goélise male",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "wingull g:male"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert3",
+      "displayText": "Faire un EggMove",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "msg-copy-copy",
+          "title": "Message",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai les deux pokémon qu'il me faut, maintenant je peux apprendre Atterrissage à Goélise et faire le Egg Move !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "hatch-pokemon",
+          "name": "minisange2",
+          "title": "§aFaire éclore un œuf de Minisange ",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mon bébé Minisange ! Je vais le montrer à Géraldine.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "rookidee lvl:1 m1:Roost"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert4",
+      "displayText": "Parler à Géraldine (Egg Move2)",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talent1",
+          "title": "§aParler à Géraldine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dOh mais c'est un bébé Minisange qui connaît Atterrissage ?! Trop bien !",
+                "§dAvant de continuer sache qu'en stratégie Pokémon, Minisange se joue parfois avec Anti-Brume qui demande aussi un eggmove",
+                "§dDonc si tu le souhaites tu peux faire un second eggmove en faisant une reproduction",
+                "§dEntre un Minisange avec Atterrissage et un autre pokémon mâle connaissant Anti Brume",
+                "§dMais je ne vais pas te forcer à le faire pour la suite de la formation, c'est seulement si tu en as envie !",
+                "§dEtape N°2: Les Talents",
+                "§dJe pense que tu le sais déjà mais chaque pokémon possède un talent, c'est une capacité passive qui le rend plus ou moins puissant.",
+                "§dCertains Pokémon n'ont qu'un seul talent possible, d'autres deux, et d'autres peuvent même avoir un troisème talent que l'on nomme talent caché",
+                "§dLes talents cachés sont plus rares que les deux autres talents, donc si tu en trouves un, garde le précieusement !",
+                "§dLe Pokémon dans l'œuf à 60% de chance de récupérer le même talent que la maman ",
+                "§dDonc durant ta reproduction fais bien attention que la maman ait le bon talent sinon tu vas perdre du temps",
+                "§dTu as de la chance pour notre Minisange tu n'as pas besoin du Talent caché, on va avoir besoin du Talent Regard Vif",
+                "§dDonc je te laisse revenir me voir dès que tu aura un Minisange femelle avec le talent Regard Vif"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert5",
+      "displayText": "Parler à Géraldine (Talent)",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talent1-copy",
+          "title": "§aParler à Géraldine",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Rookidee g:female ab:Keen Eye m1:Roost",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dVoilà ! avec ce Pokémon tu as une bonne base pour bien continuer ton breeding ! On passe à la suite !",
+                "§dEtape N°3: Les IVs",
+                "§dC'est l'étape la plus longue, mais aussi la plus importante !",
+                "§dUn IV, c'est une valeur entre 0 et 31 qui te montre si ton pokémon est fort dans une statistique",
+                "§dPar exemple si ton Pokémon a 0 iv en vitesse, il sera plus lent qu'un pokémon identique avec 31 ivs",
+                "§dDonc ton objectif va être d'avoir 31 ivs dans toutes les stats utiles à ton pokémon",
+                "§dTu peux connaître les ivs de ton pokémon grâce à la commande §c/ivs [slot du pokémon]",
+                "§dDans notre cas il nous faudrait un minisange avec 31 ivs partout sauf en attaque spéciale.",
+                "§dMAIS avant de parler de ton Minisange, il faut absolument que tu trouves des objets très utiles dans le breeding ! Je vais te les présenter:",
+                "§dDéjà tu as tous les items \"pouvoir\" qui permet de transférer un iv d'un parent à coup sûr au bébé",
+                "§dpar exemple il y a: le Poids pour les PV, les poignets pour l'attaque, la ceinture pour la défense",
+                "§dLa lentille pour l'attaque spéciale, le bandeau pour la défense spéciale et enfin la chaîne pour la vitesse",
+                "§dDonc si on prend un exemple, imaginons tu as un minisange avec 31 IVs en Attaque et l'autre 31 IVs en défense, alors tu met les poignets pouvoir à l'un et la ceinture pouvoir à l'autre",
+                "§dEt le bébé aura forcément l'attaque et la défense à 31",
+                "§dPour la suite tu auras besoin du noeud destin",
+                "§dCet objet permet de transférer 5 IVs des parents au bébé, mais les IVS choisis sont aléatoires par contre",
+                "§dAprès il faut avoir de la chance et espérer avoir les 31 placés au bon endroit",
+                "§dTrouve déjà ces sept objets et je t'expliquerai la suite ! ",
+                "§dTu peux les trouver en battant des boss rares (les bleus) ou en les achetant aux autres joueurs dans le GTS (touche $ pour l'ouvrir)"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "notalent1",
+          "title": "Parler à Géraldine no talent",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": "true",
+              "spec": "Rookidee g:female ab:Keen Eye m1:Roost",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dTu n'as pas encore le bon Minisange !",
+                "§dN'oublie pas tu dois revenir me voir avec un Minisange qui connaît Atterrissage et le talent Regard Vif !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert7",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert7",
+      "displayText": "Trouver les objets",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "powerweight",
+          "title": "Obtenir le Poids Pouvoir",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:power_weight",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "powerbracer",
+          "title": "Obtenir la Poignée Pouvoir",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:power_bracer",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "powerbelt",
+          "title": "Obtenir la Ceinture Pouvoir",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:power_belt",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "powerlens",
+          "title": "Obtenir la Lentille Pouvoir",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:power_lens",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "powerband",
+          "title": "Obtenir le Bandeau Pouvoir",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:power_band",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "poweranklet",
+          "title": "Obtenir la Chaîne Pouvoir",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:power_anklet",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "get-item",
+          "name": "destinyknot",
+          "title": "Obtenir le Nœud Destin",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:destiny_knot",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert8",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert8",
+      "displayText": "Parler à Géraldine (Talent)",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "validation7itempouvoir",
+          "title": "Message validation",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai trouvé tous les objets, plus qu'à retourner voir Géraldine !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talent1-copy-copy",
+          "title": "§aParler à Géraldine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dFélicitations tu as tout trouvé !",
+                "§dMaintenant avec ces objets tu as les moyens d'avoir les IVs à 31 pour ton pokémon, je vais t'expliquer la dernière étape.",
+                "§dEtape N°4: La Nature",
+                "§dLa nature varie en fonction du pokémon.",
+                "§dSelon la nature, ton pokémon aura une stat améliorée, mais une autre qui sera empirée.",
+                "§dPar exemple un pokémon de nature Rigide aura +10% en attaque mais -10% en attaque spéciale.",
+                "§dIl y a 25 natures différentes, tu as donc 1 chance sur 25 que ton pokémon ait la nature souhaitée",
+                "§dUne fois que tu l'as, tu peux utiliser l'objet \"Pierre Stase\" qui permet de transférer la nature du porteur à son enfant",
+                "§dTu peux avoir des pierres stase facilement en capturant des Nodulithe, ils en ont souvent sur eux ! Et les Nodulithe tu en trouves dans le safari dans la grotte !",
+                "§dJe te laisse aller en chercher une et revenir me voir après."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert9",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert9",
+      "displayText": "Trouver les objets",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "getpierrestase",
+          "title": "§aTrouver les objets",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai la Pierre Stase ! Je dois retourner voir Géraldine.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:ever_stone",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert10",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert10",
+      "displayText": "Parler à Géraldine (Talent)",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talent1-copy-copy-copy",
+          "title": "§aParler à Géraldine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dEt bien voilà tu as maintenant tout ce qu'il te faut pour faire un pokémon parfait pour le combat !",
+                "§dDonc pour te faire le résumé d'un bon breeding:",
+                "§dTu commence par faire le ou les egg moves pour ton pokémon",
+                "§dPuis tu fais en sorte d'avoir l'egg move sur un pokémon qui a le bon talent",
+                "§dEnsuite tu passes ses IVs à 31 partout (sauf dans la stat dont il a pas besoin)",
+                "§dEt enfin tu essayes d'avoir la bonne nature !",
+                "§dDès que tu as un bébé meilleur qu'un parent tu le remplaces, alors oui ça fait de l'inceste mais chez les Pokémons ça passe ! ",
+                "§dC'est selon moi la manière la plus rapide d'avoir un pokémon parfait, après tu peux faire les étapes dans un ordre différent si tu le souhaites !",
+                "§dPour voir si tu maîtrise tout, je vais te donner l'exercice final !",
+                "§dRamène moi un Minisange Stratégique !",
+                "§dC'est à dire un Minisange avec un ou plusieurs egg moves, le Talent Regard Vif, 31 IVs partout (sauf en attaque spéciale) et de Nature Malin !",
+                "§dPour t'aider je te donne un Minisange avec un IVs à 31."
+              ]
+            },
+            {
+              "type": "give-pokemon",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "rookidee ivspd:31 ba:moon_ball m1:Roost",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": false,
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert11",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert11",
+      "displayText": "Avoir Minisange Strat",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "hatch-pokemon",
+          "name": "Ministart",
+          "title": "§aAvoir Minisange Strat",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai un Minisange stratégique !!! Il faut que je montre ça à Géraldine.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "rookidee ivhp:31 ivatk:31 ivdef:31 ivspdef:31 ivspd:31 ab:KeenEye n:impish m1:Roost"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pensionexpert12",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pensionexpert12",
+      "displayText": "Parler à Géraldine (Talent)",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talent1-copy-copy-copy-copy",
+          "title": "§aParler à Géraldine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dFélicitations tu as ton Minisange stratégique !",
+                "§dJe pense que je n'ai plus rien à t'aprendre",
+                "§dL'élève a dépassé le maître §o*sniffff*",
+                "§dJ'espère que tu vas continuer l'élevage de Pokémon ! Et que tu viendras me montrer tes Pokémon parfaits de temps en temps !",
+                "§dBon courage {{player}}"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 50000",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 18",
+              "asPlayer": false
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.eleveurdelextreme",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "amount": "160",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [
+    {
+      "type": "simple",
+      "description": "Finir la quête de la pension",
+      "requirements": [
+        {
+          "type": "have-completed-quest",
+          "inverted": false,
+          "questName": "pension"
+        }
+      ]
+    }
+  ],
+  "taskSets": []
+}

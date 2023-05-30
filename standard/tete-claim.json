@@ -1,0 +1,1220 @@
+{
+  "type": "basic",
+  "name": "tete-claim",
+  "title": "Trouvez les tous !",
+  "stages": [
+    {
+      "name": "teteclaim1",
+      "displayText": "Parler au vendeur de claims",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk-claim",
+          "title": "Parler au vendeur de claims",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aBonjour {{player}} ! Tu cherches à obtenir des claims ?",
+                "§aSi tu veux j'ai créé une chasse au trésor qui va te permettre d'en obtenir !",
+                "§aTrouve tous ces blocks magiques comme celui qui se trouve derrière moi et je t'en offrirai !",
+                "§aIl y en a §c10 §aà trouver en tout dans le §cSpawn§a!"
+              ]
+            },
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "10",
+              "lowerCap": "0",
+              "upperCap": "10"
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "vendeurclaim",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "teteclaim2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "teteclaim2",
+      "displayText": "Trouver les blocks magiques",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-block",
+          "name": "tete1",
+          "title": "Trouver la 1ere tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-4889",
+          "maxX": "-4889",
+          "minY": "138",
+          "maxY": "138",
+          "minZ": "-5080",
+          "maxZ": "-5080",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete2",
+          "title": "Trouver la 2eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-4982",
+          "maxX": "-4982",
+          "minY": "109",
+          "maxY": "109",
+          "minZ": "-4977",
+          "maxZ": "-4977",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete3",
+          "title": "Trouver la 3eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-5000",
+          "maxX": "-5000",
+          "minY": "134",
+          "maxY": "134",
+          "minZ": "-5082",
+          "maxZ": "-508",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete4",
+          "title": "Trouver la 4eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-5113",
+          "maxX": "-5113",
+          "minY": "69",
+          "maxY": "69",
+          "minZ": "-5234",
+          "maxZ": "-5234",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete5",
+          "title": "Trouver la 5eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-5112",
+          "maxX": "-5112",
+          "minY": "137",
+          "maxY": "137",
+          "minZ": "-5129",
+          "maxZ": "-5129",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete6",
+          "title": "Trouver la 6eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-5082",
+          "maxX": "-5082",
+          "minY": "83",
+          "maxY": "83",
+          "minZ": "-4957",
+          "maxZ": "-4957",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete7",
+          "title": "Trouver la 7eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-5042",
+          "maxX": "-5042",
+          "minY": "149",
+          "maxY": "149",
+          "minZ": "-5065",
+          "maxZ": "-5065",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete8",
+          "title": "Trouver la 8eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-4999",
+          "maxX": "-4999",
+          "minY": "51",
+          "maxY": "51",
+          "minZ": "-5009",
+          "maxZ": "-5009",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete9",
+          "title": "Trouver la 9eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-4980",
+          "maxX": "-4980",
+          "minY": "68",
+          "maxY": "68",
+          "minZ": "-5060",
+          "maxZ": "-5060",
+          "cancelInteraction": false,
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "tete10",
+          "title": "Trouver la 10eme tête",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "change-counter",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "counterName": "teteclaim",
+              "counterStore": "",
+              "amount": "-1",
+              "lowerCap": "0",
+              "upperCap": "10"
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "true",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "message": "§aTu as trouvé 1 bloc magique, bravo ! Il t'en reste {{counter:teteclaim}} à trouver !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "f powerboost add p {{player}} 1",
+              "asPlayer": false
+            },
+            {
+              "type": "run-actions",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-counter",
+                  "inverted": "false",
+                  "counterName": "teteclaim",
+                  "counterStore": "",
+                  "minimumValue": "0",
+                  "maximumValue": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aTu as trouvé le dernier bloc magique, bravo !",
+                  "useActionBar": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 56",
+                  "asPlayer": false
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-4905",
+          "maxX": "-4905",
+          "minY": "96",
+          "maxY": "96",
+          "minZ": "-5018",
+          "maxZ": "-5018",
+          "cancelInteraction": false,
+          "blocks": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

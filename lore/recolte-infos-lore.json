@@ -1,0 +1,780 @@
+{
+  "type": "basic",
+  "name": "recolte-infos-lore",
+  "title": "A la recherche d'Informations",
+  "stages": [
+    {
+      "name": "info-lore1",
+      "displayText": "Parler à Izabella",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk-izabella",
+          "title": "Parler à Izabella",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! {{player}}, tu te souviens de moi ?",
+                "§aC'est moi qui te donne les info quand tu es en mission ! Ahah tu ne t'y attendait pas !",
+                "§aBref, j'ai des nouvelles concernant le disque que tu à ramené, la plupart de son contenu est endommagé...",
+                "§aMais on a réussi a en récupérer une partie !",
+                "§aMalheureusement, c'est crypté, et à bord du vaisseau qui est toujours immobilisé, on a pas une puissance de calcul suffisante.",
+                "§aPar contre en ville, le Pr.Ras possède de très puissant ordinateurs, amène lui le disque dur, elle devrait pouvoir en tirer quelque chose !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "izabella-vaisseau",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "info-lore2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "info-lore2",
+      "displayText": "Aller voir le Pr.Ras",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk-ras-lore",
+          "title": "Voir le Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aBonjour {{player}}, ça faisait longtemps !",
+                "§aTu viens de la part d'Izabella ? Je la connais bien et nous sommes très amies !",
+                "§aEt il faudrait faire analyser ce disque ? Attend laisse moi le brancher...",
+                "§aZut mauvais sens...",
+                "§aPas ce sens là non plus...",
+                "§aFichue connectique usb Y ... Ah voilà !",
+                "§aOulà c'est très endommagé ça ! Je vais avoir besoin de certaines choses pour t'aider !",
+                "§aIl va me falloir 3 Chrysapile si on veut avoir une chance de récupérer quoi que ce soit ! Je t'attends ici !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "info-lore3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "info-lore3",
+      "displayText": "Capturer 3 Chrysapile",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "catch-pokemon",
+          "name": "catch-chrysapile",
+          "title": "Attraper {{remaining}} Chrysapile",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai les 3 Chrysapile ! Je dois retourner voir Ras !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "3",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "spec": "Charjabug"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "info-lore4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "info-lore4",
+      "displayText": "Retourner voir Ras",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk-ras-lore-2",
+          "title": "Voir le Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aTu les as ?! Super ! Met les en slot 1,2 et 3 de ton équipe et interagis avec le pc derrière moi !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "interact-pc",
+          "title": "Interagir avec le PC",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Charjabug",
+              "slot": "1"
+            },
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Charjabug",
+              "slot": "2"
+            },
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "Charjabug",
+              "slot": "3"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§9§o[Analyse des données......]",
+                "§9§o[Injection de Chrysapile.exe....]",
+                "§9§o[Accès autorisé.]"
+              ],
+              "choiceID": "analyse1",
+              "choices": [
+                "§aAfficher les infos"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "Interagir avec le PC en ayant les Chrysapile en slot 1,2 et 3",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "dimension": 0,
+          "minX": "-5072",
+          "maxX": "-5072",
+          "minY": "64",
+          "maxY": "64",
+          "minZ": "-4965",
+          "maxZ": "-4965",
+          "cancelInteraction": false,
+          "blocks": [
+            "pixelmon:lightworkplace"
+          ]
+        },
+        {
+          "type": "select-choice",
+          "name": "choice-analyse1",
+          "title": "Choix1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§9[Lecture des données....]",
+                "§9Journal de Pr.§kTilleul §9 An 2023",
+                "§9La catastrophe que je redoutais est arrivée, l'un des §k2 pokémon §9 est tombé. Toutes les nations cryogénisent leurs citoyens et commencent l'exil de la Terre.",
+                "§9Quant à moi je reste sur place. Il faut que je continue les recherches.",
+                "§9Au cas ou je ne répond plus, mes recherches partiront aussi, j'espère qu'elles arriveront intactes au nouveau foyer de l'humanité.",
+                "§9Je vais essayer de retrouver §kYangsie pour pouvoir contrer Yinzheim.",
+                "§9§kSuite suite §9§oLe reste des données est illisible, fin de la lecture.",
+                "§9§oLe programme a détecté des coordonnées, enregistrement..."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "choiceID": "analyse1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "info-lore5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "info-lore5",
+      "displayText": "Parler à Ras",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk-ras3",
+          "title": "Paler au Pr.Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aCe message...il doit venir d'un de mes ancien collègue de la Terre, j'espère qu'il ne lui est rien arrivé.",
+                "§aLa corruption sur les données nous laisse quand même dans le vague.",
+                "§aJ'espère que ce qui se trouve à ces coordonnées nous en apprendra plus. Je les transmets à ton commandant, tu devrais aller le voir."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "info-lore6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "info-lore6",
+      "displayText": "Aller voir Rods",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talk-rod-lore",
+          "title": "Parler à Rods",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Le professeur Ras m'as transmis les résultats d'analyses. et nous avons pu localiser les coordonnées !",
+                "§3On vous y envoie dès que vous êtes prêt !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "info-lore7",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "info-lore7",
+      "displayText": "Accepter la Mission",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "tp-rod-lore",
+          "title": "Parler à Rods",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§3Est-ce que tu es prêt à partir ? J'espère que tu as préparé de bon pokémons !§a"
+              ],
+              "choiceID": "tp-lore-info",
+              "choices": [
+                "§aOui !§c",
+                "§cNon pas encore."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "capitainesafari",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "tp-lore-ok",
+          "title": "Choisir Ok",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -4341.5 47 -5818.5 0 0",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "choiceID": "tp-lore-info",
+          "choiceNumber": 1
+        },
+        {
+          "type": "interact-with-block",
+          "name": "push-button",
+          "title": "Presser bouton",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "all-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "have-flag",
+                      "inverted": false,
+                      "flag": "yangsie-info"
+                    },
+                    {
+                      "type": "have-flag",
+                      "inverted": false,
+                      "flag": "yinzheim-info"
+                    }
+                  ]
+                }
+              ],
+              "command": "tppos {{player}} -4341.5 46 -5776.5 -20 0",
+              "asPlayer": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "any-of",
+                  "inverted": false,
+                  "requirements": [
+                    {
+                      "type": "have-flag",
+                      "inverted": "true",
+                      "flag": "yangsie-info"
+                    },
+                    {
+                      "type": "have-flag",
+                      "inverted": "true",
+                      "flag": "zinzheim-info"
+                    }
+                  ]
+                }
+              ],
+              "message": "§cLa porte ne s'ouvre pas...Tu devrais peut-être aller voir ces PC de chaque coté.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-4341",
+          "maxX": "-4341",
+          "minY": "47",
+          "maxY": "47",
+          "minZ": "-5784",
+          "maxZ": "-5784",
+          "cancelInteraction": "true",
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "pc-yinzheim",
+          "title": "PC Yinzheim",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "yinzheim-info"
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§9[Info sur Yinzheim]",
+                "§9C'est un Pokémon qui est présent depuis que l'humanité existe.",
+                "§9C'est le Pokémon Légendaire de l'Oubli"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "dimension": 0,
+          "minX": "-4370",
+          "maxX": "-4370",
+          "minY": "49",
+          "maxY": "49",
+          "minZ": "-5800",
+          "maxZ": "-5800",
+          "cancelInteraction": "true",
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "pc-yangsie",
+          "title": "PC Yangsie",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "yangsie-info"
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§9[Info sur Yangsie]",
+                "§9C'est un Pokémon qui est présent depuis que l'humanité existe.",
+                "§9C'est le Pokémon Légendaire du Souvenir."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "dimension": 0,
+          "minX": "-4312",
+          "maxX": "-4312",
+          "minY": "49",
+          "maxY": "49",
+          "minZ": "-5800",
+          "maxZ": "-5800",
+          "cancelInteraction": "true",
+          "blocks": []
+        },
+        {
+          "type": "interact-with-block",
+          "name": "pc-centre",
+          "title": "PC Centre",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§9[Info sur la bataille de la Mémoire]",
+                "§9En l'an 2023, deux entités Légendaires, Yinzheim et Yangsie étaient de force égale et gardaient en équilibre la \"Mémoire\"",
+                "§9Cela permettait aus humains d'oublier certaines choses, parfois triste, ou peu importants, et de ne conserver que des éléments importants dans leur mémoire.",
+                "§9Un jour l'équilibre fut rompu par un élément extérieur, et le combat fut à l'avantage de Yinzheim.",
+                "§9Celui-ci mis Yangsie dans un état comateux. Les pouvoirs de Yinzheim, n'étant plus retenus, ils ont commencés à faire perdre la mémoire aux humains.",
+                "§9Les humains ont alors fui la Terre dans des vaisseaux équipés de capsules cryogéniques."
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} 685 46 -728",
+              "asPlayer": false
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "yangsie-info"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "yinzheim-info"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "false",
+          "dimension": 0,
+          "minX": "-4341",
+          "maxX": "-4341",
+          "minY": "47",
+          "maxY": "47",
+          "minZ": "-5773",
+          "maxZ": "-5773",
+          "cancelInteraction": "true",
+          "blocks": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "lore",
+  "state": "INACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [
+    {
+      "type": "simple",
+      "description": "Finir la quête du Safari",
+      "requirements": [
+        {
+          "type": "have-completed-quest",
+          "inverted": false,
+          "questName": "safariquest"
+        }
+      ]
+    }
+  ],
+  "taskSets": []
+}

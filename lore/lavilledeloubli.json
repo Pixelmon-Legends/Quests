@@ -1,0 +1,365 @@
+{
+  "type": "basic",
+  "name": "lavilledeloubli",
+  "title": "La ville de l'oubli",
+  "stages": [
+    {
+      "name": "lavilledeloubli1",
+      "displayText": "Parler à Billy",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkbilly",
+          "title": "Parler à Billy",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bBilly: ..........§a",
+                "§a{{player}}: Ça va petit ?§b",
+                "§bBilly: J'ai tout oublié ! Je n'sais pu ou est ma maman , je sais pu où je suis... j'ai peur...§a",
+                "§a{{player}}: Attend je vais t'aider, dis moi à quoi ressemble ta maman, je vais la retrouver !§b",
+                "§bBilly: Elle a des yeux rouges, une robe rouge et des long cheveux marrons, la dernière fois que je l'ai vu c'était pas loin d'un Zoroark Galaxy",
+                "§bBilly: Tu sais ceux qui permettent de voyager vite dans cette ville ? Mais je n'arrive pas à me souvenir de son nom c'est horrible !§a",
+                "§a{{player}}: Attends ici je vais aller la chercher !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "billy-lore",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "lavilledeloubli2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "lavilledeloubli2",
+      "displayText": "Trouver la maman de Billy",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "findbillymom",
+          "title": "§2Trouver la Maman de Billy",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aOh ! Ce doit être la maman de Billy, la description correspond !",
+              "useActionBar": false
+            },
+            {
+              "type": "show-dialogue",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bChrina: Oh c'est mon fils qui t'envoie me chercher ?! J'étais tellement inquiète ! Depuis que nous sommes arrivés ici, il a de gros problème de mémoire, enfin comme nous tous...§a",
+                "§a{{player}}: Comment ça nous tous ?§b",
+                "§bChrina: Oui, tout les êtres humains ont dû quitter la Terre, mais à notre arrivée ici, nous avons tous oublié pourquoi...",
+                "§bChrina: Pas moyen de se souvenir de ce qui s'est réellement passé ! Pour nous, adultes nos derniers souvenirs remontent à il y a quelques années, mais pour mon fils qui à 6 ans, c'est comme si il oubliait tout...§a",
+                "§a{{player}}: C'est horrible ! Est-ce qu'il y a un moyen de retrouver ces souvenirs ?§b",
+                "§bChrina: Pour être honnête avec toi je n'en ai pas la moindre idée... Mais une chose est sûre, ce n'est pas en restant dans cette ville qu'on trouvera des réponses !§b",
+                "§bChrina: Un équipage s'est formé, avec à sa tête un certain capitaine Rods, il compte partir en exploration dans l'espace pour trouver des réponses",
+                "§bChrina: Apparemment il cherche des membres pour son équipage, tu devrais allez lui parler, il est au niveau de l'héliport, à l'ouest de la ville.§a",
+                "§a{{player}}: D'accord merci, prenez soin de Billy"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4917",
+          "waypointZ": "-5050",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "billymom-lore",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkbilly-copy1",
+          "title": "Parler à Billy",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bBilly: Tu as trouvé ma maman ? Pas encore ?",
+                "§bBilly: Je pense qu'elle doit se trouvé proche d'un Zoroark Galaxy..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "billy-lore",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "lavilledeloubli3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "lavilledeloubli3",
+      "displayText": "Aller voir le Capitaine Rods",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "findrods",
+          "title": "§2Aller voir le Capitaine Rods",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "true",
+                  "flag": "SafariFini"
+                }
+              ],
+              "chatName": "",
+              "chatPages": [
+                "§bBonjour ! Jeune dresseur, serais tu intéressé pour rejoindre notre expédition vers une nouvelle planète ?§a"
+              ],
+              "choiceID": "rodslore1",
+              "choices": [
+                "§aOui Capitaine !"
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": false,
+                  "flag": "SafariFini"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "show-dialogue",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "chatName": "",
+                  "chatPages": [
+                    "§eBonjour {{player}} ! Comment ça ?",
+                    "§e Ahah on t'as demandé de venir me voir pour rejoindre l'équipage, mais tu en fais déjà partie ! Ahahah !",
+                    "§eA une prochaine sur le vaisseau !"
+                  ]
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "noppes quest finish {{player}} 46",
+                  "asPlayer": false
+                },
+                {
+                  "type": "complete-quest",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": []
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5093",
+          "waypointZ": "-5065",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "rods-lore",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixrodslore",
+          "title": "Choisir Ok",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bParfait, je t'attendrai sur mon vaisseau.",
+                "§bTu peux t'y rendre en venant me parler, ou en faisant §l/warp Safari",
+                "§bJ'espère te voir bientôt, et que ensemble nous pourrons résoudre le mystère qui pèse sur l'humanité..."
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 46",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "rodslore1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkbilly-copy2",
+          "title": "Parler à Billy",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bBilly: Merci d'avoir retrouvé ma maman !",
+                "§bBilly: Elle m'as dit que tu devais aller voir le Capitaine Rods près du spatioport !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "billy-lore",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "lore",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

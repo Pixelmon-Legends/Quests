@@ -1,0 +1,661 @@
+{
+  "type": "basic",
+  "name": "pension",
+  "title": "Elevage de Pokémon",
+  "stages": [
+    {
+      "name": "pension1",
+      "displayText": "Parler à Géraldine",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "pensionchat1",
+          "title": "§aParler à Géraldine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "pensionchat1",
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dBonjour {{player}}, bienvenue dans la pension Pokémon !",
+                "§dMon travail c'est de m'occuper des Pokémon des personnes qui travaillent dans la ville",
+                "§dIls n'ont généralement pas le temps de s'occuper de leurs Pokémon",
+                "§dDonc ils les déposent ici avant d'aller au travail et les récupèrent dès qu'ils peuvent.",
+                "§dDes fois ils ont une petite surprise en revenant: un œuf !§2"
+              ],
+              "choices": [
+                "§aTrop bien ça ! Vous pouvez garder mes Pokémon aussi ?§2",
+                "§aJ'aimerais bien apprendre à élever des Pokémon"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "pension",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choix1",
+          "title": "choix 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dNon désolé {{player}}, Je ne m'occupe que des personnes qui travaillent dans la ville, si je commence à accepter tout le monde j'aurai trop de boulot.",
+                "§dSi tu veux reproduire les Pokémon, tu vas devoir le faire toi même."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pensionchat1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choix2",
+          "title": "choix 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dAvec plaisir ! Je suis tellement contente de voir que des dresseurs s'intéressent à mon métier !",
+                "§dAlors pour commencer, je vais te demander d'aller capturer deux Pokémon afin de lancer la reproduction",
+                "§dQue penses tu de Evoli ? Tout le monde aime les Evoli !",
+                "§dDonc pour commencer vas me chercher deux Evoli s'il te plaît",
+                "§dBien entendu il te faudra un mâle et une femelle, ne me demande pas pourquoi je ne vais pas te faire un dessin !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pensionchat1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pension3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pension3",
+      "displayText": "Capturer deux Evoli",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "catch-pokemon",
+          "name": "evoliboy",
+          "title": "§Capturer un Evoli male",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "eevee g:male"
+        },
+        {
+          "type": "catch-pokemon",
+          "name": "evoligirl",
+          "title": "§Capturer un Evoli femelle",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "eevee g:female"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pension4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pension4",
+      "displayText": "Parler à Géraldine 2",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "msg-evolicatch",
+          "title": "Message",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai trouvé deux Evoli de sexe opposés, je vais pouvoir continuer ma formation auprès de Géraldine ! ",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "pensionchat3",
+          "title": "§aParler à Géraldine3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dOh tu as trouvé deux Evoli ! Ils sont trop mignons !!!",
+                "§dPardon mais j'adore ce pokémon ... Bref maintenant pour commencer l'élevage de tes deux Evoli et avoir des œufs. ",
+                "§dIl va falloir que tu fabriques un §a§n\"Bloc Ranch\"§r§a."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "cancelInteraction": "true",
+          "mark": "pension",
+          "uuid": "",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pension5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pension5",
+      "displayText": "Fabriquer un Bloc Ranch",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "craft-item",
+          "name": "ranchcraft",
+          "title": "§aFabriquer un Bloc Ranch",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:ranch",
+          "meta": -1,
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pension6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pension6",
+      "displayText": "Parler à Géraldine 3",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "msg-copy-copy-copy",
+          "title": "Message",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mon Bloc Ranch, je vais pouvoir continuer ma formation auprès de Géraldine ! ",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "pensionchat4",
+          "title": "§aParler à Géraldine4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dC'est bon tu as le Bloc Ranch. Tu as presque tout ce qu'il te faut pour commencer ton élevage",
+                "§dCar avoir le bloc ranch c'est bien, mais il faut aussi que tes Pokémon se sentent à l'aise dans l'environnement où tu les places !",
+                "§dChaque type de Pokémon a plusieurs blocs ou ils se sentent à l'aise",
+                "§dPar exemple un Pokémon type eau sera malheureux si tu le mets sur des blocs enflammés. Il sera mieux dans de l'eau",
+                "§dParmis la liste des blocs, certains sont plus efficace que d'autres, par exemple pour le type Normal d'Evoli, le top du top c'est les gâteaux",
+                "§dMais comme c'est compliqué à avoir on va se contenter de la laine qui est pas trop mal pour eux !",
+                "§dUn ranch bloc couvre l'équivalent d'un carré de 9x9, donc il va te falloir 81 blocs de laines !",
+                "§dSi jamais tu n'as pas envie d'allez vaincre des dizaines de pauvres moumouton, tu peux acheter de la laine directement au market",
+                "§dUne fois que tu as tes 81 laines, tu fais un carré de 9x9 en laine, tu poses ton Bloc Ranch au centre, tu mets tes Evoli dans le Ranch et tu attends que la magie opère !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "cancelInteraction": "true",
+          "mark": "pension",
+          "uuid": "",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pension8",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pension8",
+      "displayText": "Avoir 81 Laines",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "wool",
+          "title": "§aAvoir 81 Laines",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mes 81 Laines ! Maintenant je fais un carré de 9x9, le Bloc Ranch au centre et c'est parti !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "minecraft:wool",
+          "quantity": "81",
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pension9",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pension9",
+      "displayText": "Avoir un Œuf d'Evoli dans son équipe",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "eggeevee",
+          "title": "§aAvoir un Œuf d'Evoli dans son équipe",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "eevee egg",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai mon œuf d'Evoli !! Je vais aller le donner à Géraldine ! ",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "pension10",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "pension10",
+      "displayText": "Parler à Géraldine 4",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "pensionchat5",
+          "title": "§aParler à Géraldine5",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "eevee egg",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dFélicitations tu as réussi à avoir ton premier œuf d'Evoli !!!§2"
+              ],
+              "choiceID": "pensionfin",
+              "choices": [
+                "§aJe te l'offre pour te remercier !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "cancelInteraction": "true",
+          "mark": "pension",
+          "uuid": "",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "pensionfin",
+          "title": "Parler à Génraldine (avec un  oeuf d'évoli dans son équipe)",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "eevee egg",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "take-pokemon",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "eevee egg",
+              "search": "Party",
+              "box": -1,
+              "slot": -1,
+              "maxToTake": 1
+            },
+            {
+              "type": "give-pokemon",
+              "delay": "0.4",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "spec": "Togepi egg",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Géraldine",
+              "chatPages": [
+                "§dOh merci c'est trop gentil !",
+                "§dBah tiens pour la peine je t'offre moi aussi un oeuf, son propriétaire n'a pas voulu le récupérer, je pense qu'il sera très bien avec toi ! ",
+                "§dJ'espère que tu vas continuer les élevages de ton côté, sache que ce que je t'ai apris aujourd'hui",
+                "§dCe n'est rien comparé à ce qu'il faut savoir pour avoir des pokémon puissants dans les oeufs ",
+                "§dComment avoir des IVs parfaits, le bon talent, la bonne nature ect",
+                "§dSi tu souhaite en savoir plus n'hésite pas à revenir me voir !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 17",
+              "asPlayer": false
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.apprentieleveur",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "amount": "35",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "pensionfin",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

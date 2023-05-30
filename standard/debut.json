@@ -1,0 +1,1149 @@
+{
+  "type": "basic",
+  "name": "debut",
+  "title": "Le Début d'une longue aventure",
+  "stages": [
+    {
+      "name": "debut1",
+      "displayText": "Première connexion",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "debutlogin",
+          "title": "Première connexion",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": "5",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aBienvenue {{player}} sur §cPixelmon Legends §a! Je suis la Professeure Ras, j'ai hâte de faire ta connaissance, rejoins moi dans mon laboratoire, je vais te présenter le serveur.",
+              "useActionBar": "false"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "debut2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "debut2",
+      "displayText": "Parler au Prof. Ras",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "debutchatras-copy",
+          "title": "§2Parler au Prof. Ras",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Prof. Ras",
+              "chatPages": [
+                "§aBien le bonjour {{player}}! Bienvenue dans le monde magique des Pokémon! Mon nom est Ras!",
+                "§aCe monde est peuplé de créatures du nom de Pokémon! ",
+                "§aPour certains, les Pokémon sont des animaux domestiques, pour d'autres, ils sont un moyen de combattre.",
+                "§aPour ma part... L'étude des Pokémon est ma profession.",
+                "§aJe vois que tu as déjà ton Pokémon starter, tu as fais un très bon choix ! Avec ce Pokémon à tes côtés c'est une grande aventure qui t'attend !",
+                "§aMais avant de commencer, je vais te demander de faire le tour de cette ville, elle est très grande et on peut vite s'y perdre, donc tu dois la connaître.",
+                "§aPour commencer, va dire bonjour à mon ami §dJoelle§a, c'est l'infirmière qui s'occupe de notre Centre Pokémon au nord de la ville.",
+                "§a Elle en profitera pour regarder si ton nouveau compagnon est en bonne santé.",
+                "§aOn reste en communication via le §lchat Minecraft§r§a, amuse toi bien sur le serveur !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5072",
+          "waypointZ": "-4968",
+          "waypointRadius": "10",
+          "trackAutomatically": "true",
+          "mark": "ras",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "debut3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "debut3",
+      "displayText": "Parler à l'Infirmière Joëlle",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "debutchatjoelle",
+          "title": "§2Parler à l'Infirmière Joëlle",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Joëlle",
+              "chatPages": [
+                "§dBonjour {{player}}, Madame Ras m'a prévenue de ton arrivée.",
+                "§dBienvenue dans mon Centre Pokémon, ici tu pourra bien évidement soigner tes Pokémon mais pas que !§a"
+              ],
+              "choiceID": "joelle1",
+              "choices": [
+                "§aAh bon ?"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4970",
+          "waypointZ": "-5186",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "joelle",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "debutchatjoelle2",
+          "title": "§2Parler à l'Infirmière Joëlle (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} 21 63 -197 0 -180",
+              "asPlayer": false
+            },
+            {
+              "type": "show-choices",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "joelle2",
+              "chatName": "Joëlle",
+              "chatPages": [
+                "§dTu as aussi un chirurgien qui sait comment rendre les Pokémons stériles ",
+                "§dCette opération sans douleur est vivement conseillée si tu souhaites vendre des Pokémon par exemple.§a"
+              ],
+              "choices": [
+                "§2J'aimerais pas être à leur place !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "joelle1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutchatjoelle3",
+          "title": "§2Parler à l'Infirmière Joëlle (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} 21 63 -176 0 0",
+              "asPlayer": false
+            },
+            {
+              "type": "show-choices",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Joëlle",
+              "chatPages": [
+                "§dSinon à l'opposé tu a trois personnes qui peuvent t'aider à gérer les capacités de tes Pokémon !",
+                "§dBref il y a plein de choses à faire au Centre Pokémon ! On espère te revoir bientôt {{player}} !§a"
+              ],
+              "choiceID": "joelle3",
+              "choices": [
+                "§2Merci pour la visite madame !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "joelle2",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutchatjoelle4",
+          "title": "§2Parler à l'Infirmière Joëlle (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Tu as terminé ta visite du Centre Pokémon ? Très bien maintenant fonce au Market, Julie t'y attend pour te le présenter.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "joelle3",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "debut4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "debut4",
+      "displayText": "Parler à Julie",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "debutchatjulie1",
+          "title": "§2Parler à Julie",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "julie1",
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Salut {{player}} moi c'est Julie, comme je suis l'une des clientes les plus fidèles du Market, on m'a recrutée pour le présenter aux nouveaux",
+                "§6Ici tu trouveras tout ce dont tu as besoin pour ton aventure !",
+                "§6Tu peux venir ici rapidement grâce à la commande §c/warp market",
+                "§6Tu veux qu'on fasse un tour ?§a"
+              ],
+              "choices": [
+                "§2Oui pourquoi pas"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4913",
+          "waypointZ": "-5159",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "julie",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechat2",
+          "title": "§2Parler à Julie (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-4898",
+              "y": "62",
+              "z": "-5147",
+              "yaw": 0
+            },
+            {
+              "type": "show-choices",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "julie2",
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Ici c'est le RDC, c'est ici que tu trouveras des personnes qui souhaitent racheter des choses",
+                "§6C'est un bon moyen de se faire un peu d'argent au début de ton aventure",
+                "§6C'est ici aussi que tu trouveras le Vendeur Event",
+                "§6Lui ne prend pas les pokédollars mais uniquement les points event, ce sont des points que tu obtiens lors des events§a"
+              ],
+              "choices": [
+                "§2Logique"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechat3",
+          "title": "§2Parler à Julie (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-4898",
+              "y": "70",
+              "z": "-5147",
+              "yaw": 0
+            },
+            {
+              "type": "show-choices",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Ici c'est l'étage pour les Buildeurs !",
+                "§6Si tu n'a pas le temps de farmer les blocs ou les colorants pour tes constructions",
+                "§6Tu peux venir ici pour en acheter§a"
+              ],
+              "choiceID": "julie3",
+              "choices": [
+                "§2Pratique ça !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie2",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechat4",
+          "title": "§2Parler à Julie (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-4898",
+              "y": "78",
+              "z": "-5147",
+              "yaw": 0
+            },
+            {
+              "type": "show-choices",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "julie4",
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Ici c'est l'étage des items Pokémon !",
+                "§6Les potions, les pokéballs, ect",
+                "§6Tu as aussi quelqu'un qui peut changer la taille de tes pokémon contre de l'argent ... Je me demande comment il fait ?",
+                "§6C'est aussi ici que tu pourras revendre tous les items inutiles que tu trouves dans les raids dynamax par exemple§a"
+              ],
+              "choices": [
+                "§2D'accord"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie3",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechat5",
+          "title": "§2Parler à Julie (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-4898",
+              "y": "85",
+              "z": "-5146",
+              "yaw": 0
+            },
+            {
+              "type": "show-choices",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Ici c'est l'étage pour la stratégie Pokémon !",
+                "§6Il y a des vendeurs qui sont là pour améliorer ton Pokémon afin de le préparer aux futurs Tournois du serveur !",
+                "§6Tu peux changer la nature d'un pokémon, son talent, les objets qu'il porte en combat, ect §a"
+              ],
+              "choiceID": "julie5",
+              "choices": [
+                "§2Un jour je serai le meilleur dresseur !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie4",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechat6",
+          "title": "§2Parler à Julie (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-4898",
+              "y": "95",
+              "z": "-5147",
+              "yaw": 0
+            },
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "julie6",
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Ici c'est l'étage Premium !",
+                "§6Ici tu peux acheter plusieurs choses avec tes Points Boutique (PB)",
+                "§6Attention par contre les PB ne s'achètent que grâce à ton argent IRL",
+                "§6Le serveur n'est pas Pay 2 Win donc ne dépense ton argent que si tu aimes le serveur et que tu as les moyens !§a"
+              ],
+              "choices": [
+                "§2Attends tu viens de briser le 4ème mur là ?!"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie5",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechat7",
+          "title": "§2Parler à Julie (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-4898",
+              "y": "102",
+              "z": "-5147",
+              "yaw": 0
+            },
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "julie7",
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Ici c'est l'étage où tu peux acheter les nouveaux pokémon du serveur",
+                "§6Et oui sur Pixelmon Legends il y a des Pokémon que tu n'as jamais vu ailleurs !§a"
+              ],
+              "choices": [
+                "§2Trop bien !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie6",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechat8",
+          "title": "§2Parler à Julie (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "teleport-to-position",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "dimension": 0,
+              "x": "-4898",
+              "y": "112",
+              "z": "-5147",
+              "yaw": 0
+            },
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Julie",
+              "chatPages": [
+                "§6Ici c'est mon étage préféré !!! C'est l'étage des cosmétiques !",
+                "§6Ici tu peux acheter une nouvelle apparence pour tes Pokémon.",
+                "§6Attention par contre tu n'achètes pas un pokémon et une apparence, donc tu dois avoir le Pokémon avec toi pour que ça marche !§a"
+              ],
+              "choiceID": "julie8",
+              "choices": [
+                "§2C'est noté !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie7",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutjuliechatfin",
+          "title": "FIN",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Tu as terminé de faire du shopping avec Julie ? Parfait ! Maintenant je te conseille d'aller voir la Famille Junko, ils gèrent la Salle des crates.",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "julie8",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "debut5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "debut5",
+      "displayText": "Parler à la famille Junko",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "debutchatjunko1",
+          "title": "§2Parler à la famille Junko",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "junko",
+              "chatName": "",
+              "chatPages": [
+                "§6Bonjour ! Comment puis-je vous aider ?§a"
+              ],
+              "choices": [
+                "§2C'est la Professeure Ras qui m'envoie"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4903",
+          "waypointZ": "-5023",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "junko",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "debutchatjunko2",
+          "title": "§2Parler à la famille Junko (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "junko2",
+              "chatName": "",
+              "chatPages": [
+                "§aAh ! Tu es la nouvelle personne qui vient de rejoindre le serveur !",
+                "§aIci tu es dans la Salle des Crates. Si jamais tu n'as pas envie de marcher, tu peux utiliser la commande §c/warp Crates §a!",
+                "§aIci il y a deux étages: au RDC ce sont les coffre ou tu peux avoir des objets",
+                "§aEt à l'étage ce sont des coffre ou tu peux obtenir des Pokémon avec un skin très différent de leurs couleur d'origine !",
+                "§aBref il y a plein de coffres que tu as le droit d'ouvrir, enfin si tu obtiens la clé bien entendu",
+                "§aCertaines clés s'obtiennent lors d'event, en votant pour le serveur, et d'autres il faut les acheter auprès de moi ou au market ou les échanger"
+              ],
+              "choices": [
+                "§2D'accord et il y a quoi dans les coffres ?"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "junko",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutchatjunko3",
+          "title": "§2Parler à la famille Junko (Suite)",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aÇa varie en fonction de la rareté de la clé.",
+                "§aBah tu sais quoi ? Tu as l'air d'avoir hâte d'en ouvrir un ! Prends cette clé et ouvre ton premier coffre !",
+                "§aJ'espère te revoir bientôt pour plus d'ouvertures !!!§a"
+              ],
+              "choiceID": "junkofin",
+              "choices": [
+                "§2Merci !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "junko2",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "debutchatjunkofin",
+          "title": "FIN",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Tu as fini avec les Junko ? Tu as même eu un cadeau ?! Tu commence déjà à devenir populaire dans la ville c'est bon signe pour l'avenir ! Maintenant il y a Micheline qui t'attend dans le casino, tu ne peux pas le rater, c'est le gros batiment au milieu de la ville !",
+              "useActionBar": false
+            },
+            {
+              "type": "give-item",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:basement_key_silver",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": "{ench:[{lvl:1s,id:61s}],HideFlags:1,display:{Lore:[\"§7Une clé donnée pour avoir voté pour le serveur\"],Name:\" §b§lClé §7§lVote\"},CrazyCrates-Crate:\"Vote\"}"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "junkofin",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "debut6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "debut6",
+      "displayText": "Parler à Micheline",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "debutchatmichemine",
+          "title": "§2Parler à Micheline",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Micheline",
+              "chatPages": [
+                "§5Bienvenue au casino {{player}} !",
+                "§5C'est ici que les gens se retrouvent parfois pour se détendre",
+                "§5On a de la musique, un bar et bien entendu des jeux !",
+                "§5Toi aussi tu peux jouer, il te suffit de faire §c/kit jeton §5pour acheter 10k de jeton",
+                "§5Cette commande tu peux la faire une fois par jour",
+                "§5Une fois que tu as fini de jouer, tu peux faire §cclique droit §5sur une machine pour récupérer ton argent.",
+                "§5Des questions ?§a"
+              ],
+              "choiceID": "micheline1",
+              "choices": [
+                "§2Non c'est parfait merci."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-5000",
+          "waypointZ": "-5063",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "micheline",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "michelinesuite",
+          "title": "suite",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: C'est bon tu as parlé à Micheline ? Parfait maintenant le casino n'a plus de secrets pour toi, par contre pour aller au casino il te faut ... De l'argent ! Va parler à Benjamin dans la Banque, il va t'expliquer comment la banque fonctionne ici !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "micheline1",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "debut7",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "debut7",
+      "displayText": "Parler à Benjamin",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "Benjichat",
+          "title": "§2Parler à Benjamin",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "Benjamin",
+              "chatPages": [
+                "§cBonjour et bienvenue dans la Banque {{player}}, je suis Benjamin ton Gestionnaire Financier !",
+                "§cJe vais t'expliquer un peu comment fonctionne la Banque.",
+                "§cDe ce côté de la Banque, moi et ma collègue nous gérons le stockage de tes items.",
+                "§cTu peux parler à ma collègue pour lui confier tes items, par contre la place est limité !",
+                "§cSi jamais tu as besoin de plus de place, tu peux venir me parler, je vend de quoi upgrade ton stockage d'item",
+                "§cTiens je te donne de quoi débloquer le stockage d'items, va parler à ma collègue et donne lui ça !",
+                "§cCe services est très utile pour stocker tes objets le temps de trouver une ville ou tu pourra stocker tes objets dans tes propres coffres !",
+                "§cEn face de moi c'est le stockage de ton argent, tu peux parler à mes collègues afin de déposer une partie de ton argent",
+                "§cGrâce à cet argent stocké chez nous, tu touchera des intérêts à chaque heure de jeu sur le serveur !",
+                "§cPar contre si tu veux déposer beaucoup d'argent, tu va devoir améliorer ta banque, ça te coutera de l'argent mais ça vaut le coup grâce aux intérêts !§2"
+              ],
+              "choiceID": "benji",
+              "choices": [
+                "§aMerci !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:amaze_mulch",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": "{display:{Lore:[\"§e§oA utiliser auprès du banquier pour améliorer votre stockage.\"],Name:\"§6§lUpgrade de Banque\"}}"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": "-4928",
+          "waypointZ": "-4981",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "timesToComplete": 1,
+          "mark": "benji",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "debutchatbenjaminfin",
+          "title": "FIN DE LA QUETE",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aProf Ras: Bravo tu as fait le tour des bâtiments principaux de la ville ! Maintenant ton aventure peut enfin commencer, n'hésite pas à explorer, tu as des téléporteurs à ta disposition pour voyager rapidement dans la ville et dans les planètes aux alentours ! Bon courage et à bientôt !!!",
+              "useActionBar": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:rare_candy",
+              "quantity": "5",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "amount": "15",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "benji",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "INACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "VISIBLE",
+  "prerequisites": [],
+  "taskSets": []
+}

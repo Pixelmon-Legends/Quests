@@ -1,0 +1,4078 @@
+{
+  "type": "repeatable",
+  "name": "tdcchallenge",
+  "title": "Challenge de la Tour de Combat",
+  "stages": [
+    {
+      "name": "tdc-c1",
+      "displayText": "Parler à Luth",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 30",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talktdcc1",
+          "title": "Parler à Luth",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "explicationstdcc"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "tdcc1",
+              "chatName": "",
+              "chatPages": [
+                "§6Re salut {{player}} ! Prêt à relever un nouveau défi ?",
+                "§6Je te propose le défi de faire la tour de combat en contre-la-montre, ça te dit ?",
+                "§6Plus la difficulté que tu choisis est élevée, plus je te donnerai une belle récompense bien sûr.",
+                "§6Par contre pour débloquer les niveaux suivants, tu dois d'abord faire le précédent !",
+                "§6Ça te tente ?§a"
+              ],
+              "choices": [
+                "§aJe relève le défi !§c",
+                "§cJe suis fatigué, une autre fois..."
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixoui1",
+          "title": "Choisir Oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "explicationstdcc"
+            },
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§6Parfait ! Alors es tu prêt à la faire en moins de 30 minutes pour commencer ?§a"
+              ],
+              "choiceID": "tdcc2",
+              "choices": [
+                "§aOui !§c",
+                "§cOula ça m'a l'air compliqué"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "tdcc1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choixoui2",
+          "title": "Choisir Oui2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§6Parfait ! C'est parti pour 45 minutes ! Prêt ?"
+              ],
+              "choiceID": "tdcc-time",
+              "choices": [
+                "§aPrêt !§c"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "tdcc1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talktdcc-45",
+          "title": "Parler à Luth 45",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "explicationstdcc"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "tdcc-45"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "tdcc-35"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "tdcc-time",
+              "chatName": "",
+              "chatPages": [
+                "§6Re salut {{player}} ! Prêt à relever un nouveau défi ? En combien de temps penses tu réussir aujourd'hui ?§a"
+              ],
+              "choices": [
+                "§a45 minutes !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talktdcc-35",
+          "title": "Parler à Luth 35",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "explicationstdcc"
+            },
+            {
+              "type": "have-flag",
+              "inverted": false,
+              "flag": "tdcc-45"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "tdcc-35"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "tdcc-time",
+              "chatName": "",
+              "chatPages": [
+                "§6Re salut {{player}} ! Prêt à relever un nouveau défi ? En combien de temps penses tu réussir aujourd'hui ?§a"
+              ],
+              "choices": [
+                "§a45 minutes !§6",
+                "§635 minutes !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talktdcc-25",
+          "title": "Parler à Luth 25",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "explicationstdcc"
+            },
+            {
+              "type": "have-flag",
+              "inverted": false,
+              "flag": "tdcc-45"
+            },
+            {
+              "type": "have-flag",
+              "inverted": false,
+              "flag": "tdcc-35"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "tdcc-time",
+              "chatName": "",
+              "chatPages": [
+                "§6Re salut {{player}} ! Prêt à relever un nouveau défi ? En combien de temps penses tu réussir aujourd'hui ?§a"
+              ],
+              "choices": [
+                "§a45 minutes !§6",
+                "§635 minutes !§c",
+                "§c25 minutes !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "luth",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "tdccgo45",
+          "title": "Choix 45 minutes",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "start-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "TimerTDCC",
+              "timerText": "Tour de Combat: {{seconds}} secondes restantes.",
+              "timerSeconds": "2705",
+              "colour": "GREEN",
+              "continueWhileOffline": "false",
+              "expiryActions": [
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "TimerTDCC"
+                },
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aAïe tu n'as pas réussi cette fois-ci, mais la prochaine sera peut-être la bonne !",
+                  "useActionBar": false
+                }
+              ],
+              "logoutActions": []
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -427 51 -258 0 90",
+              "asPlayer": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c45"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "tdcc-time",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "tdccgo35",
+          "title": "Choix 35 minutes",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "start-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "TimerTDCC",
+              "timerText": "Tour de Combat: {{seconds}} secondes restantes.",
+              "timerSeconds": "2105",
+              "colour": "GREEN",
+              "continueWhileOffline": "false",
+              "expiryActions": [
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "TimerTDCC"
+                },
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aAïe tu n'as pas réussi cette fois-ci, mais la prochaine sera peut-être la bonne !",
+                  "useActionBar": false
+                }
+              ],
+              "logoutActions": []
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -427 51 -258 0 90",
+              "asPlayer": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c35"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "tdcc-time",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "select-choice",
+          "name": "tdccgo25",
+          "title": "Choix 25 minutes",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "start-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "TimerTDCC",
+              "timerText": "Tour de Combat: {{seconds}} secondes restantes.",
+              "timerSeconds": "1505",
+              "colour": "GREEN",
+              "continueWhileOffline": "false",
+              "expiryActions": [
+                {
+                  "type": "stop-timer",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "timerID": "TimerTDCC"
+                },
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§aAïe tu n'as pas réussi cette fois-ci, mais la prochaine sera peut-être la bonne !",
+                  "useActionBar": false
+                }
+              ],
+              "logoutActions": []
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -427 51 -258 0 90",
+              "asPlayer": false
+            },
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c25"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "tdcc-time",
+          "choiceNumber": "3"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "never",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc-c45",
+      "displayText": "Battre les Dresseurs en 45 minutes",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat1",
+          "title": "Battre le Dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Serena !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat2",
+          "title": "Battre le Dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Nabil !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc2",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat3",
+          "title": "Battre le Dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Sacha Ketchum !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc3",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat4",
+          "title": "Battre le Dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Roy !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc4",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat5",
+          "title": "Battre le Dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Silver !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc5",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat6",
+          "title": "Battre le Dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Echo !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc6",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat7",
+          "title": "Battre le Dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Euphorbe !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc7",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat8",
+          "title": "Battre le Dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Red !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc8",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat9",
+          "title": "Battre le Dresseur 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Pierre Rochard !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc9",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat10",
+          "title": "Battre le Dresseur 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Cynthia !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc10",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat11",
+          "title": "Battre le Dresseur 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Tarak !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc11",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat12",
+          "title": "Battre le Dresseur 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Denivak & Astriyas ! §aRetourne voir Luth pour lui annoncer la bonne nouvelle !!!",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc12",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat1-lose",
+          "title": "Perdre contre le Dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat2-lose",
+          "title": "Perdre contre le Dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc2",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat3-lose",
+          "title": "Perdre contre le Dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc3",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat4-lose",
+          "title": "Perdre contre le Dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc4",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat5-lose",
+          "title": "Perdre contre le Dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc5",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat6-lose",
+          "title": "Perdre contre le Dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc6",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat7-lose",
+          "title": "Perdre contre le Dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc7",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat8-lose",
+          "title": "Perdre contre le Dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc8",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat9-lose",
+          "title": "Perdre contre le Dresseur 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc9",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat10-lose",
+          "title": "Perdre contre le Dresseur 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc10",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat11-lose",
+          "title": "Perdre contre le Dresseur 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc11",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat12-lose",
+          "title": "Perdre contre le Dresseur 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tdc-win45",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc-win45",
+      "displayText": "Gagner en 45 min",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "tdcwin45min",
+          "title": "Gagner en 45 min",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "stop-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "TimerTDCC"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§6&lLuth: §aFélicitations ! Tu as gagné en 45 minutes ! Voici ta récompense !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdcc-45"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 30",
+              "asPlayer": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:hive_badge",
+              "quantity": "15",
+              "meta": -1,
+              "mark": "",
+              "nbt": "{ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"§6§oPoint obtenu dans la Tour de Combat\"],Name:\"§6§lPCo\"}}"
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc-c35",
+      "displayText": "Battre les Dresseurs en 35 minutes",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat1-35",
+          "title": "Battre le Dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Serena !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat2-35",
+          "title": "Battre le Dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Nabil !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc2",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat3-35",
+          "title": "Battre le Dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Sacha Ketchum !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc3",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat4-35",
+          "title": "Battre le Dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Roy !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc4",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat5-35",
+          "title": "Battre le Dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Silver !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc5",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat6-35",
+          "title": "Battre le Dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Echo !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc6",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat7-35",
+          "title": "Battre le Dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Euphorbe !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc7",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat8-35",
+          "title": "Battre le Dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Red !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc8",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat9-35",
+          "title": "Battre le Dresseur 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Pierre Rochard !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc9",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat10-35",
+          "title": "Battre le Dresseur 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Cynthia !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc10",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat11-35",
+          "title": "Battre le Dresseur 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Tarak !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc11",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat12-35",
+          "title": "Battre le Dresseur 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Denivak & Astriyas ! §aRetourne voir Luth pour lui annoncer la bonne nouvelle !!!",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc12",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat1-lose-35",
+          "title": "Perdre contre le Dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat2-lose-35",
+          "title": "Perdre contre le Dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc2",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat3-lose-35",
+          "title": "Perdre contre le Dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc3",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat4-lose-35",
+          "title": "Perdre contre le Dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc4",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat5-lose-35",
+          "title": "Perdre contre le Dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc5",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat6-lose-35",
+          "title": "Perdre contre le Dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc6",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat7-lose-35",
+          "title": "Perdre contre le Dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc7",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat8-lose-35",
+          "title": "Perdre contre le Dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc8",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat9-lose-35",
+          "title": "Perdre contre le Dresseur 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc9",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat10-lose-35",
+          "title": "Perdre contre le Dresseur 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc10",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat11-lose-35",
+          "title": "Perdre contre le Dresseur 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc11",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat12-lose-35",
+          "title": "Perdre contre le Dresseur 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tdc-win35",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc-win35",
+      "displayText": "Gagner en 35 min",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "tdcwin35min",
+          "title": "Gagner en 35 min",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "stop-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "TimerTDCC"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdcc-35"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§6&lLuth: §aFélicitations ! Tu as gagné en 35 minutes ! Voici ta récompense !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 30",
+              "asPlayer": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:hive_badge",
+              "quantity": "25",
+              "meta": -1,
+              "mark": "",
+              "nbt": "{ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"§6§oPoint obtenu dans la Tour de Combat\"],Name:\"§6§lPCo\"}}"
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc-c25",
+      "displayText": "Battre les Dresseurs en 25 minutes",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat1-25",
+          "title": "Battre le Dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Serena !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat2-25",
+          "title": "Battre le Dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Nabil !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc2",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat3-25",
+          "title": "Battre le Dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Sacha Ketchum !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc3",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat4-25",
+          "title": "Battre le Dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Roy !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc4",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat5-25",
+          "title": "Battre le Dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Silver !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc5",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat6-25",
+          "title": "Battre le Dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Echo !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc6",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat7-25",
+          "title": "Battre le Dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Euphorbe !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc7",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat8-25",
+          "title": "Battre le Dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Red !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc8",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat9-25",
+          "title": "Battre le Dresseur 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Pierre Rochard !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc9",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat10-25",
+          "title": "Battre le Dresseur 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Cynthia !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc10",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat11-25",
+          "title": "Battre le Dresseur 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Tarak !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc11",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "defeat-trainer",
+          "name": "tdccombat12-25",
+          "title": "Battre le Dresseur 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "&f&l[&a&l✔&f&l] &6Tu as battu &b&6Denivak & Astriyas ! §aRetourne voir Luth pour lui annoncer la bonne nouvelle !!!",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc12",
+          "uuid": "",
+          "minimumLevel": 0,
+          "maximumLevel": 2147483647
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat1-lose-25",
+          "title": "Perdre contre le Dresseur 1",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat2-lose-25",
+          "title": "Perdre contre le Dresseur 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc2",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat3-lose-25",
+          "title": "Perdre contre le Dresseur 3",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc3",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat4-lose-25",
+          "title": "Perdre contre le Dresseur 4",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc4",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat5-lose-25",
+          "title": "Perdre contre le Dresseur 5",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc5",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat6-lose-25",
+          "title": "Perdre contre le Dresseur 6",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc6",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat7-lose-25",
+          "title": "Perdre contre le Dresseur 7",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc7",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat8-lose-25",
+          "title": "Perdre contre le Dresseur 8",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc8",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat9-lose-25",
+          "title": "Perdre contre le Dresseur 9",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc9",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat10-lose-25",
+          "title": "Perdre contre le Dresseur 10",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc10",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat11-lose-25",
+          "title": "Perdre contre le Dresseur 11",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc11",
+          "uuid": ""
+        },
+        {
+          "type": "lose-to-trainer",
+          "name": "tdccombat12-lose-25",
+          "title": "Perdre contre le Dresseur 12",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "move-to-stage",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "transferPolicy": "take-persistent",
+              "stageName": "tdc-c-lose"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "tdc1",
+          "uuid": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tdc-win25",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc-win25",
+      "displayText": "Gagner en 25 min",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "tdcwin25min",
+          "title": "Gagner en 25 min",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "stop-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "TimerTDCC"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§6&lLuth: §aFélicitations ! Tu as gagné en 25 minutes ! Voici ta récompense !",
+              "useActionBar": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdcc-25"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 30",
+              "asPlayer": false
+            },
+            {
+              "type": "give-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:hive_badge",
+              "quantity": "35",
+              "meta": -1,
+              "mark": "",
+              "nbt": "{ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"§6§oPoint obtenu dans la Tour de Combat\"],Name:\"§6§lPCo\"}}"
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tdc-c-lose",
+      "displayText": "Perdu",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "losetdcc",
+          "title": "Perdre le challenge de la TDC",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "stop-timer",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "timerID": "TimerTDCC"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc1"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc2"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc3"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc4"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc5"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc6"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc7"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc8"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc9"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc10"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc11"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "tdc12"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 30",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "2",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [
+    {
+      "type": "simple",
+      "description": "Avoir fini la quête de la TDC",
+      "requirements": [
+        {
+          "type": "have-completed-quest",
+          "inverted": false,
+          "questName": "TDC"
+        }
+      ]
+    }
+  ],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

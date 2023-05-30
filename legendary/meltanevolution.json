@@ -1,0 +1,322 @@
+{
+  "type": "basic",
+  "name": "meltanevolution",
+  "title": "L'évolution de Meltan !?",
+  "stages": [
+    {
+      "name": "meltanevo1",
+      "displayText": "Message de Jonathan",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "enter-area",
+          "name": "enterjonathanforge",
+          "title": "Entrer dans la forge",
+          "requirements": [
+            {
+              "type": "have-completed-quest",
+              "inverted": false,
+              "questName": "meltan"
+            }
+          ],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§a§lJonathan: §aHé {{player}} ! Viens me voir !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": "0",
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "dimension": 0,
+          "minX": "-108",
+          "maxX": "-99",
+          "minY": "60",
+          "maxY": "66",
+          "minZ": "-105",
+          "maxZ": "-95"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "meltanevo2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "meltanevo2",
+      "displayText": "Parler à Jonathan",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkjonathan2",
+          "title": "§aParler à Jonathan",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "jonathanevo1",
+              "chatName": "",
+              "chatPages": [
+                "§aSalut {{player}} ! Ça faisait longtemps !",
+                "§aTu te souviens ce Meltan que tu as capturé ?",
+                "§aIl paraît que c'est possible de le faire évoluer ! Ça te dit d'essayer ?"
+              ],
+              "choices": [
+                "§aOui ! Il doit être trop fort !§e",
+                "§ePlus tard, je suis occupé là"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "jonathanevo1",
+          "title": "Choisir oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aGénial ! Pour cela il faudrait que tu fasse fondre 400 minerais en ayant Meltan avec toi !",
+                "§aJe te laisse t'en occuper, reviens me voir dès que tu auras réussi !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "jonathanevo1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "jonathanevo2",
+          "title": "Choisir non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aOkay ! Repasse me voir !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "jonathanevo1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "meltanevo3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "meltanevo3",
+      "displayText": "Faire évoluer Meltan",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "evolve-pokemon",
+          "name": "meltanevo-evo",
+          "title": "§aFaire évoluer Meltan",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aSuper ! Tu as l'évolution de Meltan ! Retourne voir Jonathan !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "fromPokemon": "",
+          "toPokemon": "melmetal"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "meltanevo4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "meltanevo4",
+      "displayText": "Retourner voir Jonathan",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "jonathanendevo",
+          "title": "§aRetourner voir Jonathan",
+          "requirements": [
+            {
+              "type": "have-pokemon-in-party",
+              "inverted": false,
+              "spec": "melmetal",
+              "slot": -1
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aRebonjour {{player}} ! Ça y est tu à réussi à le faire évoluer ?!",
+                "§aOuah il est vraiment impressionnant !",
+                "§aMerci grace à toi j'aurai pu voir ce pokémon et son évolution, voici pour toi.",
+                "§aA une prochaine !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 16",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money give {{player}} 5k",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": "-103",
+          "waypointZ": "-100",
+          "waypointRadius": "10",
+          "trackAutomatically": false,
+          "mark": "jonathanmeltan",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

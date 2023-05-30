@@ -1,0 +1,297 @@
+{
+  "type": "basic",
+  "name": "marteau",
+  "title": "L'Unique Marteau",
+  "stages": [
+    {
+      "name": "marteau1",
+      "displayText": "Parler à Seb",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "marteau",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "marteau1start",
+          "title": "Parle avec Seb",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "Seb1",
+              "chatName": "",
+              "chatPages": [
+                "§aOh tiens salutation dresseur ! J'ai perdu mon unique marteau ! Je l'ai fais tomber dans le volcan près de l'autel de Sulfura ... Peux-tu m'en ramener un nouveau ?"
+              ],
+              "choices": [
+                "§aD'accord, je m'en occupe",
+                "§eMais monsieur ... Vous en avez un dans votre main ! Vous me faîtes perdre mon temps !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-105",
+          "waypointZ": "-95",
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Seb1",
+          "choiceNumber": 1,
+          "name": "MarteauChoix2",
+          "title": "Dire Oui",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "choiceID": "Seb2",
+              "chatName": "",
+              "chatPages": [
+                "§aMerci ! Ah une dernière chose l'ami, j'aimerai que le marteau soit en pierre feu, comme ça la prochaine fois que je me promène à côté du volcan, il y aura moins de risque de perte !"
+              ],
+              "choices": [
+                "§aEuh ... Ok §o*Sinon il pourrait laisser son marteau à la forge avant la promenade ...*"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Seb1",
+          "choiceNumber": 2,
+          "name": "MarteauChoix1",
+          "title": "Dire Non",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "",
+              "chatName": "",
+              "chatPages": [
+                "§aAh oui j'avais oublié ... Désolé du dérangement"
+              ],
+              "choices": [
+                "§eBon courage ..."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "marteau2"
+    },
+    {
+      "name": "marteau2",
+      "displayText": "Fabriquer un marteau en pierre feu",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "craftmarteau",
+          "title": "§2Fabriquer le marteau en pierre feu",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aSuper ! Tu as le marteau ! Apporte le à Seb le forgeron",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "pixelmon:fire_stone_hammer",
+          "meta": -1,
+          "nbt": "",
+          "quantity": 1,
+          "mark": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "marteau3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "marteau3",
+      "displayText": "Parler à Seb",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "mark": "marteau",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": "1",
+          "name": "marteau3",
+          "title": "§2Parle avec Seb",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aMerci mon brave ! Pour te remercier je vais t'offrir quelque chose de très précieux à mes yeux: UN MARTEAU !"
+              ],
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "type": "take-item",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:fire_stone_hammer",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "give-item",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:dusk_stone_hammer",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 3",
+              "asPlayer": false
+            },
+            {
+              "amount": "15",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "complete-quest"
+            }
+          ],
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:fire_stone_hammer",
+              "quantity": 1,
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            }
+          ],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-5105",
+          "waypointZ": "-5095",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": 1,
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

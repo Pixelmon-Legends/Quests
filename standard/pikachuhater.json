@@ -1,0 +1,641 @@
+{
+  "name": "pikachuhater",
+  "title": "Le Pika Hater",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "category": "standard",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNTIL_STARTED",
+  "stages": [
+    {
+      "name": "pikahater1",
+      "displayText": "Parler à Dylan",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "dylanhater",
+          "uuid": "",
+          "cancelInteraction": true,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "dylanhaterstart",
+          "title": "§aParle avec Dylan",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "Dylan1",
+              "chatName": "",
+              "chatPages": [
+                "§aSalut... J'en ai marre de tous ces contrefaçon de Pikachu! Pas toi?"
+              ],
+              "choices": [
+                "§aSi un peu...",
+                "§eNon j'adore Pikachu! §d^^"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 14,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Dylan1",
+          "choiceNumber": 2,
+          "name": "select2",
+          "title": "Dire Si j'adore",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "",
+              "chatName": "Dylan",
+              "chatPages": [
+                "§aOh non encore un fanatique de Pikachu...Tu ferais mieux de partir!"
+              ],
+              "choices": [
+                "§eOulala allez salut! §d^^"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Dylan1",
+          "choiceNumber": 1,
+          "name": "select1",
+          "title": "Dire Oui moi aussi",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": true,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "Dylan",
+              "chatPages": [
+                "§aC'est bien qu'on soit du même avis! Je vais te confier une mission!",
+                "§aTu vas eliminer chacun des clones de Pikachu existant pour moi et je te donnerai une récompense!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "pikahater2"
+    },
+    {
+      "name": "pikahater2",
+      "displayText": "Tuer toutes les contrefaçons de Pikachu!",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "nextStage": "pikahater3",
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Raichu",
+          "timesToComplete": 1,
+          "name": "killraichu",
+          "title": "§2Elimine Raichu",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Raichu! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Plusle",
+          "timesToComplete": 1,
+          "name": "killplusle",
+          "title": "§2Elimine Posipi",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Posipi! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Minun",
+          "timesToComplete": 1,
+          "name": "killminun",
+          "title": "§2Elimine Négapi",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Négapi! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Dedenne",
+          "timesToComplete": 1,
+          "name": "killdedenne",
+          "title": "§2Elimine Dedenne",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Dedenne! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Togedemaru",
+          "timesToComplete": 1,
+          "name": "killtogedemaru",
+          "title": "§2Elimine Togedemaru",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Togedemaru! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Pichu",
+          "timesToComplete": 1,
+          "name": "killpichu",
+          "title": "§2Elimine Pichu",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Pichu! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Emolga",
+          "timesToComplete": 1,
+          "name": "killemolga",
+          "title": "§2Elimine Emolga",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Emolga! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Mimikyu",
+          "timesToComplete": 1,
+          "name": "killmimikyu",
+          "title": "§2Elimine Mimiqui",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Mimiqui! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        },
+        {
+          "spec": "Morpeko",
+          "timesToComplete": 1,
+          "name": "killmorpeko",
+          "title": "§2Elimine Morpeko",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "message": "§aBravo tu as éliminé Morpeko! Au suivant!",
+              "useActionBar": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "send-message"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        }
+      ]
+    },
+    {
+      "name": "pikahater3",
+      "displayText": "Retourner voir Dylan",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "dylanhater",
+          "uuid": "",
+          "cancelInteraction": true,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "backtodylan",
+          "title": "§2Retourner parler à Dylan",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "Dylan",
+              "chatPages": [
+                "§aSalut! J'ai vu tes exploits! Magnifique!",
+                "§aDonc je vais te donner la mission finale!",
+                "§aElimine un Pikachu! Je t'attends, reviens me voir quand tu aura fini!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4306",
+          "waypointZ": "-5632",
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "pikahater4"
+    },
+    {
+      "name": "pikahater4",
+      "displayText": "Eliminer Pikachu",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Pikachu",
+          "timesToComplete": 1,
+          "name": "killpikachu",
+          "title": "§aÉliminer Pikachu",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as enfin tué Pikachu ! Dylan va être content ! Retourne le voir",
+              "useActionBar": false
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "defeat-wild-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": true
+        }
+      ],
+      "nextStage": "pikahater5"
+    },
+    {
+      "name": "pikahater5",
+      "displayText": "Aller parler à Dylan",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "dylanhater",
+          "uuid": "",
+          "cancelInteraction": true,
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "finishdylan",
+          "title": "§2Parle à Dylan",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": false,
+          "isInfinite": false,
+          "actions": [
+            {
+              "chatName": "Dylan",
+              "chatPages": [
+                "§aAlors là bravo! Tu as réussi ma mission à merveille!",
+                "§aVoici ta récompense comme convenu!",
+                "§aParmi celles-ci tu trouvera un Pikachu que j'ai essayé de noyer...mais ça n'a pas marché..."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "amount": "55",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "item": "pixelmon:thunder_stone_sword",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": "",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-item"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.assassindespikachu",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 32",
+              "asPlayer": false
+            },
+            {
+              "spec": "Pikachu f:102",
+              "heldItem": "",
+              "heldItemMark": "",
+              "heldItemNBT": "",
+              "putInPC": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-pokemon"
+            },
+            {
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "complete-quest"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": "-4306",
+          "waypointZ": "-5632",
+          "waypointRadius": "10",
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": ""
+    }
+  ],
+  "prerequisites": [],
+  "taskSets": [],
+  "type": "basic"
+}

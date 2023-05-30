@@ -1,0 +1,465 @@
+{
+  "name": "meltan",
+  "title": "A la recherche de Meltan",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "category": "legendary",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "stages": [
+    {
+      "name": "catchmeltan1",
+      "displayText": "Parler à Jonathan",
+      "displayTextLineCount": "1",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "jonathanmeltan",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "startjonathan",
+          "title": "§aParler à Jonathan",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "Jonathan1",
+              "chatName": "",
+              "chatPages": [
+                "§aHey ! Je suis sûr que je peux t'apprendre quelque chose, ça te dit?"
+              ],
+              "choices": [
+                "§aOui pourquoi pas, je t'écoute !§e",
+                "§eUne autre fois, ok?"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Jonathan1",
+          "choiceNumber": 2,
+          "name": "jonathanselect2",
+          "title": "Dire une autre fois",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aOk à la prochaine alors!"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Jonathan1",
+          "choiceNumber": 1,
+          "name": "jonathanselect1",
+          "title": "Dire je t'ecoute",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aSuper ! Mais pour cela il faut déjà que tu aille miner!",
+                "§aReviens me voir avec le plus de minerais de fer que tu pourras trouver!",
+                "§aPrends au moins 20 stacks de minerais de fer...mais il t'en faudra peut-être plus !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "catchmeltan2"
+    },
+    {
+      "name": "catchmeltan2",
+      "displayText": "Miner du fer",
+      "displayTextLineCount": 1,
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "blocks": [
+            "minecraft:iron_ore"
+          ],
+          "meta": -1,
+          "cancelBlockBreak": false,
+          "timesToComplete": 128,
+          "name": "mineironmeltan",
+          "title": "§2Miner {{remaining}} de fer",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as déjà miné 2 stacks de fer, c'est bien, mais il t'en faudra peut être plus...",
+              "useActionBar": false
+            },
+            {
+              "type": "send-message",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu peux quand même retourner voir Jonathan",
+              "useActionBar": false
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "break-block-type",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": "catchmeltan3"
+    },
+    {
+      "name": "catchmeltan3",
+      "displayText": "Retourner voir Jonathan",
+      "displayTextLineCount": "1",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "jonathanmeltan",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "meltan2",
+          "title": "§aRetourner voir Jonathan",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "choiceID": "Jonathan2",
+              "chatName": "",
+              "chatPages": [
+                "§aTu as du courage, certaines personnes abandonnent après le 11ème minerai !",
+                "§aJe vais te raconter la légende de Meltan, un pokémon fabuleux !",
+                "§aLa légende raconte que si une grande quantité de minerais étaient cuits...",
+                "§aIl se pourrait que Meltan apparaisse ! Tu penses être capable de l'attraper ?§a"
+              ],
+              "choices": [
+                "§aC'est une vraie question ?§e",
+                "§eC'est quand même vachement compliqué votre truc.."
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-choices"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        },
+        {
+          "choiceID": "Jonathan2",
+          "choiceNumber": 1,
+          "name": "jonathan2yes",
+          "title": "Choisir oui",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aParfait, que la chance soit avec toi, j'ai hâte que tu captures ce pokémon que je puisse enfin le voir de mes propres yeux !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "choiceID": "Jonathan2",
+          "choiceNumber": 2,
+          "name": "jonathan2no",
+          "title": "Choisir non",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aJe pensais que tu avais l'étoffe nécessaire pour cela, reviens me voir si tu changes d'avis !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "select-choice",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "catchmeltan4"
+    },
+    {
+      "name": "catchmeltan4",
+      "displayText": "Fondre le fer et attraper Meltan",
+      "displayTextLineCount": "1",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "spec": "Meltan",
+          "timesToComplete": 1,
+          "name": "catchmeltan",
+          "title": "§2Faire fondre le fer et obtenir Meltan",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as capturé Meltan ! Vas le montrer à Jonathan !",
+              "useActionBar": false
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "catch-pokemon",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "nextStage": "catchmeltan5"
+    },
+    {
+      "name": "catchmeltan5",
+      "displayText": "Retourner voir Jonathan",
+      "displayTextLineCount": "1",
+      "canDrop": false,
+      "transferPolicy": "take-persistent",
+      "completedPolicy": "required-are-completed",
+      "tasks": [
+        {
+          "mark": "jonathanmeltan",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": [],
+          "timesToComplete": 1,
+          "name": "endjonathanmeltan",
+          "title": "§aRetourner voir Jonathan",
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "actions": [
+            {
+              "chatName": "",
+              "chatPages": [
+                "§aIncroyable, tu l'as eu ! T'as trop de chance !",
+                "§aPrend ceci ! Merci de me l'avoir montré !"
+              ],
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "show-dialogue"
+            },
+            {
+              "amount": "55",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-experience"
+            },
+            {
+              "command": "money give {{player}} 10k",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "item": "pixelmon:aluminium_plate",
+              "quantity": 32,
+              "meta": -1,
+              "mark": "",
+              "nbt": "",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "give-item"
+            },
+            {
+              "command": "lp user {{player}} permission set deluxetags.tag.forgerondemeltan",
+              "asPlayer": false,
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "run-command"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 15",
+              "asPlayer": false
+            },
+            {
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "type": "complete-quest"
+            }
+          ],
+          "requirements": [],
+          "intakeRequirements": [],
+          "type": "interact-with-entity",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true"
+        }
+      ],
+      "nextStage": ""
+    }
+  ],
+  "prerequisites": [],
+  "taskSets": [],
+  "type": "basic"
+}

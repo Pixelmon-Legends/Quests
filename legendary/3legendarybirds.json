@@ -1,0 +1,668 @@
+{
+  "type": "basic",
+  "name": "3legendarybirds",
+  "title": "Les 3 Oiseaux Légendaires",
+  "stages": [
+    {
+      "name": "legendarybirds1",
+      "displayText": "Parler au scientifique du vaisseau",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique",
+          "title": "Parler au scientifique",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "scientifiquebird1",
+              "chatName": "",
+              "chatPages": [
+                "§bBonjour ! Vous êtes l'officier {{player}}, c'est ça ?",
+                "§bJ'ai une mission a vous confier, j'ai pu faire des observations qui révéleraient que des oiseaux légendaires seraient proches d'ici !",
+                "§bJ'ai besoin de quelqu'un pour des observations de terrain, souhaitez-vous m'aider ?§a"
+              ],
+              "choices": [
+                "§aOui bien sûr !§c",
+                "§cC'est que....le capitaine m'a déjà confié une mission"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "talkscientifique-oui",
+          "title": "Choisir Oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bParfait ! Alors d'après ce que j'ai pu voir, il y aurait 3 oiseaux à trouver :",
+                "§bLe premier : §3Un oiseau de glace, qui doit donc se trouver dans un endroit particulièrement froid",
+                "§bLe second : §4Un oiseau de feu qui doit se trouver dans un endroit chaud",
+                "§bEt le dernier : §eUn oiseau électrique, j'ai peu d'informations sur lui mais il doit probablement être dans une zone ou il peu décharger l'excèdent d'énergie qu'il accumule"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 29",
+              "asPlayer": false
+            },
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "chercheurdoiseau"
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "scientifiquebird1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "talkscientifique-non",
+          "title": "Choisir Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bOk à une prochaine alors !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "scientifiquebird1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "legendarybirds2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "legendarybirds2",
+      "displayText": "Retourner voir le scientifique",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2",
+          "title": "§2Retourner voir le scientifique",
+          "requirements": [
+            {
+              "type": "all-of",
+              "inverted": false,
+              "requirements": [
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catcharticodin"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchelecthor"
+                },
+                {
+                  "type": "have-flag",
+                  "inverted": "false",
+                  "flag": "catchsulfura"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bBravo ! Tu les as tous trouvés, c'est impressionnant !",
+                "§bVoici une récompense pour toi !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "money add {{player}} 20k",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 24",
+              "asPlayer": false
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "catchelecthor"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "unset-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "catchsulfura"
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "expcharm {{player}}",
+              "asPlayer": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aTu as reçu le §6Exp Charm §aet §620k$ &a!",
+              "useActionBar": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-4313",
+          "waypointZ": "-5609",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2-M-A",
+          "title": "Voir le scientifique M-A",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catchsulfura"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catchelecthor"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bIl te manque l'oiseau de glace, reviens me voir quand tu l'auras !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2-M-S",
+          "title": "Voir le scientifique M-S",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catchelecthor"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchsulfura"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bIl te manque l'oiseau de feu, reviens me voir quand tu l'auras !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2-M-E",
+          "title": "Voir le scientifique M-E",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catchsulfura"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchelecthor"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bIl te manque l'oiseau de foudre, reviens me voir quand tu l'auras !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2-M-AS",
+          "title": "Voir le scientifique M-AS",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchsulfura"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catchelecthor"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bIl te manque les oiseaux de glace et de feu, reviens me voir quand tu les auras !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2-M-AE",
+          "title": "Voir le scientifique M-AE",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchelecthor"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catchsulfura"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bIl te manque les oiseaux de glace et de foudre, reviens me voir quand tu les auras !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2-M-ES",
+          "title": "Voir le scientifique M-ES",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchelecthor"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchsulfura"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "catcharticodin"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bIl te manque les oiseaux de foudre et de feu, reviens me voir quand tu les auras !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talkscientifique2-M-AES",
+          "title": "Voir le scientifique M-AES",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchelecthor"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catcharticodin"
+            },
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "catchsulfura"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§bTu n'as encore aucun des oiseaux légendaires, reviens me voir quand tu les auras !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "birdscientifique",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": "2",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}

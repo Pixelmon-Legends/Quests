@@ -1,0 +1,485 @@
+{
+  "type": "repeatable",
+  "name": "SPP",
+  "title": "La Société de Protection des Pokémon",
+  "stages": [
+    {
+      "name": "spp1",
+      "displayText": "Parler à Etienne",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "login",
+          "name": "loginmark-spp",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 53",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talketienne",
+          "title": "Parler à Etienne",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "true",
+              "flag": "AdherentSPP"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "AdherentSPP",
+              "chatName": "",
+              "chatPages": [
+                "§2Bonjour ! Bienvenue à la SPP, Société de Protection des Pokémon. ",
+                "§2Ici, une fois par jour, tu peut nous laisser un pokémon dont tu veux te séparer !",
+                "§2Veux tu que je crée ta carte de membre ?§a"
+              ],
+              "choices": [
+                "§aOui, ça m'intéresse beaucoup !§c",
+                "§cNon merci"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "etiennespp",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "choixspp-oui",
+          "title": "Choisir oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "set-flag",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "flag": "AdherentSPP"
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Alors, signez ici, et c'est tout bon, vous voici membre de la SPP !",
+                "§2Venez me parler quand vous aurez un Pokémon à me confier ! Bien sûr je vous donnerai des récompenses en échange !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "AdherentSPP",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "choixspp-non",
+          "title": "Choisir non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§2Oh quel dommage, revenez nous voir si jamais !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "AdherentSPP",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "talketienne-give",
+          "title": "Donner à Etienne",
+          "requirements": [
+            {
+              "type": "have-flag",
+              "inverted": "false",
+              "flag": "AdherentSPP"
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "",
+                  "slot": "1"
+                }
+              ],
+              "choiceID": "GiveSPP",
+              "chatName": "",
+              "chatPages": [
+                "§2Bonjour ! Bienvenue à la SPP cher membre ! ",
+                "§2Souhaitez vous donner votre Pokémon en §4slot 1 §2contre une récompense ? §4§oAttention ! C'est irreversible !"
+              ],
+              "choices": [
+                "§aOui, je confirme.§c",
+                "§cNon, pas encore."
+              ]
+            },
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": "true",
+                  "spec": "",
+                  "slot": "1"
+                }
+              ],
+              "chatName": "",
+              "chatPages": [
+                "§2Bonjour cher membre ! Bienvenue à la SPP !",
+                "§2Revenez nous voir quand vous aurez un pokémon en slot 1 !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "etiennespp",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "givespp",
+          "title": "Donner le Pokémon",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "!shiny lvlr:1-74",
+                  "slot": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "take-pokemon",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "spec": "",
+                  "search": "Party",
+                  "box": "-1",
+                  "slot": "1",
+                  "maxToTake": 1
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "cmi give {{player}} PIXELMON_RAINBOW_BADGE 1 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"&6Un point obtenu dans différentes épreuves du serveur\"],Name:\"&6&l✪ Point Legends ✪\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§2Merci pour ton don ! Voici 1 Point Legends !",
+                  "useActionBar": false
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "!shiny lvlr:75-100",
+                  "slot": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "take-pokemon",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "spec": "",
+                  "search": "Party",
+                  "box": "-1",
+                  "slot": "1",
+                  "maxToTake": 1
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "cmi give {{player}} PIXELMON_RAINBOW_BADGE 2 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"&6Un point obtenu dans différentes épreuves du serveur\"],Name:\"&6&l✪ Point Legends ✪\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§2Merci pour ton don ! Voici 2 Point Legends !",
+                  "useActionBar": false
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "shiny lvlr:1-74",
+                  "slot": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "take-pokemon",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "spec": "",
+                  "search": "Party",
+                  "box": "-1",
+                  "slot": "1",
+                  "maxToTake": 1
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "cmi give {{player}} PIXELMON_RAINBOW_BADGE 4 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"&6Un point obtenu dans différentes épreuves du serveur\"],Name:\"&6&l✪ Point Legends ✪\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§2Merci pour ton don ! Voici 4 Point Legends !",
+                  "useActionBar": false
+                }
+              ]
+            },
+            {
+              "type": "run-actions",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [
+                {
+                  "type": "have-pokemon-in-party",
+                  "inverted": false,
+                  "spec": "shiny lvlr:75-100",
+                  "slot": "1"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "take-pokemon",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "spec": "",
+                  "search": "Party",
+                  "box": "-1",
+                  "slot": "1",
+                  "maxToTake": 1
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "cmi give {{player}} PIXELMON_RAINBOW_BADGE 6 0 {ench:[{lvl:1s,id:0s}],HideFlags:1,display:{Lore:[\"&6Un point obtenu dans différentes épreuves du serveur\"],Name:\"&6&l✪ Point Legends ✪\"}}",
+                  "asPlayer": false
+                },
+                {
+                  "type": "send-message",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "message": "§2Merci pour ton don ! Voici 6 Point Legends !",
+                  "useActionBar": false
+                }
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 53",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "GiveSPP",
+          "choiceNumber": 1
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "daily",
+  "state": "ACTIVE",
+  "titleLineCount": "3",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "86400"
+}

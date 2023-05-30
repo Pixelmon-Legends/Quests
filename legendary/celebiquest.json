@@ -1,0 +1,798 @@
+{
+  "type": "repeatable",
+  "name": "celebiquest",
+  "title": "Quête de Celebi",
+  "stages": [
+    {
+      "name": "celebi1",
+      "displayText": "Parler à la Fée",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "startcelebi",
+          "title": "Parler à la Fée",
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:gs_ball",
+              "quantity": 1,
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "celebi1",
+              "chatName": "",
+              "chatPages": [
+                "§dHello ! Tu veux capturer Celebi ?§a"
+              ],
+              "choices": [
+                "§aOui !§c",
+                "§cNon"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "eirinacelebi",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "celebichoice1",
+          "title": "Choisir Oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dParfait ! Avant que je laisse le faire j'ai besoin que tu me rendes service ! "
+              ]
+            },
+            {
+              "type": "random-action",
+              "delay": "0",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "move-to-stage",
+                  "delay": "0",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "celebi2-1"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": "0",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "celebi2-2"
+                },
+                {
+                  "type": "move-to-stage",
+                  "delay": "0",
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "transferPolicy": "take-persistent",
+                  "stageName": "celebi2-3"
+                }
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "celebi1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "celebichoice1-not",
+          "title": "Choisir Non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dD'accord reviens me voir si ça t'intéresse !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "celebi1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "startcelebi-nogs",
+          "title": "Parler à la Fée pas de GS",
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": "true",
+              "item": "pixelmon:gs_ball",
+              "quantity": 1,
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dHello ! Je peux te proposer quelque chose mais il te faut une §eGS Ball §davant !§a"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "eirinacelebi",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "login",
+          "name": "loginmark",
+          "title": "Mark on Login",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest remove {{player}} 37",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "celebi2-1",
+      "displayText": "2-1 Aller battre des pokémon",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "MsgInfo",
+          "title": "Message info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dVa éliminer 10 Pokémon Dragon !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "defeat-wild-pokemon",
+          "name": "task2-1",
+          "title": "§2Battre {{remaining}} Pokémon Dragon",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": "10",
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "spec": "type1:dragon"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "celebi3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "celebi2-2",
+      "displayText": "2-2 Rapporter des Love Ball",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "MsgInfo-2-2",
+          "title": "Message info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dCraft 64 Love Ball et apporte les moi !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "get-item",
+          "name": "task2-2",
+          "title": "§2Crafter {{remaining}} Love Ball",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "item": "pixelmon:love_ball",
+          "quantity": "64",
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "giveloveball",
+          "title": "Donner les Love Ball",
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "pixelmon:love_ball",
+              "quantity": "64",
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "pixelmon:love_ball",
+              "quantity": "64",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "eirinacelebi",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "celebi3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "celebi2-3",
+      "displayText": "2-3 Rapporter des Gateaux",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "MsgInfo-2-3",
+          "title": "Message info",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dCraft 16 gâteaux et apporte les moi !"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "get-item",
+          "name": "task2-3",
+          "title": "§2Crafter {{remaining}} Gâteaux",
+          "requirements": [],
+          "actions": [],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "item": "minecraft:cake",
+          "quantity": "16",
+          "meta": -1,
+          "mark": "",
+          "nbt": ""
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "givecake",
+          "title": "Donner les gâteaux",
+          "requirements": [
+            {
+              "type": "carrying-item",
+              "inverted": false,
+              "item": "minecraft:cake",
+              "quantity": "16",
+              "meta": -1,
+              "marker": "",
+              "nbt": ""
+            }
+          ],
+          "actions": [
+            {
+              "type": "take-item",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "minecraft:cake",
+              "quantity": "16",
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "eirinacelebi",
+          "uuid": "",
+          "cancelInteraction": "false",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "celebi3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "celebi3",
+      "displayText": "La fontaine des fées",
+      "displayTextLineCount": 1,
+      "tasks": [
+        {
+          "type": "do-nothing",
+          "name": "enter",
+          "title": "Entrer dans la fontaine",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "celebienter1",
+              "chatName": "",
+              "chatPages": [
+                "§dMerci pour ton aide !",
+                "§dSouhaite tu aller maintenant à la §eFontaine de Celebi §d? Tu pourras revenir plus tard si tu ne veux pas !§a"
+              ],
+              "choices": [
+                "§aOui !§c",
+                "§cNon je repasserai"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false
+        },
+        {
+          "type": "interact-with-entity",
+          "name": "enter2",
+          "title": "Entrer dans la fontaine 2",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "choiceID": "celebienter1",
+              "chatName": "",
+              "chatPages": [
+                "§dSouhaite tu aller maintenant à la §eFontaine de Celebi §d? Tu pourras revenir plus tard si tu ne veux pas ! Pense à prendre ta GS Ball§a"
+              ],
+              "choices": [
+                "§aOui !§c",
+                "§cNon je repasserai"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "eirinacelebi",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "CelebiEnter-Yes",
+          "title": "Choisir oui",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dC'est parti alors !"
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "0.5",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "tppos {{player}} -4327.5 57 -5676.5 0 180",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "celebienter1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "CelebiEnter-No",
+          "title": "Choisir non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§dReviens me voir bientôt alors !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "celebienter1",
+          "choiceNumber": "2"
+        },
+        {
+          "type": "catch-pokemon",
+          "name": "catchcelebi",
+          "title": "§2Attraper Celebi",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "spawn {{player}}",
+              "asPlayer": false
+            },
+            {
+              "type": "run-command",
+              "delay": "1",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "warp safari {{player}}",
+              "asPlayer": false
+            },
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§dSuper tu as capturé Celebi ! Il est temps de rentrer maintenant, il n'y a plus rien à faire ici !",
+              "useActionBar": false
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 37",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "spec": "Celebi"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "legendary",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": [],
+  "timesCanRepeat": -1,
+  "secondsBetweenCompletions": "604800"
+}

@@ -1,0 +1,573 @@
+{
+  "type": "basic",
+  "name": "firsttcgcard",
+  "title": "Première carte",
+  "stages": [
+    {
+      "name": "tcg1",
+      "displayText": "Parler à Len",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talklen",
+          "title": "Parler à Len",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-choices",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSalut ! Bienvenue sur le vaisseau des fans du TCG !",
+                "§aTu connais le TCG ? Il paraît que ce jeu de carte était très en vogue sur Terre à l'époque",
+                "§aTu veux t'y mettre aussi ? Je peut t'expliquer comment obtenir des cartes !"
+              ],
+              "choiceID": "tcg-choix1",
+              "choices": [
+                "§aOui vas-y ça m'intéresse !§c",
+                "§cTu veux pas faire un... vrai combat Pokémon ?"
+              ]
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": "false",
+          "isOptional": "true",
+          "isInfinite": "true",
+          "intakeRequirements": [],
+          "timesToComplete": "1",
+          "waypointDimension": "0",
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "mark": "lentcg",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        },
+        {
+          "type": "select-choice",
+          "name": "tcg-choix1",
+          "title": "Choisir OK",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aTrop cool, alors pour fabriquer tes cartes, il va déjà te falloir une imprimante, reviens me voir quand tu l'auras !",
+                "§aIl me semble qu'un gars en vend par ici..."
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "tcg-choix1",
+          "choiceNumber": 1
+        },
+        {
+          "type": "select-choice",
+          "name": "tcg-choix1-not",
+          "title": "Choisir non",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aQuoi !? Part de ce vaisseau ! Tu ne comprends rien à l'âme des cartes..."
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": "3",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "spawn {{player}}",
+              "asPlayer": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "true",
+          "isPersistent": false,
+          "isOptional": "true",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "choiceID": "tcg-choix1",
+          "choiceNumber": "2"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tcg2",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tcg2",
+      "displayText": "Obtenir une imprimante",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "craftprinter",
+          "title": "Obtenir une imprimante",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai l'imprimante, plus qu'a retourner voir Len !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "tcg:card_printer",
+          "meta": -1,
+          "nbt": "",
+          "quantity": 1,
+          "mark": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tcg3",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tcg3",
+      "displayText": "Retourner voir Len",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talklen2",
+          "title": "§2Retourner voir Len",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aSuper tu as l'imprimante !",
+                "§aMaintenant il te faut une photo de pokémon...",
+                "§aOn va dire...une photo de Mystherbe ! Reviens me voir quand tu l'auras !"
+              ]
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-6076",
+          "waypointZ": "-5145",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "lentcg",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tcg4",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tcg4",
+      "displayText": "Prendre une photo de Mystherbe",
+      "displayTextLineCount": "2",
+      "tasks": [
+        {
+          "type": "take-photo",
+          "name": "mystherbephoto",
+          "title": "Prendre en photo Mystherbe",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aJ'ai la photo ! Je dois retourner voir Len !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "spec": "Oddish",
+          "mark": ""
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tcg5",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tcg5",
+      "displayText": "Retourner voir Len",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talklen3",
+          "title": "Retourner voir Len",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aTu as la photo ? Parfait !",
+                "§aMaintenant, tu n'as plus qu'a mettre cette base de carte que je vais te donner avec la photo dans l'imprimante, et tu aura ta carte !",
+                "§aReviens me voir après !"
+              ]
+            },
+            {
+              "type": "give-item",
+              "delay": "2",
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "item": "tcg:blank_card.grass.uncommon",
+              "quantity": 1,
+              "meta": -1,
+              "mark": "",
+              "nbt": ""
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-6076",
+          "waypointZ": "-5145",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "lentcg",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tcg6",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tcg6",
+      "displayText": "Fabriquer la carte",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "get-item",
+          "name": "craftcard",
+          "title": "Fabriquer la carte",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "send-message",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "message": "§aWoah ! Ma première carte ! Incroyable, je dois la montrer à Len !",
+              "useActionBar": false
+            }
+          ],
+          "titleLineCount": "1",
+          "description": "",
+          "hint": "",
+          "isHidden": "false",
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": false,
+          "intakeRequirements": [],
+          "waypointDimension": 0,
+          "waypointX": 0,
+          "waypointZ": 0,
+          "waypointRadius": 10,
+          "trackAutomatically": false,
+          "item": "tcg:card",
+          "quantity": 1,
+          "meta": -1,
+          "mark": "",
+          "nbt": "{CardID:396}"
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "tcg7",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    },
+    {
+      "name": "tcg7",
+      "displayText": "Retourner voir Len",
+      "displayTextLineCount": "1",
+      "tasks": [
+        {
+          "type": "interact-with-entity",
+          "name": "talklen4",
+          "title": "Retourner voir Len",
+          "requirements": [],
+          "actions": [
+            {
+              "type": "show-dialogue",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "chatName": "",
+              "chatPages": [
+                "§aFélicitations ! Tu as ta première carte !",
+                "§aPour t'aider à commencer, voici un deck, mais tu peux le modifier, ou même créer le tiens comme tu le souhaite !",
+                "§aPour créer des cartes, tu peux aller voir le commerçant là-bas, il vend les bases",
+                "§aAprès tu as juste à faire tes essais pour créer la carte que tu souhaite !",
+                "§aBon courage pour tes du-du-du-duels !!!"
+              ]
+            },
+            {
+              "type": "random-action",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "actions": [
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} 2playerStarter",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} blackout",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} bodyGuard",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} brushfire",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} lockDown",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} overgrowth",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} powerReserve",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} trainerDeckA",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} trainerDeckB",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} waterBlast",
+                  "asPlayer": false
+                },
+                {
+                  "type": "run-command",
+                  "delay": 0,
+                  "applyToAll": false,
+                  "runningChance": 100,
+                  "requirements": [],
+                  "command": "tcg give deck {{player}} zap",
+                  "asPlayer": false
+                }
+              ]
+            },
+            {
+              "type": "run-command",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": [],
+              "command": "noppes quest finish {{player}} 48",
+              "asPlayer": false
+            },
+            {
+              "type": "complete-quest",
+              "delay": 0,
+              "applyToAll": false,
+              "runningChance": 100,
+              "requirements": []
+            }
+          ],
+          "titleLineCount": 1,
+          "description": "",
+          "hint": "",
+          "isHidden": false,
+          "isPersistent": false,
+          "isOptional": "false",
+          "isInfinite": "false",
+          "intakeRequirements": [],
+          "timesToComplete": 1,
+          "waypointDimension": 0,
+          "waypointX": "-6076",
+          "waypointZ": "-5145",
+          "waypointRadius": 10,
+          "trackAutomatically": "true",
+          "mark": "lentcg",
+          "uuid": "",
+          "cancelInteraction": "true",
+          "entities": []
+        }
+      ],
+      "canDrop": false,
+      "nextStage": "",
+      "completedPolicy": "required-are-completed",
+      "transferPolicy": "take-persistent"
+    }
+  ],
+  "category": "standard",
+  "state": "ACTIVE",
+  "titleLineCount": "1",
+  "acquisitionHint": "",
+  "autoStart": "true",
+  "showProgressMessages": "false",
+  "visibility": "HIDDEN_UNLESS_ACTIVE",
+  "prerequisites": [],
+  "taskSets": []
+}
